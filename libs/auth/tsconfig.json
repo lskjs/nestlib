@@ -1,4 +1,4 @@
 {
-  "extends": "@lskjs/tsconfig/strict/tsconfig.json"
+  "extends": "../../tsconfig.json"
 }
 

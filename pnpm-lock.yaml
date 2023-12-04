@@ -12,8 +12,11 @@ importers:
         specifier: ^4.0.1
         version: 4.0.2
       '@lsk4/tsconfig':
-        specifier: ^4.0.1
+        specifier: ^4.0.3
         version: 4.0.3
+      '@lsk4/tsup-config':
+        specifier: ^4.0.2
+        version: 4.0.2
       typescript:
         specifier: ^5.3.2
         version: 5.3.2
@@ -883,6 +886,10 @@ packages:
 
   /@lsk4/tsconfig@4.0.3:
     resolution: {integrity: sha512-/mIdP0Gk1NlBvjtrp0KSXJ2+MBAOnzn8dW9eaSk3turmLx6a2lJYJimzppXbUax2yvT7qpDZDEP1aHOBPSt4Vw==}
+    dev: true
+
+  /@lsk4/tsup-config@4.0.2:
+    resolution: {integrity: sha512-tpZ7WT9XNhrUzIMqDlKlbsJ7J2YaPgGGJgMra5PiXtaAeiXgVbXSck5oOtg2fP/mB8ZgOz0LSPanEkpzAtX5YQ==}
     dev: true
 
   /@lskjs/algos@3.18.0:
