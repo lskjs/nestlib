@@ -1,7 +1,7 @@
 {
-  "name": "@lskjs/nest-config",
-  "version": "3.17.0",
-  "description": "LSK.js – nest config – helpers for config in Nest.js projects",
+  "name": "@nestlib/mutex",
+  "version": "4.0.0",
+  "description": "LSK.js – nest mutex – helpers for mutex in Nest.js projects",
   "author": "Igor Suvorov <hi@isuvorov.com> (https://github.com/isuvorov)",
   "private": false,
   "scripts": {
@@ -12,17 +12,18 @@
     "release": "        ycmd release"
   },
   "dependencies": {
-    "@lskjs/algos": "^3.17.0",
-    "@lskjs/err": "^3.17.0"
+    "@lskjs/env": "^3.17.0",
+    "@lskjs/err": "^3.17.0",
+    "async-lock": "^1.4.0",
+    "rxjs": "^7.8.1"
   },
   "devDependencies": {
-    "@nestjs/common": "^10.2.1",
-    "@nestjs/config": "^3.0.0",
-    "@nestjs/core": "^10.2.1"
+    "@nestjs/common": "^10.0.5",
+    "@nestjs/core": "^10.1.2",
+    "@types/async-lock": "^1.4.0"
   },
   "peerDependencies": {
     "@nestjs/common": "^10.0.5",
-    "@nestjs/config": "^3.0.0",
     "@nestjs/core": "^10.1.2"
   },
   "//": "///////////========================/////////========================/////////========================//////////",
@@ -55,16 +56,12 @@
   "size-limit": [
     {
       "path": "lib/index.js",
-      "limit": "10kb",
-      "ignore": [
-        "fs",
-        "path"
-      ]
+      "limit": "10kb"
     }
   ],
   "///": "//////////========================/////////========================/////////========================/////////",
-  "repository": "https://github.com/lskjs/lskjs/tree/master//libs-nest/nest-config",
-  "homepage": "https://github.com/lskjs/lskjs/tree/master//libs/nest-config",
+  "repository": "https://github.com/lskjs/lskjs/tree/master//libs-nest/nest-mutex",
+  "homepage": "https://github.com/lskjs/lskjs/tree/master//libs/nest-mutex",
   "bugs": "https://github.com/lskjs/lskjs/issues",
   "license": "MIT",
   "publishConfig": {
