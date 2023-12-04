@@ -1,3 +1,0 @@
-{
-  "extends": "@lskjs/tsconfig/nostrict/tsconfig.json"
-}

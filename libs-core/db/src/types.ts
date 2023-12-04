@@ -1,1 +1,0 @@
-export * from './IModel.types';

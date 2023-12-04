@@ -1,3 +1,0 @@
-- [Email](mailto:hi@isuvorov.com)
-- [LSK.news – Telegram channel](https://t.me/lskjs)
-- [Спроси нас в телеграме ;)](https://t.me/lskjschat)

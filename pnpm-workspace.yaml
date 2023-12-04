@@ -1,8 +1,3 @@
 packages:
+  - "presets/*"
   - "libs/*"
-  - "libs-cli/*"
-  - "libs-core/*"
-  - "libs-presets/*"
-  - "libs-nest/*"
-  # - "libs-bots/*"
-  # - "libs-legacy/*"
