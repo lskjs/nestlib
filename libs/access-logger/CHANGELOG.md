@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.1.0](https://github.com/lskjs/lskjs/compare/v3.19.0...v4.1.0) (2023-12-05)
+
+
+### Features
+
+* and separate webserver middlewares to access-logger pacakge ([65b5cfd](https://github.com/lskjs/lskjs/commit/65b5cfdd2112d64d6c76277dcb0286e82aa2ca08))
+
+
+
+
+
 # [3.17.0](https://github.com/lskjs/lskjs/compare/v3.16.3...v3.17.0) (2023-11-06)
 
 **Note:** Version bump only for package @lskjs/nest-utils
