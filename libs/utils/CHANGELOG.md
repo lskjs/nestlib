@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.2.0](https://github.com/lskjs/lskjs/compare/v4.1.0...v4.2.0) (2023-12-05)
+
+
+### Features
+
+* **utils:** improve createNestLogger ([b73d43b](https://github.com/lskjs/lskjs/commit/b73d43b29118f95de38a57861e61fb2af46dec42))
+
+
+
+
+
 # [4.1.0](https://github.com/lskjs/lskjs/compare/v3.19.0...v4.1.0) (2023-12-05)
 
 
