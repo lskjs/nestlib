@@ -3,6 +3,7 @@ import { mapValues } from '@lsk4/algos';
 import { createLogger } from '@lsk4/log';
 import { LoggerService as NestLoggerService } from '@nestjs/common';
 
+
 export type LoggerService = NestLoggerService & {
   info: (name: string, ...args: any[]) => void;
   setLogLevels: () => void;
