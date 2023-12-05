@@ -1,7 +1,12 @@
+import type { ILogger, LoggerLevelType } from '@lsk4/log';
 import { mapValues } from '@lsk4/algos';
-// eslint-disable-next-line import/named
-import { ILogger, Logger, LoggerLevelType } from '@lsk4/log';
+import { createLogger } from '@lsk4/log';
+import { LoggerService as NestLoggerService } from '@nestjs/common';
 
+export type LoggerService = NestLoggerService & {
+  info: (name: string, ...args: any[]) => void;
+  setLogLevels: () => void;
+};
 export interface ILoggerOptions {
   env?: string;
   context?: string;
@@ -11,28 +16,35 @@ export interface ILoggerOptions {
 
   ns?: string;
 }
-
-export const createNestLogger = (props: ILoggerOptions = {}): ILogger => {
+export const createNestLogger = (props: ILoggerOptions = {}): LoggerService => {
   const { level, ns } = props;
-  const log = new Logger({ level, ns });
+  // const log = new Logger({ level, ns });
   const mapper = {
-    info: 'info',
-    log: 'trace',
-    error: 'error',
-    warn: 'warn',
     verbose: 'trace',
+    log: 'trace',
+    debug: 'debug',
+    info: 'info',
+    warn: 'warn',
+    error: 'error',
+    fatal: 'fatal',
+  };
+
+  const cache: Record<string, ILogger> = {};
+  const getLogger = (ns: string) => {
+    if (!cache[ns]) cache[ns] = createLogger(`nest:${ns}`, { level });
+    return cache[ns];
   };
 
   // @ts-ignore
-  const loggerLike: ILogger = mapValues(mapper, (lskLevel) => (...args: any[]) => {
+  const loggerService: any = mapValues(mapper, (lskLevel: LoggerLevelType) => (...args: any[]) => {
     const name = args.pop();
-    const baseName = log.name;
-    log.name = name;
-    // @ts-ignore
-    const res = log[lskLevel](...args);
-    log.name = baseName;
+    const res = getLogger(name)[lskLevel](...args);
     return res;
   });
 
-  return loggerLike;
+  loggerService.setLogLevels = () => {
+    // log.setLevel(levels);
+  };
+
+  return loggerService as LoggerService;
 };

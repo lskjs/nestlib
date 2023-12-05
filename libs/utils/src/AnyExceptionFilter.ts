@@ -2,7 +2,7 @@
 import { omitNull } from '@lsk4/algos';
 import { isDebug } from '@lsk4/env';
 import { Err } from '@lsk4/err';
-import { getEnvConfig, Logger } from '@lsk4/log';
+import { createLogger } from '@lsk4/log';
 import {
   ArgumentsHost,
   Catch,
@@ -20,7 +20,7 @@ const isEmpty = (obj = {}) => !Object.keys(obj).length;
 @Catch(Err)
 export class AnyExceptionFilter implements BaseExceptionFilter {
   // AnyExceptionFilter.name
-  private readonly log = new Logger({ ns: 'webserver:exception', ...getEnvConfig() });
+  private readonly log = createLogger('webserver:exception');
   catch(err: Err, host: ArgumentsHost) {
     const ctx = host.switchToHttp();
     const res = ctx.getResponse<Response>();
