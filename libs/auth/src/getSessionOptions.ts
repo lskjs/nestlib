@@ -1,6 +1,6 @@
-import { isDev } from '@lskjs/env';
-import { Err } from '@lskjs/err';
-import { ConfigService } from '@lskjs/nest-config';
+import { isDev } from '@lsk4/env';
+import { Err } from '@lsk4/err';
+import { ConfigService } from '@nestlib/config';
 import MongoSessionStore from 'connect-mongo';
 import { SessionOptions } from 'express-session';
 

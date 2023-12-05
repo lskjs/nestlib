@@ -1,6 +1,6 @@
-import { mapValues } from '@lskjs/algos';
+import { mapValues } from '@lsk4/algos';
 // eslint-disable-next-line import/named
-import { ILogger, Logger, LoggerLevelType } from '@lskjs/log';
+import { ILogger, Logger, LoggerLevelType } from '@lsk4/log';
 
 export interface ILoggerOptions {
   env?: string;

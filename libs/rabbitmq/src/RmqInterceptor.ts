@@ -1,8 +1,8 @@
 import { RabbitHandlerConfig, RabbitRPC } from '@golevelup/nestjs-rabbitmq';
-import { omitNull } from '@lskjs/algos';
-import { isDev } from '@lskjs/env';
-import { Err } from '@lskjs/err';
-import { createLogger } from '@lskjs/log';
+import { omitNull } from '@lsk4/algos';
+import { isDev } from '@lsk4/env';
+import { Err } from '@lsk4/err';
+import { createLogger } from '@lsk4/log';
 import {
   applyDecorators,
   CallHandler,

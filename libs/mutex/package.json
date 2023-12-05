@@ -12,8 +12,8 @@
     "release": "        ycmd release"
   },
   "dependencies": {
-    "@lskjs/env": "^3.17.0",
-    "@lskjs/err": "^3.17.0",
+    "@lsk4/env": "^4.1.0",
+    "@lsk4/err": "^4.1.0",
     "async-lock": "^1.4.0",
     "rxjs": "^7.8.1"
   },

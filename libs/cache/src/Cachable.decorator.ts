@@ -1,4 +1,4 @@
-import { Err } from '@lskjs/err';
+import { Err } from '@lsk4/err';
 import { CACHE_KEY_METADATA, CACHE_TTL_METADATA } from '@nestjs/cache-manager';
 import { isFunction, isNil } from '@nestjs/common/utils/shared.utils';
 

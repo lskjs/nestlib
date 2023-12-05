@@ -1,5 +1,5 @@
 /* eslint-disable no-empty-function */
-import { Err } from '@lskjs/err';
+import { Err } from '@lsk4/err';
 import { CanActivate, ContextType, ExecutionContext, Injectable } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 

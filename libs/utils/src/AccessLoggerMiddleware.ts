@@ -1,4 +1,4 @@
-import { isDev } from '@lskjs/env';
+import { isDev } from '@lsk4/env';
 // @ts-ignore
 // eslint-disable-next-line import/no-unresolved
 import applyLogger from '@lskjs/webserver/middlewares/accessLogger/applyLogger';

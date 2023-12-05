@@ -1,4 +1,4 @@
-import { createLogger } from '@lskjs/log';
+import { createLogger } from '@lsk4/log';
 import { isFunction, isNil } from '@nestjs/common/utils/shared.utils';
 import { LRUCache as BaseLRUCache } from 'lru-cache';
 

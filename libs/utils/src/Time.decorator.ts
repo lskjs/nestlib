@@ -1,4 +1,4 @@
-import { createLogger } from '@lskjs/log';
+import { createLogger } from '@lsk4/log';
 
 const log = createLogger('Time', { ns: 'time' });
 

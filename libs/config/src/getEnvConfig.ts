@@ -3,7 +3,7 @@
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { Err } from '@lskjs/err';
+import { Err } from '@lsk4/err';
 
 export const getEnvConfig = (filenames: string | string[]) => {
   // eslint-disable-next-line no-param-reassign

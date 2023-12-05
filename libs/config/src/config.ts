@@ -1,8 +1,8 @@
 /* eslint-disable no-unreachable-loop */
 // https://docs.nestjs.com/techniques/configuration
 
-import { pick } from '@lskjs/algos';
-import { Err } from '@lskjs/err';
+import { pick } from '@lsk4/algos';
+import { Err } from '@lsk4/err';
 import {
   ConfigModule as NestConfigModule,
   ConfigService as NestConfigService,

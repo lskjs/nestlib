@@ -12,8 +12,8 @@
     "release": "        ycmd release"
   },
   "dependencies": {
-    "@lskjs/algos": "^3.17.0",
-    "@lskjs/err": "^3.17.0"
+    "@lsk4/algos": "^4.1.0",
+    "@lsk4/err": "^4.1.0"
   },
   "devDependencies": {
     "@nestjs/common": "^10.2.1",

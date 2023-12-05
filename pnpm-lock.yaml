@@ -1,9 +1,5 @@
 lockfileVersion: '6.0'
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
-
 importers:
 
   .:
@@ -26,12 +22,12 @@ importers:
 
   libs/auth:
     dependencies:
-      '@lskjs/env':
-        specifier: ^3.17.0
-        version: 3.18.0
-      '@lskjs/err':
-        specifier: ^3.17.0
-        version: 3.18.0
+      '@lsk4/env':
+        specifier: ^4.1.0
+        version: 4.1.0
+      '@lsk4/err':
+        specifier: ^4.1.0
+        version: 4.1.0
       connect-mongo:
         specifier: ^5.0.0
         version: 5.1.0(express-session@1.17.3)(mongodb@6.3.0)
@@ -39,30 +35,30 @@ importers:
         specifier: ^1.17.3
         version: 1.17.3
     devDependencies:
-      '@lskjs/nest-config':
-        specifier: ^3.17.0
-        version: 3.18.0(@nestjs/common@10.2.10)(@nestjs/config@3.1.1)(@nestjs/core@10.2.10)
       '@nestjs/common':
         specifier: ^10.0.5
         version: 10.2.10(reflect-metadata@0.1.13)(rxjs@7.8.1)
       '@nestjs/core':
         specifier: ^10.1.2
         version: 10.2.10(@nestjs/common@10.2.10)(reflect-metadata@0.1.13)(rxjs@7.8.1)
+      '@nestlib/config':
+        specifier: workspace:^
+        version: link:../config
       '@types/express-session':
         specifier: ^1.17.7
         version: 1.17.10
 
   libs/cache:
     dependencies:
-      '@lskjs/env':
-        specifier: ^3.17.0
-        version: 3.18.0
-      '@lskjs/err':
-        specifier: ^3.17.0
-        version: 3.18.0
-      '@lskjs/log':
-        specifier: ^3.17.0
-        version: 3.18.0
+      '@lsk4/env':
+        specifier: ^4.1.0
+        version: 4.1.0
+      '@lsk4/err':
+        specifier: ^4.1.0
+        version: 4.1.0
+      '@lsk4/log':
+        specifier: ^4.1.0
+        version: 4.1.0
       lru-cache:
         specifier: ^10.0.0
         version: 10.1.0
@@ -79,12 +75,12 @@ importers:
 
   libs/config:
     dependencies:
-      '@lskjs/algos':
-        specifier: ^3.17.0
-        version: 3.18.0
-      '@lskjs/err':
-        specifier: ^3.17.0
-        version: 3.18.0
+      '@lsk4/algos':
+        specifier: ^4.1.0
+        version: 4.1.0
+      '@lsk4/err':
+        specifier: ^4.1.0
+        version: 4.1.0
     devDependencies:
       '@nestjs/common':
         specifier: ^10.2.1
@@ -98,12 +94,12 @@ importers:
 
   libs/mutex:
     dependencies:
-      '@lskjs/env':
-        specifier: ^3.17.0
-        version: 3.18.0
-      '@lskjs/err':
-        specifier: ^3.17.0
-        version: 3.18.0
+      '@lsk4/env':
+        specifier: ^4.1.0
+        version: 4.1.0
+      '@lsk4/err':
+        specifier: ^4.1.0
+        version: 4.1.0
       async-lock:
         specifier: ^1.4.0
         version: 1.4.0
@@ -123,18 +119,18 @@ importers:
 
   libs/rabbitmq:
     dependencies:
-      '@lskjs/algos':
-        specifier: ^3.17.0
-        version: 3.18.0
-      '@lskjs/env':
-        specifier: ^3.17.0
-        version: 3.18.0
-      '@lskjs/err':
-        specifier: ^3.17.0
-        version: 3.18.0
-      '@lskjs/log':
-        specifier: ^3.17.0
-        version: 3.18.0
+      '@lsk4/algos':
+        specifier: ^4.1.0
+        version: 4.1.0
+      '@lsk4/env':
+        specifier: ^4.1.0
+        version: 4.1.0
+      '@lsk4/err':
+        specifier: ^4.1.0
+        version: 4.1.0
+      '@lsk4/log':
+        specifier: ^4.1.0
+        version: 4.1.0
       amqplib:
         specifier: ^0.10.3
         version: 0.10.3
@@ -157,18 +153,18 @@ importers:
 
   libs/utils:
     dependencies:
-      '@lskjs/algos':
-        specifier: ^3.17.0
-        version: 3.18.0
-      '@lskjs/env':
-        specifier: ^3.17.0
-        version: 3.18.0
-      '@lskjs/err':
-        specifier: ^3.17.0
-        version: 3.18.0
-      '@lskjs/log':
-        specifier: ^3.17.0
-        version: 3.18.0
+      '@lsk4/algos':
+        specifier: ^4.1.0
+        version: 4.1.0
+      '@lsk4/env':
+        specifier: ^4.1.0
+        version: 4.1.0
+      '@lsk4/err':
+        specifier: ^4.1.0
+        version: 4.1.0
+      '@lsk4/log':
+        specifier: ^4.1.0
+        version: 4.1.0
       '@lskjs/webserver':
         specifier: ^3.17.0
         version: 3.18.0(@emotion/core@10.3.1)(@lskjs/db@2.33.1)(@lskjs/i18@2.33.1)(@types/lodash@4.14.202)(axios@0.27.2)(bluebird@3.7.2)(lodash@4.17.21)(react@18.2.0)
@@ -818,25 +814,27 @@ packages:
       - supports-color
     dev: true
 
-  /@lsk4/algos@4.0.2:
-    resolution: {integrity: sha512-pnFf2H+XXau4rgllDH8dpuzI3z015Fe8BfATNofRn6Kv8NahMGDbv/vhOHbWFjIS0BxoWD37jYfA+N91txom1A==}
-    dev: true
+  /@lsk4/algos@4.1.0:
+    resolution: {integrity: sha512-CwCP0fWu6qRPtYpzTIakcytpr+8nnVHFSL8HbRsVCrw8a3i1vOacdlliWijMwzB22EHB2oua1HODzGWr7LlJYA==}
 
-  /@lsk4/colors@4.0.2:
-    resolution: {integrity: sha512-eYodzAYznFHwAb/FdYM+nAcu00IJnWNaszdS6mFmtWv3/E8zBWbIo/JH2Q0o9haQYwuyyvXtr3laQfDvge6RfA==}
+  /@lsk4/colors@4.1.0:
+    resolution: {integrity: sha512-qryr9/pLCdDgOsAuxNN/95YQLjP8p026nMfarZMOu7N6d1u65zFFveJjB/oQc+P+RZ++mdRrs3FR7mBCS8/w9w==}
     dependencies:
-      '@lsk4/env': 4.0.2
-    dev: true
+      '@lsk4/env': 4.1.0
 
-  /@lsk4/env@4.0.2:
-    resolution: {integrity: sha512-Tj1q7dMWUonYBrAb46wuc32ocjqiuPg0dFagHPfNwGd6UfibHeORs+QqwDSRvwebEvJXxq2LW/W33codHPhhDg==}
-    dev: true
+  /@lsk4/env@4.1.0:
+    resolution: {integrity: sha512-jWoxyJSN9ShST/D2ZCGw0b35REEvsrIGNv1IWaRaP6+ZVv3gl3hOgOObVz15MMSQMVH5ShZi70l1Y7iNXcH5RQ==}
 
   /@lsk4/err@4.0.2:
     resolution: {integrity: sha512-cGZApQZv+0gRTJxs8A82PYLS2De+K8i3KnQ+NB9UMwkUdvwCaMSD+XuONHIf8SdrzDDey83tScLbsoKdizLNag==}
     dependencies:
-      '@lsk4/algos': 4.0.2
+      '@lsk4/algos': 4.1.0
     dev: true
+
+  /@lsk4/err@4.1.0:
+    resolution: {integrity: sha512-B1AdKOQVOAwO2zRktBk0D4xclQxUQ8/Cmi04dFFIHejnrnb8jwEvGpcinDsPUB8yJvcvH69wB5IbCoiGy9tgag==}
+    dependencies:
+      '@lsk4/algos': 4.1.0
 
   /@lsk4/eslint-config@4.0.2:
     resolution: {integrity: sha512-xvDiICzyKYcmsXdAbN0A3F69lNWuFX6a1z+kqSezxVDTjGu2QgJvBSjjqSmRry4m9HDtmU5bEuRBR9uAWx3DNQ==}
@@ -866,14 +864,14 @@ packages:
       - supports-color
     dev: true
 
-  /@lsk4/log@4.0.2:
-    resolution: {integrity: sha512-mfpb3/tBISr7YeXZBdFOwFlVAc2Bqk9Rw/L0I/MXIkEhSGbnCn1h/4SYVLSJOcOTtJnfcAP1oul/BvptX+8qhQ==}
+  /@lsk4/log@4.1.0:
+    resolution: {integrity: sha512-QPW45Wh8QIgJMI8IkW7beyNC28JWEUSUOHBvXFWNHscUZCXNuXDGvQ4pd7Kn0Tnbru/kxvqgk8tdfBpG82oQvQ==}
     hasBin: true
     dependencies:
-      '@lsk4/algos': 4.0.2
-      '@lsk4/colors': 4.0.2
-      '@lsk4/env': 4.0.2
-      '@lsk4/err': 4.0.2
+      '@lsk4/algos': 4.1.0
+      '@lsk4/colors': 4.1.0
+      '@lsk4/env': 4.1.0
+      '@lsk4/err': 4.1.0
       fast-safe-stringify: 2.1.1
       pretty-bytes: 5.6.0
       pretty-time: 1.1.0
@@ -882,7 +880,6 @@ packages:
       through: 2.3.8
     optionalDependencies:
       logfmt: 1.3.2
-    dev: true
 
   /@lsk4/tsconfig@4.0.3:
     resolution: {integrity: sha512-/mIdP0Gk1NlBvjtrp0KSXJ2+MBAOnzn8dW9eaSk3turmLx6a2lJYJimzppXbUax2yvT7qpDZDEP1aHOBPSt4Vw==}
@@ -894,12 +891,7 @@ packages:
 
   /@lskjs/algos@3.18.0:
     resolution: {integrity: sha512-dTLE+MJNdks4xKtNuziYqADgxR4+b5xUHr8RfmeWhousvNoRfCNi6LRzLEp8PYtrCt5KJfrB09v5t0MIOyGtPg==}
-
-  /@lskjs/colors@3.18.0:
-    resolution: {integrity: sha512-cAcBRHXPV36AJAnxIWoGZMjq1y89sRm67pqsx3jpZ1mCYbgtb7u0MAoVyu3nhy/vcbOqR5L8TMF9LXCDvt8uyw==}
-    dependencies:
-      '@lskjs/env': 3.18.0
-    dev: false
+    dev: true
 
   /@lskjs/db@2.33.1(@types/lodash@4.14.202)(@types/mongoose@5.11.97)(bluebird@3.7.2)(lodash@4.17.21):
     resolution: {integrity: sha512-7T906RdbIyrGhR5UFjwjNBLFlAL+t0LNCFyJb4VYgTwyeDgsl82e00tBpOLqZtGPvcBbTcCrbhBNEA/azzfk+g==}
@@ -944,10 +936,6 @@ packages:
     resolution: {integrity: sha512-MjwI2T7jkW2AM29lR7M/jOxm1EZOaH404izUOKFgNzxzS+lsyfWI3l/+xW2AtjE1d4RUlTmPhx2RqqQtEym10A==}
     dev: false
 
-  /@lskjs/env@3.18.0:
-    resolution: {integrity: sha512-paer/oRp3WpaOZ6NKgS97XfFiq9MMYE6KrTc6zkNgzQdkUxFJvL2QsKK7lUqGKwtIQQrB1ui1pDaufi5j2QvHg==}
-    dev: false
-
   /@lskjs/err@2.29.0:
     resolution: {integrity: sha512-3Qk3vpmt7CVMS5wUm444ODdUVS61oRhoSxl8530zalm6L+4Zp93ORRlJ+USPWZ4i/+voc81e7MggDDHBc8WO8g==}
     dependencies:
@@ -964,6 +952,7 @@ packages:
     resolution: {integrity: sha512-5eUaWXVBc6FeF9BfCJWv9Ug70VLn/kQAgck6VBUg1rgKt9nfJLIu7yAqJlZn+GqDeAXA15sSIgmoxs1S6Lojmg==}
     dependencies:
       '@lskjs/algos': 3.18.0
+    dev: true
 
   /@lskjs/i18@2.33.1(@types/lodash@4.14.202)(bluebird@3.7.2)(js-cookie@3.0.5)(lodash@4.17.21)(mobx@5.15.7):
     resolution: {integrity: sha512-+xvVTjfcdKReEpOFQdZO0nlaOIOmGEbTvyLqKcHCDSOHUPPUmbcIYIvABIFPne6ZslNADkYJbHXfng0uFHzmyQ==}
@@ -1007,24 +996,6 @@ packages:
       '@lskjs/env': 2.85.1
       '@lskjs/err': 2.85.1
       fast-safe-stringify: 2.0.8
-      pretty-bytes: 5.6.0
-      pretty-time: 1.1.0
-      readline: 1.3.0
-      split: 1.0.1
-      through: 2.3.8
-    optionalDependencies:
-      logfmt: 1.3.2
-    dev: false
-
-  /@lskjs/log@3.18.0:
-    resolution: {integrity: sha512-JjDGvvAaFcPWFNgOU4Xu2D6w5LQiYmOQSQrVX1Q6XxzHnuXHBKHqdymvs/qVrup5RdRWI6BZKzACZdDmi6QbJA==}
-    hasBin: true
-    dependencies:
-      '@lskjs/algos': 3.18.0
-      '@lskjs/colors': 3.18.0
-      '@lskjs/env': 3.18.0
-      '@lskjs/err': 3.18.0
-      fast-safe-stringify: 2.1.1
       pretty-bytes: 5.6.0
       pretty-time: 1.1.0
       readline: 1.3.0
@@ -1083,20 +1054,6 @@ packages:
     dependencies:
       async-mutex: 0.2.6
     dev: false
-
-  /@lskjs/nest-config@3.18.0(@nestjs/common@10.2.10)(@nestjs/config@3.1.1)(@nestjs/core@10.2.10):
-    resolution: {integrity: sha512-v+8ZTJW3HxwG7uRAldT8VzsvaXHhznBTyNmJOvTklMI9IHCusNSF9YQ/NgeMnq5raG7xN2jeLLU4LuEB39O7Cg==}
-    peerDependencies:
-      '@nestjs/common': ^10.0.5
-      '@nestjs/config': ^3.0.0
-      '@nestjs/core': ^10.1.2
-    dependencies:
-      '@lskjs/algos': 3.18.0
-      '@lskjs/err': 3.18.0
-      '@nestjs/common': 10.2.10(reflect-metadata@0.1.13)(rxjs@7.8.1)
-      '@nestjs/config': 3.1.1(@nestjs/common@10.2.10)(reflect-metadata@0.1.13)
-      '@nestjs/core': 10.2.10(@nestjs/common@10.2.10)(reflect-metadata@0.1.13)(rxjs@7.8.1)
-    dev: true
 
   /@lskjs/stringify@3.19.0:
     resolution: {integrity: sha512-nT0l+a0Ma7ctzpjP4hlVYtW7/Mlnw9Q/5V/vP3r0jbzlUcAz8DhV1tgI0V5ozbwXS+QV7CsC6/ZKYZUg7+Fg+w==}
@@ -2500,7 +2457,7 @@ packages:
     peerDependencies:
       ycmd: ^0.8.0
     dependencies:
-      '@lsk4/algos': 4.0.2
+      '@lsk4/algos': 4.1.0
       '@lskjs/stringify': 3.19.0
       '@macrobe/tsup': 0.0.1(@swc/core@1.3.100)(typescript@5.3.2)
       '@swc/cli': 0.1.63(@swc/core@1.3.100)(chokidar@3.5.3)
@@ -2537,11 +2494,11 @@ packages:
   /@ycmd/helpers@0.10.0(esbuild@0.19.8):
     resolution: {integrity: sha512-jOH7TJsgSESKtXntDqKMaMBaJ5EBsbTIqomWyR1/H+zBkEGA9hhL4sKtkmgVrYoTD2ls1sW3Qq4NzZ/VjtvDEA==}
     dependencies:
-      '@lsk4/algos': 4.0.2
-      '@lsk4/colors': 4.0.2
-      '@lsk4/env': 4.0.2
-      '@lsk4/err': 4.0.2
-      '@lsk4/log': 4.0.2
+      '@lsk4/algos': 4.1.0
+      '@lsk4/colors': 4.1.0
+      '@lsk4/env': 4.1.0
+      '@lsk4/err': 4.1.0
+      '@lsk4/log': 4.1.0
       '@ycmd/utils': 0.10.0(esbuild@0.19.8)
       yargs: 17.7.2
     transitivePeerDependencies:
@@ -2573,9 +2530,9 @@ packages:
   /@ycmd/utils@0.10.0(esbuild@0.19.8):
     resolution: {integrity: sha512-umurn1krKxscClRCsgidVJUsjR/qJNaBd49tVJOiBAAPhf2OdH80e98c8pcxv4vw6/k1+/XbzGk0vhhItHNaEQ==}
     dependencies:
-      '@lsk4/env': 4.0.2
-      '@lsk4/err': 4.0.2
-      '@lsk4/log': 4.0.2
+      '@lsk4/env': 4.1.0
+      '@lsk4/err': 4.1.0
+      '@lsk4/log': 4.1.0
       bundle-require: 4.0.2(esbuild@0.19.8)
       fishbird: 1.1.8
       global-prefix: 3.0.0
@@ -3919,6 +3876,18 @@ packages:
     dependencies:
       ms: 2.1.3
 
+  /debug@4.3.4:
+    resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+    dependencies:
+      ms: 2.1.2
+    dev: false
+
   /debug@4.3.4(supports-color@5.5.0):
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
     engines: {node: '>=6.0'}
@@ -4248,7 +4217,7 @@ packages:
       base64id: 2.0.0
       cookie: 0.4.2
       cors: 2.8.5
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4
       engine.io-parser: 4.0.3
       ws: 7.4.6
     transitivePeerDependencies:
@@ -7652,7 +7621,7 @@ packages:
     resolution: {integrity: sha512-iQMncpmEK8R8ncT8HJGsGc9Dsp8xcgYMVSbs5jgnm1lFHTZqMJTUWTDx1LBO8+mK3tPNZWFLBghQEIOULSTHZg==}
     engines: {node: '>=14.0.0'}
     dependencies:
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -9562,7 +9531,7 @@ packages:
     dependencies:
       '@types/component-emitter': 1.2.14
       component-emitter: 1.3.1
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -9572,7 +9541,7 @@ packages:
     engines: {node: '>=10.0.0'}
     deprecated: 'This package has been renamed to ''@socket.io/redis-adapter'', please see the migration guide here: https://socket.io/docs/v4/redis-adapter/#migrating-from-socketio-redis'
     dependencies:
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4
       notepack.io: 2.2.0
       redis: 3.1.2
       socket.io-adapter: 2.2.0
@@ -9590,7 +9559,7 @@ packages:
       '@types/node': 20.10.3
       accepts: 1.3.8
       base64id: 2.0.0
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4
       engine.io: 5.2.1
       socket.io-adapter: 2.3.3
       socket.io-parser: 4.0.5
@@ -10831,7 +10800,7 @@ packages:
     resolution: {integrity: sha512-G68k68Fz+wk6HwceSsYkXC/mh7JmINB1OnWeNZgD7KGmGwDRhgAso1X84q8Vs6BK0oc1IAgQwbAzMTIy9Ty0jw==}
     hasBin: true
     dependencies:
-      '@lsk4/err': 4.0.2
+      '@lsk4/err': 4.1.0
       '@ycmd/commands': 0.10.0(esbuild@0.19.8)(typescript@5.3.2)(ycmd@0.10.0)
       '@ycmd/helpers': 0.10.0(esbuild@0.19.8)
       '@ycmd/run': 0.10.0(esbuild@0.19.8)
@@ -10871,3 +10840,7 @@ packages:
       lilconfig: 2.1.0
       micromatch: 4.0.5
     dev: true
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false

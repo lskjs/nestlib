@@ -1,8 +1,8 @@
 /* eslint-disable no-param-reassign */
-import { omitNull } from '@lskjs/algos';
-import { isDebug } from '@lskjs/env';
-import { Err } from '@lskjs/err';
-import { getEnvConfig, Logger } from '@lskjs/log';
+import { omitNull } from '@lsk4/algos';
+import { isDebug } from '@lsk4/env';
+import { Err } from '@lsk4/err';
+import { getEnvConfig, Logger } from '@lsk4/log';
 import {
   ArgumentsHost,
   Catch,
