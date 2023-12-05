@@ -4,7 +4,7 @@
   "type": "module",
   "description": "Nestlib - module & decorators collection for Nest.js",
   "author": "Igor Suvorov <hi@isuvorov.com> (https://github.com/isuvorov)",
-  "private": false,
+  "private": true,
   "scripts": {
     "start": "          ycmd start",
     "dev": "            ycmd dev",
@@ -37,8 +37,7 @@
   "bugs": "https://github.com/lskjs/nestlib/issues",
   "license": "MIT",
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "access": "restricted"
   },
   "////": "/////////========================/////////========================/////////========================/////////"
 }
