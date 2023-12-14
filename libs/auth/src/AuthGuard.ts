@@ -3,7 +3,7 @@ import { Err } from '@lsk4/err';
 import { CanActivate, ContextType, ExecutionContext, Injectable } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 
-import { Role, ROLES_KEY } from './Auth.decorator';
+import { Role, ROLES_KEY } from './AuthDecorator';
 
 export function isAdmin(user: Record<string, unknown>) {
   return ['admin'].includes(user?.companyId as string);
