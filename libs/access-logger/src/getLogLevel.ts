@@ -1,4 +1,5 @@
 import { LoggerLevelType } from '@lsk4/log';
+
 import { AccessLoggerData } from './types.js';
 
 export function getLogLevel(data: AccessLoggerData, event: 'start' | 'finish'): LoggerLevelType {

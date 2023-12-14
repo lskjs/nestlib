@@ -6,7 +6,7 @@ export function getReqIp(req: Request) {
     req?.connection?.remoteAddress ||
     req?.socket?.remoteAddress ||
     // NOTE: странно что типа нет, должно работать
-    // @ts-ignore 
+    // @ts-ignore
     req?.socket?.socket?.remoteAddress ||
     req?.ip ||
     null;

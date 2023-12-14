@@ -68,16 +68,19 @@
     "registry": "https://registry.npmjs.org/"
   },
   "////": "/////////========================/////////========================/////////========================/////////",
-  "ependencies": {
+  "dependencies": {
     "@lsk4/algos": "^4.3.0",
+    "@lsk4/env": "^4.3.1",
+    "@lsk4/err": "^4.3.0",
+    "@lsk4/log": "^4.3.4",
     "pretty-error": "^4.0.0"
-  }, 
+  },
   "devDependencies": {
     "@nestjs/common": "^10.2.10",
     "express": "^4.18.2",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1"
-  }, 
+  },
   "peerDependencies": {
     "@nestjs/common": "^10.2.10",
     "express": "^4.18.2",

@@ -1,8 +1,7 @@
-import type { ILogger, LoggerLevelType } from '@lsk4/log';
 import { mapValues } from '@lsk4/algos';
+import type { ILogger, LoggerLevelType } from '@lsk4/log';
 import { createLogger } from '@lsk4/log';
 import { LoggerService as NestLoggerService } from '@nestjs/common';
-
 
 export type LoggerService = NestLoggerService & {
   info: (name: string, ...args: any[]) => void;
@@ -18,7 +17,7 @@ export interface ILoggerOptions {
   ns?: string;
 }
 export const createNestLogger = (props: ILoggerOptions = {}): LoggerService => {
-  const { level, ns } = props;
+  const { level } = props;
   // const log = new Logger({ level, ns });
   const mapper = {
     verbose: 'trace',

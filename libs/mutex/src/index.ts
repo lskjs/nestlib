@@ -1,2 +1,2 @@
-export * from './Lock.decorator';
+export * from './LockDecorator';
 export * from './Mutex3';
