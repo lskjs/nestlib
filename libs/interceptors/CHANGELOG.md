@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.4.0](https://github.com/lskjs/lskjs/compare/v4.3.0...v4.4.0) (2023-12-14)
+
+
+### Features
+
+* **interceptors:** create package ([3bcedbb](https://github.com/lskjs/lskjs/commit/3bcedbbaf524a21c04835dd5cd3dcc9d03dd45ea))
+
+
+
+
+
 # [4.3.0](https://github.com/lskjs/lskjs/compare/v4.2.0...v4.3.0) (2023-12-05)
 
 

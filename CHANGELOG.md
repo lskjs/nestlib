@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.4.0](https://github.com/lskjs/nestlib/compare/v4.3.0...v4.4.0) (2023-12-14)
+
+
+### Bug Fixes
+
+* **access-logger:** pass error to req ([0a82836](https://github.com/lskjs/nestlib/commit/0a8283629a6f348217fa70512bedc82534052f75))
+
+
+### Features
+
+* **interceptors:** create package ([3bcedbb](https://github.com/lskjs/nestlib/commit/3bcedbbaf524a21c04835dd5cd3dcc9d03dd45ea))
+
+
+
+
+
 # [4.3.0](https://github.com/lskjs/nestlib/compare/v4.2.0...v4.3.0) (2023-12-05)
 
 
