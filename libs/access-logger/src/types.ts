@@ -1,5 +1,9 @@
 import type { ILogger } from '@lsk4/log';
-import { Request as ExpressRequest, Response as ExpressResponse, NextFunction as ExpressNextFunction } from 'express';
+import {
+  NextFunction as ExpressNextFunction,
+  Request as ExpressRequest,
+  Response as ExpressResponse,
+} from 'express';
 
 export type Request = ExpressRequest & {
   reqId?: string | number;

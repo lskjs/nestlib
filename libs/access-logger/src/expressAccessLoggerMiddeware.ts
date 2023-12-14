@@ -1,13 +1,13 @@
-import { createLogger } from '@lsk4/log';
 import { omit } from '@lsk4/algos';
 import { isDev } from '@lsk4/env';
-import type { AccessLoggerData, Request, Response, NextFunction } from './types.js';
+import { Err } from '@lsk4/err';
+import { createLogger } from '@lsk4/log';
 
-import { getReqIp } from './getReqIp.js';
 import { getLogLevel } from './getLogLevel.js';
+import { getReqIp } from './getReqIp.js';
+import type { AccessLoggerData, NextFunction, Request, Response } from './types.js';
 
 const defaultLogger = createLogger({ name: 'req' }); // TODO: подумать нужно ли создавать или надо наследоваться
-
 export function expressAccessLoggerMiddeware(req: Request, res: Response, next?: NextFunction) {
   const log = req.log || defaultLogger;
 
@@ -47,7 +47,11 @@ export function expressAccessLoggerMiddeware(req: Request, res: Response, next?:
     clearTimeout(startLogger);
     data.status = res.statusCode;
     data.length = Number(res.getHeader('Content-Length')) || 0;
-    // TODO: подумать как полуить код и сообщение ощибки
+
+    // @ts-ignore
+    const err = (this.req.nestError || this.req.err || this.req.error) as any;
+    const errCode = Err.getCode(err);
+    data.err = errCode;
 
     const diff = process.hrtime(hrtime);
     data.duration = diff[0] * 1e3 + diff[1] * 1e-6;

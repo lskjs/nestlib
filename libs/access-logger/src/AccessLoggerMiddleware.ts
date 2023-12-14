@@ -1,8 +1,9 @@
 import { isDev } from '@lsk4/env';
 import { Injectable, NestMiddleware } from '@nestjs/common';
 import { nanoid } from 'nanoid';
+
 import { expressAccessLoggerMiddeware } from './expressAccessLoggerMiddeware.js';
-import type { AccessLoggerData, Request, Response, NextFunction } from './types.js';
+import type { NextFunction, Request, Response } from './types.js';
 
 let reqId = 0;
 
