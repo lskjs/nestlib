@@ -1,0 +1,87 @@
+{
+  "name": "@nestlib/interceptors",
+  "version": "4.3.0",
+  "description": "LSK.js – nest utils – helpers and utils for Nest.js projects",
+  "author": "Igor Suvorov <hi@isuvorov.com> (https://github.com/isuvorov)",
+  "private": false,
+  "scripts": {
+    "dev": "            ycmd dev",
+    "build": "          ycmd build",
+    "test": "           ycmd test",
+    "prepack": "        ycmd prepack",
+    "release": "        ycmd release"
+  },
+  "//": "///////////========================/////////========================/////////========================//////////",
+  "prettier": "@lsk4/eslint-config/prettier",
+  "eslintConfig": {
+    "extends": "@lsk4/eslint-config"
+  },
+  "files": [
+    "lib",
+    "cjs",
+    "README.md",
+    "LICENCE"
+  ],
+  "main": "cjs/index.js",
+  "types": "cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "types": "./cjs/index.d.ts",
+      "default": "./cjs/index.js"
+    },
+    "./*": {
+      "import": "./lib/*.js",
+      "types": "./cjs/*.d.ts",
+      "default": "./cjs/*.js"
+    }
+  },
+  "_size-limit": [
+    {
+      "path": "lib/AnyExceptionFilter.js",
+      "limit": "10kb"
+    },
+    {
+      "path": "lib/AccessLoggerMiddleware.js",
+      "limit": "10kb"
+    },
+    {
+      "path": "lib/AnyExceptionFilter.js",
+      "limit": "10kb"
+    },
+    {
+      "path": "lib/createNestLogger.js",
+      "limit": "10kb"
+    },
+    {
+      "path": "lib/Time.decorator.js",
+      "limit": "10kb"
+    }
+  ],
+  "///": "//////////========================/////////========================/////////========================/////////",
+  "repository": "https://github.com/lskjs/lskjs/tree/master//libs-nest/nest-utils",
+  "homepage": "https://github.com/lskjs/lskjs/tree/master//libs/nest-utils",
+  "bugs": "https://github.com/lskjs/lskjs/issues",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "////": "/////////========================/////////========================/////////========================/////////",
+  "ependencies": {
+    "@lsk4/algos": "^4.3.0",
+    "pretty-error": "^4.0.0"
+  }, 
+  "devDependencies": {
+    "@nestjs/common": "^10.2.10",
+    "express": "^4.18.2",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.1"
+  }, 
+  "peerDependencies": {
+    "@nestjs/common": "^10.2.10",
+    "express": "^4.18.2",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.1"
+  }
+}
