@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.4.1](https://github.com/lskjs/lskjs/compare/v4.4.0...v4.4.1) (2023-12-14)
+
+
+### Bug Fixes
+
+* **interceptors:** mute node: ([f136e5f](https://github.com/lskjs/lskjs/commit/f136e5f6f3b7dd7c50bb7287a606fa14f8a914b0))
+
+
+
+
+
 # [4.4.0](https://github.com/lskjs/lskjs/compare/v4.3.0...v4.4.0) (2023-12-14)
 
 
