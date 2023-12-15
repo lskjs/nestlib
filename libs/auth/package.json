@@ -12,8 +12,8 @@
     "release": "        ycmd release"
   },
   "dependencies": {
-    "@lsk4/env": "^4.3.1",
-    "@lsk4/err": "^4.3.0",
+    "@lsk4/env": "^4.4.0",
+    "@lsk4/err": "^4.4.0",
     "connect-mongo": "^5.0.0",
     "express-session": "^1.17.3"
   },
