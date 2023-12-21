@@ -23,3 +23,5 @@
 
 // NOTE: not working with ESM esbuild
 throw '!bcrypt';
+
+export const hashPassword = () => {};
