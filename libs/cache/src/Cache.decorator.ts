@@ -1,6 +1,7 @@
 // TODO: @ga2mer: прокинуть везде типы
 // @ts-nocheck
 
+import { createLogger } from '@lsk4/log';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Inject, Req } from '@nestjs/common';
 import { isNil } from '@nestjs/common/utils/shared.utils';
@@ -34,6 +35,8 @@ function transform(obj: any) {
   }
   return transformedObj;
 }
+
+const log = createLogger('cache');
 
 export function Cache(params: Params) {
   const injector = Inject(CACHE_MANAGER);
@@ -91,7 +94,7 @@ export function Cache(params: Params) {
         this.cacheManager.set(...cacheArgs);
         return result;
       } catch (err) {
-        console.error(err);
+        log.error(err);
         return originalMethod(args);
       }
     };
