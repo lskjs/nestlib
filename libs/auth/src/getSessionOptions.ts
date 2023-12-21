@@ -19,7 +19,10 @@ export function getSessionOptions(
   if (!cookieName) throw new Err('!config.auth.session.cookieName');
 
   const sessionOptions: SessionOptions = {
-    store: MongoSessionStore.create({ mongoUrl }),
+    store: MongoSessionStore.create({
+      mongoUrl,
+      collectionName: 'auth_session',
+    }),
     name: cookieName,
     secret: sessionSecret,
     resave: false,
