@@ -70,6 +70,16 @@
       "import": "./lib/*.js",
       "types": "./cjs/*.d.ts",
       "default": "./cjs/*.js"
+    },
+    "./models": {
+      "import": "./lib/models/index.js",
+      "types": "./cjs/models/index.d.ts",
+      "default": "./cjs/models/index.js"
+    },
+    "./models/*": {
+      "import": "./lib/models/*.js",
+      "types": "./cjs/models/*.d.ts",
+      "default": "./cjs/models/*.js"
     }
   },
   "_size-limit": [
