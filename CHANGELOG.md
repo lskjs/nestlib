@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.9.1](https://github.com/lskjs/nestlib/compare/v4.9.0...v4.9.1) (2023-12-21)
+
+
+### Bug Fixes
+
+* **auth:** add models in exports ([6e35f04](https://github.com/lskjs/nestlib/commit/6e35f04a72c3cc5fcf347f588a998aa7bf488831))
+
+
+
+
+
 # [4.9.0](https://github.com/lskjs/nestlib/compare/v4.8.1...v4.9.0) (2023-12-21)
 
 
