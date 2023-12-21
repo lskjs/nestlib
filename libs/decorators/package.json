@@ -1,0 +1,90 @@
+{
+  "name": "@nestlib/decorators",
+  "version": "4.6.0",
+  "description": "LSK.js – nest utils – helpers and utils for Nest.js projects",
+  "author": "Igor Suvorov <hi@isuvorov.com> (https://github.com/isuvorov)",
+  "private": false,
+  "scripts": {
+    "dev": "            ycmd dev",
+    "build": "          ycmd build",
+    "test": "           ycmd test",
+    "prepack": "        ycmd prepack",
+    "release": "        ycmd release"
+  },
+  "//": "///////////========================/////////========================/////////========================//////////",
+  "prettier": "@lsk4/eslint-config/prettier",
+  "eslintConfig": {
+    "extends": "@lsk4/eslint-config"
+  },
+  "files": [
+    "lib",
+    "cjs",
+    "README.md",
+    "LICENCE"
+  ],
+  "main": "cjs/index.js",
+  "types": "cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "types": "./cjs/index.d.ts",
+      "default": "./cjs/index.js"
+    },
+    "./*": {
+      "import": "./lib/*.js",
+      "types": "./cjs/*.d.ts",
+      "default": "./cjs/*.js"
+    },
+    "./transformers": {
+      "import": "./lib/transformers/index.js",
+      "types": "./cjs/transformers/index.d.ts",
+      "default": "./cjs/transformers/index.js"
+    },
+    "./transformers/*": {
+      "import": "./lib/transformers/*.js",
+      "types": "./cjs/transformers/*.d.ts",
+      "default": "./cjs/transformers/*.js"
+    }
+  },
+  "_size-limit": [
+    {
+      "path": "lib/AnyExceptionFilter.js",
+      "limit": "10kb"
+    },
+    {
+      "path": "lib/AccessLoggerMiddleware.js",
+      "limit": "10kb"
+    },
+    {
+      "path": "lib/AnyExceptionFilter.js",
+      "limit": "10kb"
+    },
+    {
+      "path": "lib/createNestLogger.js",
+      "limit": "10kb"
+    },
+    {
+      "path": "lib/Time.decorator.js",
+      "limit": "10kb"
+    }
+  ],
+  "///": "//////////========================/////////========================/////////========================/////////",
+  "repository": "https://github.com/lskjs/lskjs/tree/master//libs-nest/nest-utils",
+  "homepage": "https://github.com/lskjs/lskjs/tree/master//libs/nest-utils",
+  "bugs": "https://github.com/lskjs/lskjs/issues",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "////": "/////////========================/////////========================/////////========================/////////",
+  "dependencies": {
+    "class-transformer": "^0.5.1"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^10.2.10"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "*"
+  }
+}
