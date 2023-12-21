@@ -23,9 +23,9 @@
     "@nestjs/core": "^10.1.2"
   },
   "peerDependencies": {
-    "@nestjs/cache-manager": "^2.1.0",
-    "@nestjs/common": "^10.0.5",
-    "@nestjs/core": "^10.1.2"
+    "@nestjs/cache-manager": "*",
+    "@nestjs/common": "*",
+    "@nestjs/core": "*"
   },
   "//": "///////////========================/////////========================/////////========================//////////",
   "prettier": "@lsk4/eslint-config/prettier",

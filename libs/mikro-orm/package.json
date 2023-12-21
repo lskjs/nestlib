@@ -18,7 +18,7 @@
     "@mikro-orm/core": "^5.9.2"
   },
   "peerDependencies": {
-    "@mikro-orm/core": "^5.9.2"
+    "@mikro-orm/core":"*"
   },
   "//": "///////////========================/////////========================/////////========================//////////",
   "prettier": "@lsk4/eslint-config/prettier",
