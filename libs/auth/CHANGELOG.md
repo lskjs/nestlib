@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.6.0](https://github.com/lskjs/lskjs/compare/v4.5.0...v4.6.0) (2023-12-21)
+
+
+### Bug Fixes
+
+* **auth:** change auth_session collection name ([8aa94a5](https://github.com/lskjs/lskjs/commit/8aa94a50117bbfb3dd40e3bb4424808d5ac94aca))
+
+
+
+
+
 # [4.5.0](https://github.com/lskjs/lskjs/compare/v4.4.1...v4.5.0) (2023-12-15)
 
 **Note:** Version bump only for package @nestlib/auth

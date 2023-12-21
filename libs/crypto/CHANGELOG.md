@@ -5,15 +5,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [4.6.0](https://github.com/lskjs/lskjs/compare/v4.5.0...v4.6.0) (2023-12-21)
 
-**Note:** Version bump only for package @nestlib/mikro-orm
 
+### Bug Fixes
 
-
-
-
-# [4.5.0](https://github.com/lskjs/lskjs/compare/v4.4.1...v4.5.0) (2023-12-15)
+* **crypto:** bcrypt dts ([9b4ec59](https://github.com/lskjs/lskjs/commit/9b4ec5941375b97e7906f138a9a1a9b488f81d8c))
 
 
 ### Features
 
-* **mikro-orm:** create package ([5fd4b85](https://github.com/lskjs/lskjs/commit/5fd4b8576ad2fbc9aa163b608c0ddc4b1513f47a))
+* **crypto:** create new crypto module ([d9b3163](https://github.com/lskjs/lskjs/commit/d9b31631ae620888a5fb9deeb7e1cd33247b229c))

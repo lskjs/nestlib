@@ -1,6 +1,6 @@
 {
   "name": "@nestlib/crypto",
-  "version": "4.5.0",
+  "version": "4.6.0",
   "description": "LSK.js – nest mutex – helpers for mutex in Nest.js projects",
   "author": "Igor Suvorov <hi@isuvorov.com> (https://github.com/isuvorov)",
   "private": false,

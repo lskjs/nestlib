@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.6.0](https://github.com/lskjs/lskjs/compare/v4.5.0...v4.6.0) (2023-12-21)
+
+
+### Bug Fixes
+
+* **cache:** change add error log ([c13b1ae](https://github.com/lskjs/lskjs/commit/c13b1ae8fddaa1337a12496cd2834a1a9059ba0c))
+
+
+### Features
+
+* **cache:** add new Cache & IgnoreCache decorators ([2ef4e06](https://github.com/lskjs/lskjs/commit/2ef4e06b298cf8461814d23a84a6a64e2ce592b7))
+
+
+
+
+
 # [4.5.0](https://github.com/lskjs/lskjs/compare/v4.4.1...v4.5.0) (2023-12-15)
 
 **Note:** Version bump only for package @nestlib/cache

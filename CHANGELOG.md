@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.6.0](https://github.com/lskjs/nestlib/compare/v4.5.0...v4.6.0) (2023-12-21)
+
+
+### Bug Fixes
+
+* **auth:** change auth_session collection name ([8aa94a5](https://github.com/lskjs/nestlib/commit/8aa94a50117bbfb3dd40e3bb4424808d5ac94aca))
+* **cache:** change add error log ([c13b1ae](https://github.com/lskjs/nestlib/commit/c13b1ae8fddaa1337a12496cd2834a1a9059ba0c))
+* **crypto:** bcrypt dts ([9b4ec59](https://github.com/lskjs/nestlib/commit/9b4ec5941375b97e7906f138a9a1a9b488f81d8c))
+
+
+### Features
+
+* **cache:** add new Cache & IgnoreCache decorators ([2ef4e06](https://github.com/lskjs/nestlib/commit/2ef4e06b298cf8461814d23a84a6a64e2ce592b7))
+* **crypto:** create new crypto module ([d9b3163](https://github.com/lskjs/nestlib/commit/d9b31631ae620888a5fb9deeb7e1cd33247b229c))
+
+
+
+
+
 # [4.5.0](https://github.com/lskjs/nestlib/compare/v4.4.1...v4.5.0) (2023-12-15)
 
 

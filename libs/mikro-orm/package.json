@@ -1,6 +1,6 @@
 {
   "name": "@nestlib/mikro-orm",
-  "version": "4.5.0",
+  "version": "4.6.0",
   "description": "LSK.js – nest mikro-orm – helpers for mutex in Nest.js projects",
   "author": "Igor Suvorov <hi@isuvorov.com> (https://github.com/isuvorov)",
   "private": false,
@@ -18,7 +18,7 @@
     "@mikro-orm/core": "^5.9.2"
   },
   "peerDependencies": {
-    "@mikro-orm/core":"*"
+    "@mikro-orm/core": "*"
   },
   "//": "///////////========================/////////========================/////////========================//////////",
   "prettier": "@lsk4/eslint-config/prettier",
