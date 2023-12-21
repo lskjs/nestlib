@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.9.0](https://github.com/lskjs/nestlib/compare/v4.8.1...v4.9.0) (2023-12-21)
+
+
+### Features
+
+* **auth:** add AuthModule ([4524cec](https://github.com/lskjs/nestlib/commit/4524cec454735f62f3083d50061fa62f9ce5ae99))
+
+
+
+
+
 ## [4.8.1](https://github.com/lskjs/nestlib/compare/v4.8.0...v4.8.1) (2023-12-21)
 
 
