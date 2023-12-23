@@ -3,6 +3,10 @@ import { ObjectId } from '@mikro-orm/mongodb';
 
 @Entity({ tableName: 'auth_otp' })
 export class AuthOtpModel {
+  constructor(partial: Partial<AuthOtpModel>) {
+    Object.assign(this, partial);
+  }
+
   @PrimaryKey()
   _id!: ObjectId;
 

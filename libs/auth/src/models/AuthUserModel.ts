@@ -22,6 +22,10 @@ export class Info {
 
 @Entity({ tableName: 'auth_user' })
 export class AuthUserModel {
+  constructor(partial: Partial<AuthUserModel>) {
+    Object.assign(this, partial);
+  }
+
   @PrimaryKey({ name: '_id', hidden: false })
   _id!: ObjectId;
 
