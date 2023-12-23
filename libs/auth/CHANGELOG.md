@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.11.0](https://github.com/lskjs/lskjs/compare/v4.10.0...v4.11.0) (2023-12-23)
+
+
+### Features
+
+* **auth:** forgot empty constructor ([02842c0](https://github.com/lskjs/lskjs/commit/02842c0810d7446adb45231ca6fe45f11b7e1db8))
+
+
+
+
+
 # [4.10.0](https://github.com/lskjs/lskjs/compare/v4.9.1...v4.10.0) (2023-12-23)
 
 
