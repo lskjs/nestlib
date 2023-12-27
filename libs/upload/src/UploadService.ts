@@ -35,15 +35,16 @@ export class UploadService {
     if (!prefix) throw new Err('!config.s3.prefix');
     const { path } = file;
     if (!path) throw new Err('!path', { status: 400, message: 'path is required' });
+    const isSigned = !!this.configService.get('s3.signed');
 
     const key = this.getKey({ path });
-    const url = this.getUrl({ path });
     const props = {
       Bucket: bucket,
       Key: key,
     };
     try {
       const res = await this.s3.headObject(props);
+      const url = isSigned ? await this.getSignedUrl({ path }) : this.getUrl({ path });
       return {
         ...res,
         url,
@@ -61,11 +62,11 @@ export class UploadService {
     if (!bucket) throw new Err('!config.s3.bucket');
     const prefix = this.configService.get('s3.prefix');
     if (!prefix) throw new Err('!config.s3.prefix');
+    const isSigned = !!this.configService.get('s3.signed');
 
     const { buffer, mimetype, path } = file;
 
     const key = this.getKey({ path });
-    const url = this.getUrl({ path });
     const props = {
       Bucket: bucket,
       ACL: 'public-read',
@@ -74,6 +75,7 @@ export class UploadService {
       ContentType: mimetype,
     };
     await this.s3.putObject(props);
+    const url = isSigned ? await this.getSignedUrl({ path }) : this.getUrl({ path });
 
     return {
       bucket,
