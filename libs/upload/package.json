@@ -1,6 +1,6 @@
 {
   "name": "@nestlib/upload",
-  "version": "4.6.0",
+  "version": "4.12.0",
   "description": "LSK.js – nest mutex – helpers for mutex in Nest.js projects",
   "author": "Igor Suvorov <hi@isuvorov.com> (https://github.com/isuvorov)",
   "private": false,
@@ -21,12 +21,11 @@
   "devDependencies": {
     "@nestjs/config": "^3.0.0",
     "nestjs-s3": "^2.0.1"
-
   },
   "peerDependencies": {
+    "@nestjs/common": "*",
     "@nestjs/config": "*",
-    "nestjs-s3": "*",
-    "@nestjs/common": "*"
+    "nestjs-s3": "*"
   },
   "//": "///////////========================/////////========================/////////========================//////////",
   "prettier": "@lsk4/eslint-config/prettier",
