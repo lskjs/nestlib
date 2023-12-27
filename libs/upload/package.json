@@ -1,0 +1,66 @@
+{
+  "name": "@nestlib/upload",
+  "version": "4.6.0",
+  "description": "LSK.js – nest mutex – helpers for mutex in Nest.js projects",
+  "author": "Igor Suvorov <hi@isuvorov.com> (https://github.com/isuvorov)",
+  "private": false,
+  "scripts": {
+    "dev": "            ycmd dev",
+    "build": "          ycmd build",
+    "test": "           ycmd test",
+    "prepack": "        ycmd prepack",
+    "release": "        ycmd release"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.481.0",
+    "@aws-sdk/s3-request-presigner": "^3.481.0",
+    "@lsk4/err": "^4.5.0",
+    "aws-sdk": "^2.1525.0",
+    "fishbird": "^1.1.8"
+  },
+  "devDependencies": {
+    "@nestjs/config": "^3.0.0",
+    "nestjs-s3": "^2.0.1"
+
+  },
+  "peerDependencies": {
+    "@nestjs/config": "*",
+    "nestjs-s3": "*",
+    "@nestjs/common": "*"
+  },
+  "//": "///////////========================/////////========================/////////========================//////////",
+  "prettier": "@lsk4/eslint-config/prettier",
+  "eslintConfig": {
+    "extends": "@lsk4/eslint-config"
+  },
+  "files": [
+    "lib",
+    "cjs",
+    "README.md",
+    "LICENCE"
+  ],
+  "main": "cjs/index.js",
+  "types": "cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "types": "./cjs/index.d.ts",
+      "default": "./cjs/index.js"
+    },
+    "./*": {
+      "import": "./lib/*.js",
+      "types": "./cjs/*.d.ts",
+      "default": "./cjs/*.js"
+    }
+  },
+  "///": "//////////========================/////////========================/////////========================/////////",
+  "repository": "https://github.com/lskjs/lskjs/tree/master//libs-nest/nest-mutex",
+  "homepage": "https://github.com/lskjs/lskjs/tree/master//libs/nest-mutex",
+  "bugs": "https://github.com/lskjs/lskjs/issues",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "////": "/////////========================/////////========================/////////========================/////////"
+}
