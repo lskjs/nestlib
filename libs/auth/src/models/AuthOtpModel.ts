@@ -23,6 +23,7 @@ export class AuthOtpModel {
   @Property()
   code!: string;
 
+  // TODO: а надо ли?
   // Дата когда пермит перестал быть валидным(досрочный expiredAt)
   @Property()
   disabledAt?: Date;

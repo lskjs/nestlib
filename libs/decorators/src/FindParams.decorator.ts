@@ -10,7 +10,7 @@ export class Find<Filter = any> {
   limit: number = 10;
 
   @IsNumber()
-  skip: number = 0;
+  offset: number = 0;
 
   @Exclude()
   filter?: Filter;
