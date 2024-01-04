@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.13.1](https://github.com/lskjs/nestlib/compare/v4.13.0...v4.13.1) (2024-01-04)
+
+
+### Bug Fixes
+
+* **decorators:** change skip to offset ([1e5f7a4](https://github.com/lskjs/nestlib/commit/1e5f7a4d48b8b544bc9060974353bd6d41db847b))
+
+
+
+
+
 # [4.13.0](https://github.com/lskjs/nestlib/compare/v4.12.0...v4.13.0) (2023-12-27)
 
 
