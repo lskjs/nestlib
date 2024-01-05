@@ -1,7 +1,7 @@
 import { Err } from '@lsk4/err';
 import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 import { Exclude, plainToInstance } from 'class-transformer';
-import { IsBoolean, IsNumber, Max, Min, validate } from 'class-validator';
+import { IsBoolean, IsNumber, IsString, Max, Min, validate } from 'class-validator';
 
 export class Find<Filter = any> {
   @IsNumber()
@@ -11,6 +11,9 @@ export class Find<Filter = any> {
 
   @IsNumber()
   offset: number = 0;
+
+  @IsString()
+  search?: string;
 
   @Exclude()
   filter?: Filter;
