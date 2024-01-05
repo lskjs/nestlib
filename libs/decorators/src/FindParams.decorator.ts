@@ -1,17 +1,20 @@
 import { Err } from '@lsk4/err';
 import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 import { Exclude, plainToInstance } from 'class-transformer';
-import { IsBoolean, IsNumber, IsString, Max, Min, validate } from 'class-validator';
+import { IsBoolean, IsNumber, IsOptional, IsString, Max, Min, validate } from 'class-validator';
 
 export class Find<Filter = any> {
+  @IsOptional()
   @IsNumber()
   @Min(1)
   @Max(100)
   limit: number = 10;
 
+  @IsOptional()
   @IsNumber()
   offset: number = 0;
 
+  @IsOptional()
   @IsString()
   search?: string;
 
@@ -21,6 +24,7 @@ export class Find<Filter = any> {
   sort: any;
 
   // Нужно ли возвращать общее количество записей
+  @IsOptional()
   @IsBoolean()
   count?: any = false;
 }
