@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.14.0](https://github.com/lskjs/nestlib/compare/v4.13.3...v4.14.0) (2024-01-07)
+
+
+### Features
+
+* **mikro-orm:** improve query logger ([bae93a3](https://github.com/lskjs/nestlib/commit/bae93a32f57284261f8e944b5b96a9fca6bc7128))
+
+
+
+
+
 ## [4.13.3](https://github.com/lskjs/nestlib/compare/v4.13.2...v4.13.3) (2024-01-05)
 
 
