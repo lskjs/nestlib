@@ -15,6 +15,8 @@
     "@lsk4/env": "^4.4.0",
     "@lsk4/err": "^4.4.0",
     "async-lock": "^1.4.0",
+    "redis": "^4.6.12",
+    "redis-lock": "^1.0.0",
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
