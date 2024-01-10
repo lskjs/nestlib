@@ -5,6 +5,7 @@ import { createLogger } from '@lsk4/log';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Inject, Req } from '@nestjs/common';
 import { isNil } from '@nestjs/common/utils/shared.utils';
+import { LOCK, LockService } from '@nestlib/mutex';
 import objectHash from 'object-hash';
 
 interface Params {
@@ -40,18 +41,21 @@ const log = createLogger('cache');
 
 export function Cache(params: Params) {
   const injector = Inject(CACHE_MANAGER);
+  const lockInjector = Inject(LOCK);
   return (
     target: Record<string, any>,
     _key?: string,
     descriptor?: TypedPropertyDescriptor<any>,
   ) => {
     injector(target, 'cacheManager');
+    lockInjector(target, 'lock');
     const originalMethod = descriptor.value;
     const reqIndex = originalMethod.length;
     reqInject(target, _key, reqIndex);
 
     // eslint-disable-next-line no-param-reassign
     descriptor.value = async function (...args: any[]) {
+      const lockService: LockService = this.lock;
       const className = target.constructor.name;
       const targetMethod = `${className}.${_key}`;
       const req = args[reqIndex];
@@ -75,24 +79,37 @@ export function Cache(params: Params) {
         if (params.session && userId) {
           key = `${userId}_${key}`;
         }
-        const value = await this.cacheManager.get(key);
+        let value = await this.cacheManager.get(key);
         if (!isNil(value)) {
           return value;
         }
-        const result = await originalMethod.apply(this, args);
-        const cacheArgs = [key, result];
-        if (typeof params.ttl === 'number') {
-          // TODO: переделать на манер как это сделано в cache manager
-          if (this.cacheManager?.store?.name === 'redis') {
-            cacheArgs.push({
-              ttl: params.ttl / 1000, // пока надеемся что там целое число
-            });
-          } else {
-            cacheArgs.push(params.ttl);
-          }
-        }
-        this.cacheManager.set(...cacheArgs);
-        return result;
+        const res = await lockService.acquire(
+          key,
+          async () => {
+            value = await this.cacheManager.get(key);
+            if (!isNil(value)) {
+              return value;
+            }
+            const result = await originalMethod.apply(this, args);
+            const cacheArgs = [key, result];
+            if (typeof params.ttl === 'number') {
+              // TODO: переделать на манер как это сделано в cache manager
+              if (this.cacheManager?.store?.name === 'redis') {
+                cacheArgs.push({
+                  ttl: params.ttl / 1000, // пока надеемся что там целое число
+                });
+              } else {
+                cacheArgs.push(params.ttl);
+              }
+            }
+            this.cacheManager.set(...cacheArgs);
+            return result;
+          },
+          {
+            timeout: params.ttl,
+          },
+        );
+        return res;
       } catch (err) {
         log.error(err);
         return originalMethod(args);
