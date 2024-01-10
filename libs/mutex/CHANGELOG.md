@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.16.0](https://github.com/lskjs/lskjs/compare/v4.15.0...v4.16.0) (2024-01-10)
+
+
+### Bug Fixes
+
+* **cache,mutex:** proper usage of async-lock ([b0c1d42](https://github.com/lskjs/lskjs/commit/b0c1d425cc62e2f22d03b80c23c06daef65f0f49))
+
+
+
+
+
 # [4.15.0](https://github.com/lskjs/lskjs/compare/v4.14.0...v4.15.0) (2024-01-10)
 
 

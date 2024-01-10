@@ -1,6 +1,6 @@
 {
   "name": "@nestlib/cache",
-  "version": "4.6.0",
+  "version": "4.16.0",
   "description": "LSK.js – nest cache – helpers for cache in Nest.js projects",
   "author": "Igor Suvorov <hi@isuvorov.com> (https://github.com/isuvorov)",
   "private": false,
@@ -22,7 +22,7 @@
     "@nestjs/cache-manager": "^2.1.0",
     "@nestjs/common": "^10.0.5",
     "@nestjs/core": "^10.1.2",
-    "@nestlib/mutex": "^4.15.0"
+    "@nestlib/mutex": "^4.16.0"
   },
   "peerDependencies": {
     "@nestjs/cache-manager": "*",

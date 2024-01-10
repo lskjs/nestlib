@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.16.0](https://github.com/lskjs/nestlib/compare/v4.15.0...v4.16.0) (2024-01-10)
+
+
+### Bug Fixes
+
+* **cache,mutex:** proper usage of async-lock ([b0c1d42](https://github.com/lskjs/nestlib/commit/b0c1d425cc62e2f22d03b80c23c06daef65f0f49))
+
+
+### Features
+
+* **cache:** lock in mutex ([a2241c7](https://github.com/lskjs/nestlib/commit/a2241c72970a6494361f066f2cb4c604cd3c7c0c))
+
+
+
+
+
 # [4.15.0](https://github.com/lskjs/nestlib/compare/v4.14.0...v4.15.0) (2024-01-10)
 
 

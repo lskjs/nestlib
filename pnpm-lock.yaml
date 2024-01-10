@@ -146,7 +146,7 @@ importers:
         specifier: ^10.1.2
         version: 10.2.10(@nestjs/common@10.2.10)(reflect-metadata@0.1.14)(rxjs@7.8.1)
       '@nestlib/mutex':
-        specifier: ^4.15.0
+        specifier: ^4.16.0
         version: link:../mutex
 
   libs/config:
