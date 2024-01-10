@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.15.0](https://github.com/lskjs/lskjs/compare/v4.14.0...v4.15.0) (2024-01-10)
+
+
+### Bug Fixes
+
+* **interceptors:** types express ([6f5e267](https://github.com/lskjs/lskjs/commit/6f5e267511bd74cd2630a0c31bc19dd83ad9f98a))
+
+
+
+
+
 # [4.6.0](https://github.com/lskjs/lskjs/compare/v4.5.0...v4.6.0) (2023-12-21)
 
 **Note:** Version bump only for package @nestlib/interceptors

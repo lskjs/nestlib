@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.15.0](https://github.com/lskjs/nestlib/compare/v4.14.0...v4.15.0) (2024-01-10)
+
+
+### Bug Fixes
+
+* **interceptors:** types express ([6f5e267](https://github.com/lskjs/nestlib/commit/6f5e267511bd74cd2630a0c31bc19dd83ad9f98a))
+
+
+### Features
+
+* **mutex:** sample lock module with redis or in-memory switch ([89fec6f](https://github.com/lskjs/nestlib/commit/89fec6fe73ab47e7977e0e0572ff09f2ecee6b59))
+
+
+
+
+
 # [4.14.0](https://github.com/lskjs/nestlib/compare/v4.13.3...v4.14.0) (2024-01-07)
 
 

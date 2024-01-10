@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.15.0](https://github.com/lskjs/lskjs/compare/v4.14.0...v4.15.0) (2024-01-10)
+
+
+### Features
+
+* **mutex:** sample lock module with redis or in-memory switch ([89fec6f](https://github.com/lskjs/lskjs/commit/89fec6fe73ab47e7977e0e0572ff09f2ecee6b59))
+
+
+
+
+
 # [4.6.0](https://github.com/lskjs/lskjs/compare/v4.5.0...v4.6.0) (2023-12-21)
 
 **Note:** Version bump only for package @nestlib/mutex
