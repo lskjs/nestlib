@@ -15,10 +15,13 @@ import { LOCK_OPTIONS } from './Lock.constants';
 export class LockService {
   redisEnabled = false;
   redisLock: any;
+  memoryLock!: AsyncLock;
   constructor(@Inject(LOCK_OPTIONS) protected readonly config: LockOptions) {
     if (typeof config.redisOptions === 'object' && Object.keys(config.redisOptions).length) {
       this.redisEnabled = true;
       this.createClient();
+    } else {
+      this.memoryLock = new AsyncLock();
     }
   }
 
@@ -30,10 +33,15 @@ export class LockService {
       await done();
       return res;
     }
-    const lock = new AsyncLock({
-      timeout,
-    });
-    return lock.acquire(key, cb);
+    // TODO: у них разная логика работы
+    // например таймаут 4 секунды
+    // redis-lock удалит лок после таймаута и поэтому вторая задача запустится сразу если запустить её через 4 секунды
+    // async-lock не удаляет лок спустя таймаут и поэтому вторая задача запустится только через 4 секунды если запустить её через 4 секунды
+    return this.memoryLock
+      .acquire(key, cb, {
+        timeout,
+      })
+      .catch(() => cb());
   }
 
   private async createClient() {

@@ -10,6 +10,7 @@ import objectHash from 'object-hash';
 
 interface Params {
   ttl: number;
+  lockTimeout?: number;
   session?: boolean;
   paramIndex?: number[];
 }
@@ -83,6 +84,7 @@ export function Cache(params: Params) {
         if (!isNil(value)) {
           return value;
         }
+        const lockTimeout = params.lockTimeout || params.ttl;
         const res = await lockService.acquire(
           key,
           async () => {
@@ -106,7 +108,7 @@ export function Cache(params: Params) {
             return result;
           },
           {
-            timeout: params.ttl,
+            timeout: lockTimeout,
           },
         );
         return res;
