@@ -86,7 +86,7 @@ export class AuthService {
     };
     if (hash) userData.password = hash;
 
-    const userId = await this.usersRepository.nativeInsert(userData);
+    const userId = await this.usersRepository.insert(userData);
 
     if (!userId) {
       throw new Err('auth.notCreated', { status: 500, message: 'User not created' });

@@ -87,8 +87,7 @@ export class AuthOtpService {
   async createOtp(scenario: OtpType, params: any): Promise<any> {
     const code = this.generateCode(scenario);
     const expiredAt = this.getExpiredAt(scenario);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const otpId = await this.otpsRepository.nativeInsert({
+    const otpId = await this.otpsRepository.insert({
       ...params,
       code,
       expiredAt,

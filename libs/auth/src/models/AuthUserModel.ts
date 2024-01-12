@@ -70,8 +70,8 @@ export class AuthUserModel {
   //   return toUserJson(this);
   // }
 
-  toJSON(...args: any[]): { [p: string]: any } {
-    const o = wrap(this, true).toObject(...args); // do not forget to pass rest params here
+  toJSON(ignoreFields?: any[]): { [p: string]: any } {
+    const o = wrap(this, true).toObject(ignoreFields || []); // do not forget to pass rest params here
     return toUserJson(o);
   }
 }
