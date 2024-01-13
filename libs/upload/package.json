@@ -1,6 +1,6 @@
 {
   "name": "@nestlib/upload",
-  "version": "4.16.1",
+  "version": "4.16.2",
   "description": "LSK.js – nest mutex – helpers for mutex in Nest.js projects",
   "author": "Igor Suvorov <hi@isuvorov.com> (https://github.com/isuvorov)",
   "private": false,
