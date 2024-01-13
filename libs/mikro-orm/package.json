@@ -15,7 +15,7 @@
     "@lsk4/log": "^4.8.0"
   },
   "devDependencies": {
-    "@mikro-orm/core": "^6.0.2"
+    "@mikro-orm/core": "^6.0.3"
   },
   "peerDependencies": {
     "@mikro-orm/core": "*"
