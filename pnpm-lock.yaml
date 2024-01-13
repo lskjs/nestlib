@@ -150,7 +150,7 @@ importers:
         specifier: ^10.3.0
         version: 10.3.0(@nestjs/common@10.3.0)(reflect-metadata@0.1.14)(rxjs@7.8.1)
       '@nestlib/mutex':
-        specifier: ^4.16.0
+        specifier: ^4.16.1
         version: link:../mutex
 
   libs/config:

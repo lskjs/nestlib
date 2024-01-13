@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.16.1](https://github.com/lskjs/nestlib/compare/v4.16.0...v4.16.1) (2024-01-13)
+
+
+### Bug Fixes
+
+* **auth:** mikro orm nativeInsert ([6522009](https://github.com/lskjs/nestlib/commit/6522009e931b788da9f1239c9c3f2b079daf9a58))
+
+
+
+
+
 # [4.16.0](https://github.com/lskjs/nestlib/compare/v4.15.0...v4.16.0) (2024-01-10)
 
 
