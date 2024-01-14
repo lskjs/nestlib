@@ -15,16 +15,16 @@
     "@aws-sdk/client-s3": "^3.490.0",
     "@aws-sdk/s3-request-presigner": "^3.490.0",
     "@lsk4/err": "^4.5.0",
+    "@nestlib/config": "workspace:^",
     "aws-sdk": "^2.1535.0",
     "fishbird": "^1.1.8"
   },
   "devDependencies": {
-    "@nestjs/config": "^3.0.0",
+    "@nestjs/common": "^10.3.0",
     "nestjs-s3": "^2.0.1"
   },
   "peerDependencies": {
     "@nestjs/common": "*",
-    "@nestjs/config": "*",
     "nestjs-s3": "*"
   },
   "//": "///////////========================/////////========================/////////========================//////////",

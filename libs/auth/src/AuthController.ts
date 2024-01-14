@@ -15,8 +15,8 @@ import {
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
 import { MailerService } from '@nestjs-modules/mailer';
+import { ConfigService } from '@nestlib/config';
 import { ErrorInterceptor, ResponseInterceptor } from '@nestlib/interceptors';
 
 import { AuthRole } from './AuthDecorator';
