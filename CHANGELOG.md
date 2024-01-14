@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.16.3](https://github.com/lskjs/nestlib/compare/v4.16.2...v4.16.3) (2024-01-14)
+
+
+### Bug Fixes
+
+* **interceptors:** startsWith file ([6e69e25](https://github.com/lskjs/nestlib/commit/6e69e250cdea91bd99ab9de7309185598be38455))
+
+
+
+
+
 ## [4.16.2](https://github.com/lskjs/nestlib/compare/v4.16.1...v4.16.2) (2024-01-13)
 
 **Note:** Version bump only for package @nestlib/root
