@@ -89,13 +89,13 @@ pe.skipPackage('rxjs', '@nestjs]/core');
 pe.skipNodeFiles();
 
 pe.skip((traceLine) => {
-  if (traceLine.file.startsWith('node:')) {
+  if (String(traceLine.file).startsWith('node:')) {
     return true;
   }
-  if (traceLine.shortenedPath.startsWith('node:')) {
+  if (String(traceLine.shortenedPath).startsWith('node:')) {
     return true;
   }
-  if (traceLine.shortenedAddr.includes('[@nestjs]/core')) {
+  if (String(traceLine.shortenedAddr).includes('[@nestjs]/core')) {
     return true;
   }
   return false;
