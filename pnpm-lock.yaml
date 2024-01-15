@@ -47,10 +47,10 @@ importers:
     devDependencies:
       '@nestjs/common':
         specifier: ^10.3.0
-        version: 10.3.0(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.1)
+        version: 10.3.0(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.1)
       '@types/node':
-        specifier: ^20.11.0
-        version: 20.11.0
+        specifier: ^20.11.2
+        version: 20.11.2
 
   libs/auth:
     dependencies:
@@ -89,20 +89,20 @@ importers:
         version: 1.17.3
     devDependencies:
       '@mikro-orm/core':
-        specifier: ^6.0.3
-        version: 6.0.3
+        specifier: ^6.0.4
+        version: 6.0.4
       '@mikro-orm/mongodb':
-        specifier: ^6.0.3
-        version: 6.0.3(@mikro-orm/core@6.0.3)
+        specifier: ^6.0.4
+        version: 6.0.4(@mikro-orm/core@6.0.4)
       '@mikro-orm/nestjs':
         specifier: ^5.2.3
-        version: 5.2.3(@mikro-orm/core@6.0.3)(@nestjs/common@10.3.0)(@nestjs/core@10.3.0)
+        version: 5.2.3(@mikro-orm/core@6.0.4)(@nestjs/common@10.3.0)(@nestjs/core@10.3.0)
       '@nestjs-modules/mailer':
         specifier: ^1.10.3
         version: 1.10.3(@nestjs/common@10.3.0)(@nestjs/core@10.3.0)(nodemailer@6.9.8)
       '@nestjs/common':
         specifier: ^10.3.0
-        version: 10.3.0(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.1)
+        version: 10.3.0(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.1)
       '@nestjs/core':
         specifier: ^10.3.0
         version: 10.3.0(@nestjs/common@10.3.0)(reflect-metadata@0.1.14)(rxjs@7.8.1)
@@ -248,8 +248,8 @@ importers:
         version: 4.8.0
     devDependencies:
       '@mikro-orm/core':
-        specifier: ^6.0.3
-        version: 6.0.3
+        specifier: ^6.0.4
+        version: 6.0.4
 
   libs/mutex:
     dependencies:
@@ -331,15 +331,15 @@ importers:
         specifier: workspace:^
         version: link:../config
       aws-sdk:
-        specifier: ^2.1535.0
-        version: 2.1535.0
+        specifier: ^2.1536.0
+        version: 2.1536.0
       fishbird:
         specifier: ^1.1.8
         version: 1.1.8
     devDependencies:
       '@nestjs/common':
         specifier: ^10.3.0
-        version: 10.3.0(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.1)
+        version: 10.3.0(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.1)
       nestjs-s3:
         specifier: ^2.0.1
         version: 2.0.1(@aws-sdk/client-s3@3.490.0)(@nestjs/common@10.3.0)(@nestjs/core@10.3.0)
@@ -1659,8 +1659,8 @@ packages:
       - ts-node
     dev: true
 
-  /@mikro-orm/core@6.0.3:
-    resolution: {integrity: sha512-tHPJRWWEqkXzHjKOyTygWzYhjiQtbkAMQ/OxB9458XSCuks70WiuB+n1iZjT8jozGlfpf/3qRqN/wS9ZMn/AAw==}
+  /@mikro-orm/core@6.0.4:
+    resolution: {integrity: sha512-Kjrs5TPHEhh5sOjOa7kAy56aury03Xw6pPU/gE81gipGq4fNNUJAjYn3aC/9JVxVsZ/oB2eiqKsBSs4Gyvu9iw==}
     engines: {node: '>= 18.12.0'}
     dependencies:
       dataloader: 2.2.2
@@ -1668,17 +1668,17 @@ packages:
       esprima: 4.0.1
       fs-extra: 11.2.0
       globby: 11.1.0
-      mikro-orm: 6.0.3
+      mikro-orm: 6.0.4
       reflect-metadata: 0.2.1
     dev: true
 
-  /@mikro-orm/mongodb@6.0.3(@mikro-orm/core@6.0.3):
-    resolution: {integrity: sha512-CH5InH6b6ygPngBs/scf7ieDMVqhHO3kXEQGW7T+fmviTx2GiwSbz4xkYjVLLQcJgprKfJP053a7JLl6x/u3zg==}
+  /@mikro-orm/mongodb@6.0.4(@mikro-orm/core@6.0.4):
+    resolution: {integrity: sha512-OF/1NfIFhJa890/sQxucHYGxdsgsZJpV3uNfVY0ZX8BqZwUDuSLE9aXxbDHH8m5IIGTuc6Ixtl28M4++13ur7w==}
     engines: {node: '>= 18.12.0'}
     peerDependencies:
       '@mikro-orm/core': ^6.0.0
     dependencies:
-      '@mikro-orm/core': 6.0.3
+      '@mikro-orm/core': 6.0.4
       bson: 6.2.0
       mongodb: 6.3.0
     transitivePeerDependencies:
@@ -1691,7 +1691,7 @@ packages:
       - socks
     dev: true
 
-  /@mikro-orm/nestjs@5.2.3(@mikro-orm/core@6.0.3)(@nestjs/common@10.3.0)(@nestjs/core@10.3.0):
+  /@mikro-orm/nestjs@5.2.3(@mikro-orm/core@6.0.4)(@nestjs/common@10.3.0)(@nestjs/core@10.3.0):
     resolution: {integrity: sha512-JMxaXrNXlo6j59D3LWMC1tEC1a5JanCtqdfv91JUH0sfVZh97SsjQ9K794BY3JWIUKSFyQwpnLxYZ0Ash/BlPA==}
     engines: {node: '>= 14.0.0'}
     peerDependencies:
@@ -1699,8 +1699,8 @@ packages:
       '@nestjs/common': ^8.0.0 || ^9.0.0 || ^10.0.0
       '@nestjs/core': ^8.0.0 || ^9.0.0 || ^10.0.0
     dependencies:
-      '@mikro-orm/core': 6.0.3
-      '@nestjs/common': 10.3.0(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.1)
+      '@mikro-orm/core': 6.0.4
+      '@nestjs/common': 10.3.0(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.1)
       '@nestjs/core': 10.3.0(@nestjs/common@10.3.0)(reflect-metadata@0.1.14)(rxjs@7.8.1)
     dev: true
 
@@ -1718,8 +1718,8 @@ packages:
       os-filter-obj: 2.0.0
     dev: true
 
-  /@mongodb-js/saslprep@1.1.3:
-    resolution: {integrity: sha512-SyCxhJfmK6MoLNV5SbDpNdUy9SDv5H7y9/9rl3KpnwgTHWuNNMc87zWqbcIZXNWY+aUjxLGLEcvHoLagG4tWCg==}
+  /@mongodb-js/saslprep@1.1.4:
+    resolution: {integrity: sha512-8zJ8N1x51xo9hwPh6AWnKdLGEC5N3lDa6kms1YHmFBoRhTpJR6HG8wWk0td1MVCu9cD4YBrvjZEtd5Obw0Fbnw==}
     dependencies:
       sparse-bitfield: 3.0.3
 
@@ -1730,7 +1730,7 @@ packages:
       '@nestjs/core': '>=7.0.9'
       nodemailer: '>=6.4.6'
     dependencies:
-      '@nestjs/common': 10.3.0(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.1)
+      '@nestjs/common': 10.3.0(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.1)
       '@nestjs/core': 10.3.0(@nestjs/common@10.3.0)(reflect-metadata@0.1.14)(rxjs@7.8.1)
       css-inline: 0.11.2
       glob: 10.3.10
@@ -1777,6 +1777,27 @@ packages:
         optional: true
     dependencies:
       class-transformer: 0.5.1
+      class-validator: 0.14.1
+      iterare: 1.2.1
+      reflect-metadata: 0.1.14
+      rxjs: 7.8.1
+      tslib: 2.6.2
+      uid: 2.0.2
+    dev: true
+
+  /@nestjs/common@10.3.0(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.1):
+    resolution: {integrity: sha512-DGv34UHsZBxCM3H5QGE2XE/+oLJzz5+714JQjBhjD9VccFlQs3LRxo/epso4l7nJIiNlZkPyIUC8WzfU/5RTsQ==}
+    peerDependencies:
+      class-transformer: '*'
+      class-validator: '*'
+      reflect-metadata: ^0.1.12
+      rxjs: ^7.1.0
+    peerDependenciesMeta:
+      class-transformer:
+        optional: true
+      class-validator:
+        optional: true
+    dependencies:
       class-validator: 0.14.1
       iterare: 1.2.1
       reflect-metadata: 0.1.14
@@ -1837,7 +1858,7 @@ packages:
       '@nestjs/websockets':
         optional: true
     dependencies:
-      '@nestjs/common': 10.3.0(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.1)
+      '@nestjs/common': 10.3.0(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.1)
       '@nuxtjs/opencollective': 0.3.2
       fast-safe-stringify: 2.1.1
       iterare: 1.2.1
@@ -3329,7 +3350,7 @@ packages:
     resolution: {integrity: sha512-fB3Zu92ucau0iQ0JMCFQE7b/dv8Ot07NI3KaZIkIUNXq82k4eBAqUaneXfleGY9JWskeS9y+u0nXMyspcuQrCg==}
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 20.11.0
+      '@types/node': 20.11.2
 
   /@types/cacheable-request@6.0.3:
     resolution: {integrity: sha512-IQ3EbTzGxIigb1I3qPZc1rWJnH0BmSKv5QYTalEwweFvyBDLSAe24zP0le/hyi7ecGfZVlIVAg4BZqb8WBwKqw==}
@@ -3343,7 +3364,7 @@ packages:
   /@types/connect@3.4.38:
     resolution: {integrity: sha512-K6uROf1LD88uDQqJCktA4yzL1YYAK6NgfsI0v/mTgyPKWsX1CnJ0XPSDhViejru1GcRkLWb8RlzFYJRqGUbaug==}
     dependencies:
-      '@types/node': 20.11.0
+      '@types/node': 20.11.2
 
   /@types/ejs@3.1.5:
     resolution: {integrity: sha512-nv+GSx77ZtXiJzwKdsASqi+YQ5Z7vwHsTP0JY2SiQgjGckkBRKZnk8nIM+7oUZ1VCtuTz0+By4qVR7fqzp/Dfg==}
@@ -3371,7 +3392,7 @@ packages:
   /@types/express-serve-static-core@4.17.41:
     resolution: {integrity: sha512-OaJ7XLaelTgrvlZD8/aa0vvvxZdUmlCn6MtWeB7TkiKW70BQLc9XEPpDLPdbo52ZhXUCrznlWdCHWxJWtdyajA==}
     dependencies:
-      '@types/node': 20.11.0
+      '@types/node': 20.11.2
       '@types/qs': 6.9.10
       '@types/range-parser': 1.2.7
       '@types/send': 0.17.4
@@ -3440,6 +3461,12 @@ packages:
     resolution: {integrity: sha512-o9bjXmDNcF7GbM4CNQpmi+TutCgap/K3w1JyKgxAjqx41zp9qlIAVFi0IhCNsJcXolEqLWhbFbEeL0PvYm4pcQ==}
     dependencies:
       undici-types: 5.26.5
+    dev: true
+
+  /@types/node@20.11.2:
+    resolution: {integrity: sha512-cZShBaVa+UO1LjWWBPmWRR4+/eY/JR/UIEcDlVsw3okjWEu+rB7/mH6X3B/L+qJVHDLjk9QW/y2upp9wp1yDXA==}
+    dependencies:
+      undici-types: 5.26.5
 
   /@types/normalize-package-data@2.4.4:
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -3474,14 +3501,14 @@ packages:
     resolution: {integrity: sha512-x2EM6TJOybec7c52BX0ZspPodMsQUd5L6PRwOunVyVUhXiBSKf3AezDL8Dgvgt5o0UfKNfuA0eMLr2wLT4AiBA==}
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 20.11.0
+      '@types/node': 20.11.2
 
   /@types/serve-static@1.15.5:
     resolution: {integrity: sha512-PDRk21MnK70hja/YF8AHfC7yIsiQHn1rcXx7ijCFBX/k+XQJhQT/gw3xekXKJvx+5SXaMMS8oqQy09Mzvz2TuQ==}
     dependencies:
       '@types/http-errors': 2.0.4
       '@types/mime': 3.0.4
-      '@types/node': 20.11.0
+      '@types/node': 20.11.2
 
   /@types/validator@13.11.8:
     resolution: {integrity: sha512-c/hzNDBh7eRF+KbCf+OoZxKbnkpaK/cKp9iLQWqB7muXtM+MtL9SUUH8vCFcLn6dH1Qm05jiexK0ofWY7TfOhQ==}
@@ -4291,8 +4318,8 @@ packages:
     resolution: {integrity: sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==}
     engines: {node: '>= 0.4'}
 
-  /aws-sdk@2.1535.0:
-    resolution: {integrity: sha512-Ah9prS7ZX4rIMPBeXmBD1NV6tIHoJoryrCe1Zr/Zk4PdEM743jezpfIyM9bMhzKi/Z0CmBkqtHx54uPAghsp7A==}
+  /aws-sdk@2.1536.0:
+    resolution: {integrity: sha512-Kwl5xKti6qURwKkasZPA9d4q72tcNt0e3ZZ2ikjZvWbfWcIuuLN0GpUTarU8UpV4EiEw3W5z5G3jyHy8JLNyLw==}
     engines: {node: '>= 10.0.0'}
     dependencies:
       buffer: 4.9.2
@@ -5023,7 +5050,7 @@ packages:
       express-session: ^1.17.1
       mongodb: '>= 5.1.0 < 7'
     dependencies:
-      debug: 4.3.4(supports-color@5.5.0)
+      debug: 4.3.4
       express-session: 1.17.3
       kruptein: 3.0.6
       mongodb: 6.3.0
@@ -5288,6 +5315,18 @@ packages:
     dependencies:
       ms: 2.1.3
     dev: true
+
+  /debug@4.3.4:
+    resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+    dependencies:
+      ms: 2.1.2
+    dev: false
 
   /debug@4.3.4(supports-color@5.5.0):
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
@@ -8880,8 +8919,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /mikro-orm@6.0.3:
-    resolution: {integrity: sha512-o3tW5qrho+Zs2OY4Ku+zjMJLFjWY70qIkEGp7ZeHI8DUMAh4oCRrEFwKbyrAQqeWmroXnHA/qI935G2jjitw+Q==}
+  /mikro-orm@6.0.4:
+    resolution: {integrity: sha512-rhC9PJ6rhfOoBQgnVpC+3GeeILQf0cfU1mSZHA+74FjpurfrznS5AZmuTxSKBnfjpMzrPoTOOwMwQC6DE7aVaQ==}
     engines: {node: '>= 18.12.0'}
     dev: true
 
@@ -9517,7 +9556,7 @@ packages:
       socks:
         optional: true
     dependencies:
-      '@mongodb-js/saslprep': 1.1.3
+      '@mongodb-js/saslprep': 1.1.4
       bson: 6.2.0
       mongodb-connection-string-url: 3.0.0
 
@@ -9593,7 +9632,7 @@ packages:
       '@nestjs/core': '>=6.7.0'
     dependencies:
       '@aws-sdk/client-s3': 3.490.0
-      '@nestjs/common': 10.3.0(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.1)
+      '@nestjs/common': 10.3.0(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.1)
       '@nestjs/core': 10.3.0(@nestjs/common@10.3.0)(reflect-metadata@0.1.14)(rxjs@7.8.1)
     dev: true
 
