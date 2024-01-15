@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.18.0](https://github.com/lskjs/nestlib/compare/v4.17.0...v4.18.0) (2024-01-15)
+
+
+### Features
+
+* **config:** improve InjectConfig ([095c6ac](https://github.com/lskjs/nestlib/commit/095c6ac29ba8672bdda8fa9913e166f765c984f1))
+
+
+
+
+
 # [4.17.0](https://github.com/lskjs/nestlib/compare/v4.16.3...v4.17.0) (2024-01-14)
 
 
