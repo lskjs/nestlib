@@ -1,4 +1,4 @@
-import { DynamicModule, Module } from '@nestjs/common';
+import { DynamicModule, Global, Module } from '@nestjs/common';
 import {
   ConfigModule as NestConfigModule,
   ConfigService as NestConfigService,
@@ -7,16 +7,27 @@ import {
 // import { ConfigModule } from '@nestlib/config';
 import { ConfigService } from './ConfigService';
 import { loadConfigEnvs } from './loadConfigEnvs';
+import { ConfigModuleOptions } from './types';
+import { getConfigServiceToken } from './utils';
 
+@Global()
 @Module({
   // import: [],
   // controllers: [AuthController],
   // providers: [CryptoService, AuthOtpService, AuthService],
   // exports: [ConfigService],
+  // exports: [
+  //   // ConfigService,
+  //   // NestConfigService,
+  //   {
+  //     provide: getConfigServiceToken(),
+  //     useExisting: ConfigService,
+  //   },
+  // ],
 })
 export class ConfigModule {
-  static forRoot(): DynamicModule {
-    const rootDir = process.cwd();
+  static forRoot(options: ConfigModuleOptions = {}): DynamicModule {
+    const rootDir = options.cwd || process.cwd();
     const envFiles = ['.env', '../.env', '../../.env'].map((f) => `${rootDir}/${f}`);
     const configEnvs = [
       '.env.js',
@@ -26,7 +37,13 @@ export class ConfigModule {
       '../../.env.js',
       '../../.env.json',
     ].map((f) => `${rootDir}/${f}`);
+
     // console.log('[CnfModule]', { envFiles, configEnvs });
+
+    const ConfigService2 = {
+      provide: getConfigServiceToken(options.connection),
+      useExisting: ConfigService,
+    };
     return {
       imports: [
         NestConfigModule.forRoot({ envFilePath: envFiles }),
@@ -35,11 +52,18 @@ export class ConfigModule {
       ],
       module: ConfigModule,
       // controllers: [AuthController],
-      providers: [ConfigService, NestConfigService],
-      exports: [ConfigService, NestConfigService],
+      providers: [ConfigService, NestConfigService, ConfigService2],
+      exports: [ConfigService, NestConfigService, ConfigService2],
     };
   }
   static getExports() {
-    return [ConfigService, NestConfigService];
+    return [
+      ConfigService,
+      NestConfigService,
+      {
+        provide: getConfigServiceToken(),
+        useExisting: ConfigService,
+      },
+    ];
   }
 }

@@ -8,3 +8,5 @@ export * from './getConfig';
 export * from './getEnvConfig';
 export * from './loadConfigEnvs';
 export * from './types';
+export * from './InjectConfig';
+export * from './utils';

@@ -2,7 +2,7 @@ import { GetObjectCommand } from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import { Err } from '@lsk4/err';
 import { Injectable } from '@nestjs/common';
-import { ConfigService } from '@nestlib/config';
+import { ConfigService, InjectConfig } from '@nestlib/config';
 import { S3 } from 'aws-sdk';
 import { map } from 'fishbird';
 import { InjectS3 } from 'nestjs-s3';
@@ -15,7 +15,7 @@ export class UploadService {
     // TODO: понять почему не подходят типы
     // @ts-ignore
     @InjectS3() private s3: S3,
-    private configService: ConfigService,
+    @InjectConfig() private configService: ConfigService,
   ) {
     // console.log('s3', this.configService.get('s3'));
   }
