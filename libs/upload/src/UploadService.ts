@@ -3,7 +3,7 @@ import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
 import { Err } from '@lsk4/err';
 import { Injectable } from '@nestjs/common';
 import { ConfigService, InjectConfig } from '@nestlib/config';
-import { S3 } from 'aws-sdk';
+import type { S3 } from 'aws-sdk';
 import { map } from 'fishbird';
 import { InjectS3 } from 'nestjs-s3';
 
