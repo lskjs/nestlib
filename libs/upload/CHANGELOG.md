@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.18.3](https://github.com/lskjs/lskjs/compare/v4.18.2...v4.18.3) (2024-01-16)
+
+
+### Bug Fixes
+
+* **upload:** s3 type ([10967ca](https://github.com/lskjs/lskjs/commit/10967cae3449dc26ab167de74238046c1c7964aa))
+
+
+
+
+
 ## [4.18.1](https://github.com/lskjs/lskjs/compare/v4.18.0...v4.18.1) (2024-01-15)
 
 **Note:** Version bump only for package @nestlib/upload
