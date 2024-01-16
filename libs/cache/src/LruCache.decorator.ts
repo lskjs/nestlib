@@ -1,5 +1,5 @@
 import { createLogger } from '@lsk4/log';
-import { isFunction, isNil } from '@nestjs/common/utils/shared.utils';
+import { isFunction, isNil } from '@nestjs/common/utils/shared.utils.js';
 import { LRUCache as BaseLRUCache } from 'lru-cache';
 
 export const cacheManager = new BaseLRUCache({

@@ -4,7 +4,7 @@
 import { createLogger } from '@lsk4/log';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Inject, Req } from '@nestjs/common';
-import { isNil } from '@nestjs/common/utils/shared.utils';
+import { isNil } from '@nestjs/common/utils/shared.utils.js';
 import { LOCK, LockService } from '@nestlib/mutex';
 import objectHash from 'object-hash';
 

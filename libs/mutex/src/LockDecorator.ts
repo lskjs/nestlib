@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import { isFunction } from '@nestjs/common/utils/shared.utils';
+import { isFunction } from '@nestjs/common/utils/shared.utils.js';
 import AsyncLock, { AsyncLockOptions } from 'async-lock';
 
 export function Lock({
