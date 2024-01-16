@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.18.2](https://github.com/lskjs/nestlib/compare/v4.18.1...v4.18.2) (2024-01-16)
+
+
+### Bug Fixes
+
+* **mutex:** may be fix esm import ([ce609be](https://github.com/lskjs/nestlib/commit/ce609bed198c433ad7f567d991f834099b146a37))
+
+
+
+
+
 ## [4.18.1](https://github.com/lskjs/nestlib/compare/v4.18.0...v4.18.1) (2024-01-15)
 
 **Note:** Version bump only for package @nestlib/root
