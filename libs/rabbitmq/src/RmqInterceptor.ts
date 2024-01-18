@@ -1,123 +1,30 @@
-import { RabbitHandlerConfig, RabbitRPC } from '@golevelup/nestjs-rabbitmq';
-import { omitNull } from '@lsk4/algos';
 import { isDev } from '@lsk4/env';
 import { Err } from '@lsk4/err';
 import { createLogger } from '@lsk4/log';
 import {
-  applyDecorators,
   CallHandler,
   ContextType,
   ExecutionContext,
   Injectable,
   NestInterceptor,
 } from '@nestjs/common';
-import * as amqplib from 'amqplib';
+import { delay } from 'fishbird';
 import { lastValueFrom, Observable, of } from 'rxjs';
 
-// eslint-disable-next-line no-promise-executor-return
-const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+import { getRmqConfig, rmqDeliveryAttempts } from './config';
+import { inc } from './utils';
 
-// import { createLogger } from '../nest-utils/log';
-
-// import { lskConfig } from '../../config';
-export const RmqRPCConfig = {};
-// import { log } from '../../log';
-
-const deliveryAttempts: Record<string, any> = {};
-
-const maxAttempts = isDev ? 3 : 20;
-const isLog = true;
-const errDelay = 1000;
-
-const inc = (obj: Record<string, any>, key: string, val = 1) => {
-  // eslint-disable-next-line no-param-reassign
-  obj[key] = (obj[key] || 0) + val;
-  return obj[key];
-};
-
-type RmqRPCConfigProps = Pick<
-  RabbitHandlerConfig,
-  | 'queue'
-  | 'name'
-  | 'connection'
-  | 'exchange'
-  | 'routingKey'
-  | 'createQueueIfNotExists'
-  | 'assertQueueErrorHandler'
-  | 'queueOptions'
-  | 'errorBehavior'
-  | 'errorHandler'
-  | 'allowNonJsonMessages'
->;
-
-const log = createLogger({ ns: 'rmqrpc' });
-export function RmqRPC(props: RmqRPCConfigProps & { prefetchCount?: number }) {
-  const { channel } = props?.queueOptions || {};
-  // @ts-ignore
-  const channelConfig = RmqRPCConfig?.rabbitmq?.channels?.[channel];
-  const prefetchCount = props?.prefetchCount || channelConfig?.prefetchCount || undefined;
-  const decorators = [];
-  const message = `RmqRPC ${channel}=${prefetchCount} ${props.routingKey || ''}`;
-  if (prefetchCount) {
-    log.debug(message);
-    decorators.push(RabbitRPC(props));
-  } else {
-    log.trace(message);
-  }
-  return applyDecorators(...decorators);
-}
-
-export function RmqErrorCallback(channel: amqplib.Channel, msg: amqplib.ConsumeMessage, err: any) {
-  // log.debug('RmqErrorCallback', err);
-  // console.log('msg', msg);
-  const { replyTo, correlationId } = msg.properties;
-  if (err?.status === 300 || (err?.__err && err?.rd)) {
-    const { routingKey, exchange } = msg.fields;
-    const rd = typeof err?.rd === 'string' ? err?.rd : `${routingKey}_rd`;
-    const { pattern, data, ...meta } = err.meta || {};
-    const payload = omitNull({
-      pattern,
-      data,
-      err: Err.getJSON(err) || Err.getCode(err),
-      meta: {
-        ...meta,
-        exchange,
-        routingKey,
-      },
-    });
-    channel.publish('', rd, Buffer.from(JSON.stringify(payload)));
-  }
-  if (replyTo) {
-    let error;
-    if (err?.__err) {
-      error = JSON.stringify(err);
-    } else if ((err instanceof Error) as any) {
-      error = JSON.stringify({
-        code: err?.code || err?.name || 1,
-        message: err?.message,
-      });
-    } else if (typeof err === 'string') {
-      error = JSON.stringify({
-        code: 1,
-        message: err,
-      });
-    } else {
-      error = JSON.stringify(err);
-    }
-    channel.publish('', replyTo, Buffer.from(error), { correlationId });
-  }
-  if (err?.status === 200 || err?.status === 300) {
-    channel.nack(msg, false, false);
-  } else {
-    channel.nack(msg, false, true);
-  }
-}
+// import { deliveryAttempts, errDelay, inc, isLog, maxAttempts } from './utils';
 
 @Injectable()
 export class RmqInterceptor implements NestInterceptor {
   private log = createLogger(this.constructor.name, { ns: 'rmq', level: 'warn' });
   async intercept(context: ExecutionContext, next: CallHandler): Promise<Observable<any>> {
     const type = context.getType() as ContextType | 'rmq';
+    const isLog = getRmqConfig('isLog') || false;
+    const maxAttempts = getRmqConfig('maxAttempts') || 0;
+    const errDelay = getRmqConfig('errDelay') || 0;
+
     if (type !== 'rmq') return next.handle();
     const startedAt = new Date();
     const name = context.getHandler().name || context.getClass().name;
@@ -135,7 +42,7 @@ export class RmqInterceptor implements NestInterceptor {
       const duration = +finishedAt - +startedAt;
       if (isLog) this.log.info(`[${name}]`, 'success', { duration });
       const meta = { data, meta: message.meta, startedAt, finishedAt, duration };
-      delete deliveryAttempts[messageId];
+      delete rmqDeliveryAttempts[messageId];
       return of({
         code: 0,
         data: res,
@@ -145,7 +52,7 @@ export class RmqInterceptor implements NestInterceptor {
     } catch (err) {
       const finishedAt = new Date();
       const duration = +finishedAt - +startedAt;
-      const attempts = inc(deliveryAttempts, messageId);
+      const attempts = inc(rmqDeliveryAttempts, messageId);
       const isMaxAttempts = Boolean(redelivered && attempts > maxAttempts);
       const meta = { data, meta: message.meta, startedAt, finishedAt, duration, attempts };
       const status: any = (err as any)?.status;
@@ -164,7 +71,7 @@ export class RmqInterceptor implements NestInterceptor {
           await delay(errDelay);
         }
       }
-      if (isMaxAttempts) delete deliveryAttempts[messageId];
+      if (isMaxAttempts) delete rmqDeliveryAttempts[messageId];
       throw new Err(err, {
         status: isMaxAttempts ? 300 : status || 500,
         meta,
