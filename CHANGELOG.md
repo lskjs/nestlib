@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.19.0](https://github.com/lskjs/nestlib/compare/v4.18.3...v4.19.0) (2024-01-18)
+
+
+### Features
+
+* **rabbitmq:** improve and stable rmq module ([508e58b](https://github.com/lskjs/nestlib/commit/508e58b73f0d1307cb1038227120c5481c4c9ebf))
+
+
+
+
+
 ## [4.18.3](https://github.com/lskjs/nestlib/compare/v4.18.2...v4.18.3) (2024-01-16)
 
 
