@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.20.0](https://github.com/lskjs/nestlib/compare/v4.19.0...v4.20.0) (2024-01-29)
+
+
+### Features
+
+* **rabbitmq:** less default logs ([b5eddd6](https://github.com/lskjs/nestlib/commit/b5eddd6756d159d60cc50b19147a457da083eed6))
+* **redis:** add new package ([d1b48f9](https://github.com/lskjs/nestlib/commit/d1b48f9c6ca3d9f0ce8c5dcee68ff53d93181f8e))
+
+
+
+
+
 # [4.19.0](https://github.com/lskjs/nestlib/compare/v4.18.3...v4.19.0) (2024-01-18)
 
 

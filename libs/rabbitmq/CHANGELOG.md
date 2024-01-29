@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.20.0](https://github.com/lskjs/lskjs/compare/v4.19.0...v4.20.0) (2024-01-29)
+
+
+### Features
+
+* **rabbitmq:** less default logs ([b5eddd6](https://github.com/lskjs/lskjs/commit/b5eddd6756d159d60cc50b19147a457da083eed6))
+
+
+
+
+
 # [4.19.0](https://github.com/lskjs/lskjs/compare/v4.18.3...v4.19.0) (2024-01-18)
 
 
