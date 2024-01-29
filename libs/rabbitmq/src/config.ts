@@ -11,10 +11,10 @@ export const defaultRmqConfig = {
   isLog: isDev,
 };
 
-const log = createLogger({ ns: 'rmq:config' });
+const log = createLogger('rmq:config', { level: 'debug' });
 
 export const setRmqConfig = (config: any) => {
-  log.trace('[set]', config);
+  log.trace('set', config);
   Object.assign(rmqConfig, config);
 };
 export const getRmqConfig = (deepKey: string) => {
@@ -24,7 +24,7 @@ export const getRmqConfig = (deepKey: string) => {
   for (const key of keys) {
     value = value?.[key];
   }
-  log.trace('[config]', deepKey, value);
+  log.trace('get', deepKey, value);
   return value as any;
 };
 

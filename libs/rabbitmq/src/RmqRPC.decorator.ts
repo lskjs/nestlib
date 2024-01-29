@@ -10,7 +10,7 @@ export function RmqRPC(props: RmqRPCConfigProps) {
   const channelConfig = getRmqConfig(`channels.${channel}`);
   const prefetchCount = props?.prefetchCount || channelConfig?.prefetchCount || undefined;
   const decorators = [];
-  const message = `RmqRPC ${channel}=${prefetchCount} ${props.routingKey || ''}`;
+  const message = `${channel}=${prefetchCount} ${props.routingKey || ''}`;
   // log.trace('[[RmqRPC]]', props, RmqRPCConfig);
   if (prefetchCount) {
     log.debug(message);
