@@ -12,7 +12,7 @@
     "release": "        ycmd release"
   },
   "dependencies": {
-    "@lsk4/log": "^4.8.0"
+    "@lsk4/log": "^4.9.0"
   },
   "devDependencies": {
     "@mikro-orm/core": "^6.0.4"

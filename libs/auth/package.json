@@ -12,17 +12,17 @@
     "release": "        ycmd release"
   },
   "dependencies": {
-    "@lsk4/algos": "^4.5.0",
+    "@lsk4/algos": "^4.9.0",
     "@lsk4/env": "^4.6.0",
-    "@lsk4/err": "^4.5.0",
-    "@lsk4/log": "^4.8.0",
+    "@lsk4/err": "^4.9.0",
+    "@lsk4/log": "^4.9.0",
     "@nestlib/crypto": "workspace:^",
     "@nestlib/decorators": "workspace:^",
     "@nestlib/interceptors": "workspace:^",
     "bcryptjs": "^2.4.3",
     "class-validator": "^0.14.1",
     "connect-mongo": "^5.0.0",
-    "express-session": "^1.17.3"
+    "express-session": "^1.18.0"
   },
   "devDependencies": {
     "@mikro-orm/core": "^6.0.4",
