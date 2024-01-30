@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.22.1](https://github.com/lskjs/nestlib/compare/v4.22.0...v4.22.1) (2024-01-30)
+
+
+### Bug Fixes
+
+* **rabbitmq:** fix rmq type ([5b0cbb4](https://github.com/lskjs/nestlib/commit/5b0cbb4fe1fe5e32428d3d3807424f857dbf2823))
+
+
+
+
+
 # [4.22.0](https://github.com/lskjs/nestlib/compare/v4.21.0...v4.22.0) (2024-01-30)
 
 
