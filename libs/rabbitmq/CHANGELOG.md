@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.22.2](https://github.com/lskjs/lskjs/compare/v4.22.1...v4.22.2) (2024-01-30)
+
+
+### Bug Fixes
+
+* **rabbitmq:** fix rmq type ([d080576](https://github.com/lskjs/lskjs/commit/d080576ff4c5f93a386e7aa063fe06f73cacd3b1))
+
+
+
+
+
 ## [4.22.1](https://github.com/lskjs/lskjs/compare/v4.22.0...v4.22.1) (2024-01-30)
 
 
