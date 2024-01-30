@@ -1,17 +1,17 @@
 import { RedisModule } from '@liaoliaots/nestjs-redis';
-import { createLogger } from '@lsk4/log';
+// import { createLogger } from '@lsk4/log';
 import { DynamicModule, Global, Module } from '@nestjs/common';
 
 import { RedisService } from './RedisService.js';
 import { getRedisServiceToken } from './tokens.js';
 
-const log = createLogger('redis');
+// const log = createLogger('redis');
 
 @Global()
 @Module({})
 export class RdsModule {
   static forRoot(options: any = {}): DynamicModule {
-    log.trace('[forRoot]', options);
+    // log.trace('[forRoot]', options);
     const RedisService2 = {
       provide: getRedisServiceToken(options.connection),
       useExisting: RedisService,
@@ -24,7 +24,7 @@ export class RdsModule {
     };
   }
   static forRootAsync(options: any = {}): DynamicModule {
-    log.trace('[forRootAsync]', options);
+    // log.trace('[forRootAsync]', options);
     const RedisService2 = {
       provide: getRedisServiceToken(options.connection),
       useExisting: RedisService,

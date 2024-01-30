@@ -20,3 +20,8 @@ export type RmqRPCConfigProps = Pick<
   | 'errorHandler'
   | 'allowNonJsonMessages'
 > & { prefetchCount?: number };
+
+export type RmqRequestPayload = {
+  pattern: string;
+  data: any;
+};
