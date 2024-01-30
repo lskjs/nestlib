@@ -24,4 +24,5 @@ export type RmqRPCConfigProps = Pick<
 export type RmqRequestPayload = {
   pattern: string;
   data: any;
+  meta?: any;
 };
