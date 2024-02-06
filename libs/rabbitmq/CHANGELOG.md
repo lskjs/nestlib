@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.23.0](https://github.com/lskjs/lskjs/compare/v4.22.2...v4.23.0) (2024-02-06)
+
+
+### Features
+
+* improve logs ([5b600e4](https://github.com/lskjs/lskjs/commit/5b600e4fb1bf70531d5ed9bb46fff751d59c3207))
+
+
+
+
+
 ## [4.22.2](https://github.com/lskjs/lskjs/compare/v4.22.1...v4.22.2) (2024-01-30)
 
 
