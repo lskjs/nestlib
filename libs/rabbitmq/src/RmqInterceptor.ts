@@ -18,10 +18,10 @@ import { inc } from './utils';
 
 @Injectable()
 export class RmqInterceptor implements NestInterceptor {
-  log = createLogger(this.constructor.name, { ns: 'rmq', level: 'warn' });
+  log = createLogger(this.constructor.name, { ns: 'rmq:consume', level: 'warn' });
   async intercept(context: ExecutionContext, next: CallHandler): Promise<Observable<any>> {
     const type = context.getType() as ContextType | 'rmq';
-    const isLog = getRmqConfig('isLog') || false;
+    const isLog = getRmqConfig('isLog') ?? isDev;
     const maxAttempts = getRmqConfig('maxAttempts') || 0;
     const errDelay = getRmqConfig('errDelay') || 0;
 

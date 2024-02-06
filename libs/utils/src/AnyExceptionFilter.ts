@@ -20,7 +20,8 @@ const isEmpty = (obj = {}) => !Object.keys(obj).length;
 @Catch(Err)
 export class AnyExceptionFilter implements BaseExceptionFilter {
   // AnyExceptionFilter.name
-  private readonly log = createLogger('webserver:exception');
+  log = createLogger('webserver:exception');
+  rmqlog = createLogger('rmq:exception');
   catch(err: Err, host: ArgumentsHost) {
     const ctx = host.switchToHttp();
     const res = ctx.getResponse<Response>();
@@ -32,14 +33,14 @@ export class AnyExceptionFilter implements BaseExceptionFilter {
       status = 500;
     }
 
-    const logInfo: Record<string, unknown> = {
+    const logInfo: Record<string, unknown> = omitNull({
       url: req.url,
       status,
       query: req.query,
       body: req.body,
       headers: req.headers,
-    };
-    this.logError(err, logInfo);
+    });
+    this.logError(err, logInfo, host);
 
     // @ts-ignore
     const debug = isDebug && !isEmpty(err?.debug) ? err?.debug : null;
@@ -72,22 +73,26 @@ export class AnyExceptionFilter implements BaseExceptionFilter {
     return res.status(status).send(stringify(response, undefined, isDebug ? 2 : 0));
   }
 
-  logError(err: Err, logInfo: any = {}) {
+  logError(err: Err, logInfo: any, host: ArgumentsHost) {
+    const contextType = host.getType() as string;
+    const log = contextType === 'rmq' ? this.rmqlog : this.log;
     if (isEmpty(logInfo.query)) delete logInfo.query;
     if (isEmpty(logInfo.body)) delete logInfo.body;
     if (!isDeepDebug || isEmpty(logInfo.headers)) delete logInfo.headers;
     if (logInfo.status >= 500) {
-      this.log.error(err);
-      this.log.trace('[req]', logInfo);
+      log.error(err);
+      log.trace('[req]', logInfo);
     } else if ([401, 403, 404].includes(logInfo.status)) {
-      this.log.trace(err);
-      // this.log.trace('[req]', logInfo);
+      log.trace(err);
+      // log.trace('[req]', logInfo);
     } else if (logInfo.status >= 400) {
-      this.log.debug(err);
-      this.log.trace('[req]', logInfo);
+      log.debug(err);
+      log.trace('[req]', logInfo);
+    } else if (logInfo.status === 200) {
+      log.trace('[req]', { ...logInfo, errCode: Err.getCode(err) });
     } else {
-      this.log.debug(err);
-      this.log.trace('[req]', logInfo);
+      log.debug(err);
+      log.trace('[req]', logInfo);
     }
   }
 }

@@ -8,7 +8,7 @@ export const rmqDeliveryAttempts: Record<string, any> = {};
 export const defaultRmqConfig = {
   errDelay: isDev ? 1000 : 100,
   maxAttempts: isDev ? 3 : 20,
-  isLog: isDev,
+  isLog: false,
 };
 
 const log = createLogger('rmq:config', { level: 'debug' });
