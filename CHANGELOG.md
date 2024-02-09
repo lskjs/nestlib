@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.23.1](https://github.com/lskjs/nestlib/compare/v4.23.0...v4.23.1) (2024-02-09)
+
+
+### Bug Fixes
+
+* **interceptors:** return data as null in response if data is undefined ([f2f1825](https://github.com/lskjs/nestlib/commit/f2f1825ae5a55d0ba202722c3780b20ed30cae5a))
+
+
+
+
+
 # [4.23.0](https://github.com/lskjs/nestlib/compare/v4.22.2...v4.23.0) (2024-02-06)
 
 
