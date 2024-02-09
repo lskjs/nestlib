@@ -20,12 +20,12 @@ export function pack(context: ExecutionContext, raw: any, info?: any) {
     } else if (raw instanceof Error) {
       throw raw;
     } else if (typeof raw === 'function') {
-      data = {};
+      data = undefined;
     } else {
       data = raw;
     }
   }
-  if (!data) data = {};
+  if (typeof data === 'undefined') data = null;
   const code = resultWrap ? info.code : data.code;
   let message = resultWrap ? info.message : data.message;
   if (message === code) message = undefined;
