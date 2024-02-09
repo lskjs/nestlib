@@ -1,6 +1,7 @@
 // TODO: @ga2mer: прокинуть везде типы
 // @ts-nocheck
 
+import { Err } from '@lsk4/err';
 import { createLogger } from '@lsk4/log';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Inject, Req } from '@nestjs/common';
@@ -64,7 +65,7 @@ export function Cache(params: Params) {
       const hashArray = [];
       const { paramIndex = [] } = params;
       args.forEach((arg, index) => {
-        if (paramIndex.includes[index]) {
+        if (paramIndex.includes(index)) {
           if (typeof arg === 'object') {
             const filteredDTO = transform(arg);
             hashArray.push(filteredDTO);
@@ -113,8 +114,12 @@ export function Cache(params: Params) {
         );
         return res;
       } catch (err) {
+        // TODO: check if it's originalMethod throws or code of decorator
+        if (err instanceof Err) {
+          throw err;
+        }
         log.error(err);
-        return originalMethod(args);
+        return originalMethod.apply(this, args);
       }
     };
   };
