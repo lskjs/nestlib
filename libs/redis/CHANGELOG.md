@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.24.0](https://github.com/lskjs/lskjs/compare/v4.23.2...v4.24.0) (2024-02-19)
+
+
+### Bug Fixes
+
+* **redis:** rename tokens ([75c0839](https://github.com/lskjs/lskjs/commit/75c08394a6250657bde2d8385e97405a6a50460f))
+
+
+
+
+
 # [4.22.0](https://github.com/lskjs/lskjs/compare/v4.21.0...v4.22.0) (2024-01-30)
 
 

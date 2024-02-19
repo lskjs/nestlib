@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 importers:
 
   .:
@@ -13619,7 +13623,3 @@ packages:
       lilconfig: 2.1.0
       micromatch: 4.0.5
     dev: true
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false

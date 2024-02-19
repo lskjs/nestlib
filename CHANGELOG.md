@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.24.0](https://github.com/lskjs/nestlib/compare/v4.23.2...v4.24.0) (2024-02-19)
+
+
+### Bug Fixes
+
+* **rabbitmq:** rename tokens ([c1267b7](https://github.com/lskjs/nestlib/commit/c1267b73adeee8ce73905d2c75fe6ece241f77d7))
+* **redis:** rename tokens ([75c0839](https://github.com/lskjs/nestlib/commit/75c08394a6250657bde2d8385e97405a6a50460f))
+
+
+### Features
+
+* **config:** improve .env type detection by loadConfigSync ([046baae](https://github.com/lskjs/nestlib/commit/046baae2095eb30791d8e81e29ce31ac53735cf9))
+* **config:** improve .env type detection by loadConfigSync ([2df79e3](https://github.com/lskjs/nestlib/commit/2df79e3df58cd4a228fef7cda913006239d2cff5))
+
+
+
+
+
 ## [4.23.2](https://github.com/lskjs/nestlib/compare/v4.23.1...v4.23.2) (2024-02-09)
 
 

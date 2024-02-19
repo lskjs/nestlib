@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.24.0](https://github.com/lskjs/lskjs/compare/v4.23.2...v4.24.0) (2024-02-19)
+
+
+### Bug Fixes
+
+* **rabbitmq:** rename tokens ([c1267b7](https://github.com/lskjs/lskjs/commit/c1267b73adeee8ce73905d2c75fe6ece241f77d7))
+
+
+
+
+
 # [4.23.0](https://github.com/lskjs/lskjs/compare/v4.22.2...v4.23.0) (2024-02-06)
 
 
