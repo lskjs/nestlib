@@ -13,14 +13,15 @@
   },
   "dependencies": {
     "@lsk4/algos": "^4.9.0",
-    "@lsk4/config": "^4.9.0",
-    "@lsk4/err": "^4.9.0",
-    "@lsk4/log": "^4.9.0"
+    "@lsk4/config": "^4.10.0",
+    "@lsk4/err": "^4.10.0",
+    "@lsk4/log": "^4.10.0",
+    "dotenv": "^16.4.4"
   },
   "devDependencies": {
-    "@nestjs/common": "^10.3.0",
-    "@nestjs/config": "^3.0.0",
-    "@nestjs/core": "^10.3.0"
+    "@nestjs/common": "^10.3.3",
+    "@nestjs/config": "^3.2.0",
+    "@nestjs/core": "^10.3.3"
   },
   "peerDependencies": {
     "@nestjs/common": "*",

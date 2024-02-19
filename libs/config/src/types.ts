@@ -1,15 +1,11 @@
+import type { LoadConfigOptions } from '@lsk4/config';
+
 export type PropsFn = (res: Record<string, unknown>) => Record<string, unknown>;
 
-export interface ConfigModuleOptions {
-  connection?: string;
+type Fn = (a: any) => any;
+export interface ConfigModuleOptions extends LoadConfigOptions {
+  ns?: string;
+  key?: string | Fn;
 
   name?: string;
-  cwd?: string;
-  files?: string[];
-  exts?: string[];
-  stopDir?: string;
-  throwError?: boolean;
-  silent?: boolean;
-  packageKey?: string;
-  processEnvKey?: string;
 }
