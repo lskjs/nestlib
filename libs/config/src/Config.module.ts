@@ -8,9 +8,9 @@ import {
   ConfigService as NestConfigService,
 } from '@nestjs/config';
 
-import { ConfigService } from './ConfigService';
-import { ConfigModuleOptions } from './types';
-import { getConfigServiceToken } from './utils';
+import { ConfigService } from './Config.service.js';
+import { getConfigServiceToken } from './tokens.js';
+import type { ConfigModuleOptions } from './types.js';
 
 @Global()
 @Module({})

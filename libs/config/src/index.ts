@@ -1,12 +1,8 @@
 /* eslint-disable no-unreachable-loop */
 // https://docs.nestjs.com/techniques/configuration
 
-// export * from './config';
-export * from './ConfigService';
-export * from './ConfigModule';
-export * from './getConfig';
-export * from './getEnvConfig';
-export * from './loadConfigEnvs';
-export * from './types';
-export * from './InjectConfig';
-export * from './utils';
+export * from './tokens.js';
+export * from './Config.service.js';
+export * from './Config.module.js';
+export * from './types.js';
+export * from './InjectConfig.js';
