@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.25.0](https://github.com/lskjs/lskjs/compare/v4.24.0...v4.25.0) (2024-02-19)
+
+
+### Features
+
+* **rabbitmq:** add publish options ([0347180](https://github.com/lskjs/lskjs/commit/034718033450f9caec5e47790e486733e5c8cd91))
+
+
+
+
+
 # [4.24.0](https://github.com/lskjs/lskjs/compare/v4.23.2...v4.24.0) (2024-02-19)
 
 
