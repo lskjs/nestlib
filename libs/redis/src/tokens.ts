@@ -1,6 +1,5 @@
-export const NESTLIB_REDIS_CONNECTION = 'default';
-export const NESTLIB_REDIS_SERVICE_TOKEN = 'NestlibRedisServiceToken';
+export const NESTLIB_REDIS_SERVICE_TOKEN = 'nestlib:RedisService';
 
-export function getRedisServiceToken(connection?: string): string {
-  return `${connection || NESTLIB_REDIS_CONNECTION}_${NESTLIB_REDIS_SERVICE_TOKEN}`;
+export function getRedisServiceToken(ns?: string): string {
+  return [ns, NESTLIB_REDIS_SERVICE_TOKEN].filter(Boolean).join(':');
 }
