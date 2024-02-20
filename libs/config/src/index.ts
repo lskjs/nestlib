@@ -4,5 +4,6 @@
 export * from './tokens.js';
 export * from './Config.service.js';
 export * from './Config.module.js';
+export * from './getConfig.js';
 export * from './types.js';
 export * from './InjectConfig.js';
