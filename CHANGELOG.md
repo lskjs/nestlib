@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.25.1](https://github.com/lskjs/nestlib/compare/v4.25.0...v4.25.1) (2024-02-20)
+
+
+### Bug Fixes
+
+* **config:** revert getConfig ([8854546](https://github.com/lskjs/nestlib/commit/8854546ed5498eb0b7a3d84db17270f69280c17a))
+
+
+
+
+
 # [4.25.0](https://github.com/lskjs/nestlib/compare/v4.24.0...v4.25.0) (2024-02-19)
 
 
