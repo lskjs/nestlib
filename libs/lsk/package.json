@@ -1,0 +1,58 @@
+{
+  "name": "@nestlib/lsk",
+  "version": "4.21.0",
+  "description": "LSK.js – nest lsk – lsk module wrapper for nestjs",
+  "author": "Igor Suvorov <hi@isuvorov.com> (https://github.com/isuvorov)",
+  "private": false,
+  "scripts": {
+    "dev": "            ycmd dev",
+    "build": "          ycmd build",
+    "test": "           ycmd test",
+    "prepack": "        ycmd prepack",
+    "release": "        ycmd release"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@nestjs/core": "^10.3.0",
+    "@nestjs/common": "^10.3.0"
+  },
+  "peerDependencies": {
+    "@nestjs/core": "*",
+    "@nestjs/common": "*"
+  },
+  "//": "///////////========================/////////========================/////////========================//////////",
+  "prettier": "@lsk4/eslint-config/prettier",
+  "eslintConfig": {
+    "extends": "@lsk4/eslint-config"
+  },
+  "files": [
+    "lib",
+    "cjs",
+    "README.md",
+    "LICENCE"
+  ],
+  "main": "cjs/index.js",
+  "types": "cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "types": "./cjs/index.d.ts",
+      "default": "./cjs/index.js"
+    },
+    "./*": {
+      "import": "./lib/*.js",
+      "types": "./cjs/*.d.ts",
+      "default": "./cjs/*.js"
+    }
+  },
+  "///": "//////////========================/////////========================/////////========================/////////",
+  "repository": "https://github.com/lskjs/lskjs/tree/master//libs-nest/nest-mutex",
+  "homepage": "https://github.com/lskjs/lskjs/tree/master//libs/nest-mutex",
+  "bugs": "https://github.com/lskjs/lskjs/issues",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "////": "/////////========================/////////========================/////////========================/////////"
+}
