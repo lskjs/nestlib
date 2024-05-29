@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.27.0](https://github.com/lskjs/lskjs/compare/v4.26.0...v4.27.0) (2024-05-29)
+
+
+### Features
+
+* **notify:** add notify package ([8d0a40b](https://github.com/lskjs/lskjs/commit/8d0a40ba7403cfde52f349a3b6829b38ea537547))
+* **notify:** add notify package ([8bbfdf4](https://github.com/lskjs/lskjs/commit/8bbfdf4ce4580835d846598505a94b8b726c82ba))
+* **notify:** add notify package ([faa2054](https://github.com/lskjs/lskjs/commit/faa20546afe29fe66510eff89f9058e82421c0a1))
+
+
+
+
+
 ## [4.23.2](https://github.com/lskjs/lskjs/compare/v4.23.1...v4.23.2) (2024-02-09)
 
 
