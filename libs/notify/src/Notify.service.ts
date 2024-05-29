@@ -2,8 +2,8 @@ import type { RlogSendData, RlogSendOptions } from '@lsk4/rlog';
 import { Rlog } from '@lsk4/rlog';
 import { Inject, Injectable } from '@nestjs/common';
 
-import { NOTIFY_MODULE_OPTIONS_TOKEN } from './tokens';
-import { NotifyModuleOptions } from './types';
+import { NOTIFY_MODULE_OPTIONS_TOKEN } from './tokens.js';
+import { NotifyModuleOptions } from './types.js';
 
 @Injectable()
 export class NotifyService {
