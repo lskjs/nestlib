@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.28.0](https://github.com/lskjs/nestlib/compare/v4.27.0...v4.28.0) (2024-05-29)
+
+
+### Features
+
+* **utils:** add AnyValidataionPipe ([10dfba9](https://github.com/lskjs/nestlib/commit/10dfba99779c4278e76eadef84c82eb9ffe045e4))
+
+
+
+
+
 # [4.27.0](https://github.com/lskjs/nestlib/compare/v4.26.0...v4.27.0) (2024-05-29)
 
 
