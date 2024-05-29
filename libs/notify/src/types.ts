@@ -1,3 +1,5 @@
 import type { RlogOptions } from '@lsk4/rlog';
 
-export type NotifyModuleOptions = RlogOptions;
+export type NotifyModuleOptions = RlogOptions & {
+  // some custom options
+};

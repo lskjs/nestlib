@@ -2,7 +2,7 @@ import { DynamicModule, Module } from '@nestjs/common';
 
 import { NotifyService } from './Notify.service.js';
 import { NOTIFY_MODULE_OPTIONS_TOKEN } from './tokens.js';
-import { NotifyModuleOptions } from './types.js';
+import type { NotifyModuleOptions } from './types.js';
 
 @Module({
   providers: [NotifyService],

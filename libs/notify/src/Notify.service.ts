@@ -3,7 +3,7 @@ import { Rlog } from '@lsk4/rlog';
 import { Inject, Injectable } from '@nestjs/common';
 
 import { NOTIFY_MODULE_OPTIONS_TOKEN } from './tokens.js';
-import { NotifyModuleOptions } from './types.js';
+import type { NotifyModuleOptions } from './types.js';
 
 @Injectable()
 export class NotifyService {
