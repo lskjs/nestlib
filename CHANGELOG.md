@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.28.1](https://github.com/lskjs/nestlib/compare/v4.28.0...v4.28.1) (2024-05-29)
+
+
+### Bug Fixes
+
+* **utils:** forgot index ([5dfd88f](https://github.com/lskjs/nestlib/commit/5dfd88f7579b146e9de1f83e207987ca30f72604))
+
+
+
+
+
 # [4.28.0](https://github.com/lskjs/nestlib/compare/v4.27.0...v4.28.0) (2024-05-29)
 
 
