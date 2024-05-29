@@ -1,0 +1,66 @@
+{
+  "name": "@nestlib/notify",
+  "version": "4.23.2",
+  "description": "LSK.js – nest notify sender – use telegram, slack or emails",
+  "author": "Igor Suvorov <hi@isuvorov.com> (https://github.com/isuvorov)",
+  "private": false,
+  "scripts": {
+    "dev": "            ycmd dev",
+    "build": "          ycmd build",
+    "test": "           ycmd test",
+    "prepack": "        ycmd prepack",
+    "release": "        ycmd release"
+  },
+  "dependencies": {
+    "@lsk4/rlog": "^4.21.0"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^10.3.0",
+    "@nestjs/core": "^10.3.0"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "*",
+    "@nestjs/core": "*"
+  },
+  "//": "///////////========================/////////========================/////////========================//////////",
+  "prettier": "@lsk4/eslint-config/prettier",
+  "eslintConfig": {
+    "extends": "@lsk4/eslint-config"
+  },
+  "files": [
+    "lib",
+    "cjs",
+    "README.md",
+    "LICENCE"
+  ],
+  "main": "cjs/index.js",
+  "types": "cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "types": "./cjs/index.d.ts",
+      "default": "./cjs/index.js"
+    },
+    "./*": {
+      "import": "./lib/*.js",
+      "types": "./cjs/*.d.ts",
+      "default": "./cjs/*.js"
+    }
+  },
+  "_size-limit": [
+    {
+      "path": "lib/index.js",
+      "limit": "10kb"
+    }
+  ],
+  "///": "//////////========================/////////========================/////////========================/////////",
+  "repository": "https://github.com/lskjs/lskjs/tree/master//libs-nest/nest-cache",
+  "homepage": "https://github.com/lskjs/lskjs/tree/master//libs/nest-cache",
+  "bugs": "https://github.com/lskjs/lskjs/issues",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "////": "/////////========================/////////========================/////////========================/////////"
+}
