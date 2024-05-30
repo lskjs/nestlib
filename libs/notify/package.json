@@ -1,6 +1,6 @@
 {
   "name": "@nestlib/notify",
-  "version": "4.30.1",
+  "version": "4.31.0",
   "description": "LSK.js – nest notify sender – use telegram, slack or emails",
   "author": "Igor Suvorov <hi@isuvorov.com> (https://github.com/isuvorov)",
   "private": false,
