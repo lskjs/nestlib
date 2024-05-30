@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.29.0](https://github.com/lskjs/lskjs/compare/v4.28.1...v4.29.0) (2024-05-30)
+
+
+### Features
+
+* **interceptors:** add UseController ([059e9f7](https://github.com/lskjs/lskjs/commit/059e9f7979b6c8d218f94ca6390f6c087bc6bbbd))
+
+
+
+
+
 ## [4.23.1](https://github.com/lskjs/lskjs/compare/v4.23.0...v4.23.1) (2024-02-09)
 
 
