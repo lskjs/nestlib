@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.31.1](https://github.com/lskjs/lskjs/compare/v4.31.0...v4.31.1) (2024-05-30)
+
+
+### Bug Fixes
+
+* **notify:** optional namespace ([ed43644](https://github.com/lskjs/lskjs/commit/ed43644b2158f91647d781bce773310f0b3af6b6))
+
+
+
+
+
 # [4.31.0](https://github.com/lskjs/lskjs/compare/v4.30.1...v4.31.0) (2024-05-30)
 
 
