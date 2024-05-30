@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.30.1](https://github.com/lskjs/lskjs/compare/v4.30.0...v4.30.1) (2024-05-30)
+
+
+### Bug Fixes
+
+* **notify:** rename inject method ([426cd90](https://github.com/lskjs/lskjs/commit/426cd901535cca6afca63723a3dda365ce6cceba))
+
+
+
+
+
 # [4.27.0](https://github.com/lskjs/lskjs/compare/v4.26.0...v4.27.0) (2024-05-29)
 
 
