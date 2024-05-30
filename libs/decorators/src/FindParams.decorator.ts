@@ -2,6 +2,7 @@ import { Err } from '@lsk4/err';
 import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 import { Exclude, plainToInstance } from 'class-transformer';
 import { IsBoolean, IsNumber, IsOptional, IsString, Max, Min, validate } from 'class-validator';
+import { validateAndThrow, validateErrorsAndThrow } from './utils/validateAndTrow';
 
 export class Find<Filter = any> {
   @IsOptional()
@@ -47,25 +48,7 @@ export const FindParams = createParamDecorator(
       filterValidationErrors = await validate(findParams.filter);
     }
     const validationErrors: any[] = [...(await validate(findParams)), ...filterValidationErrors];
-    if (validationErrors.length) {
-      const messages = validationErrors.map((error) => {
-        let message;
-        const keys = Object.keys(error.constraints);
-        if (keys.length > 1) {
-          message = Object.values(error.constraints);
-        } else {
-          message = error.constraints[keys[0]];
-        }
-        return {
-          property: error.property,
-          message,
-        };
-      });
-      throw new Err('Validation Error', {
-        status: 400,
-        data: messages,
-      });
-    }
+    await validateErrorsAndThrow(validationErrors);
     return findParams;
   },
 );

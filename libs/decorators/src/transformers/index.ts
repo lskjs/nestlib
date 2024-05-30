@@ -1,2 +1,2 @@
-export * from './ToLowerCase.decorator';
-export * from './Trim.decorator';
+export * from './ToLowerCase.decorator.js';
+export * from './Trim.decorator.js';
