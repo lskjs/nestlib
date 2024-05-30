@@ -69,7 +69,10 @@ export class NotifyModule {
         },
       ];
     }
-    throw new Err('Invalid configuration. Must provide useFactory, useClass, or useExisting.');
+    throw new Err(
+      '!anyOptions',
+      'Invalid configuration. Must provide useFactory, useClass, or useExisting.',
+    );
   }
 
   static forRootAsync(options: NotifyModuleAsyncOptions): DynamicModule {

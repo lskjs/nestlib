@@ -11,8 +11,9 @@ export class NotifyService {
   constructor(@Inject(NOTIFY_MODULE_OPTIONS_TOKEN) private readonly options: NotifyModuleOptions) {
     this.client = new Rlog(this.options);
   }
-  send(data: RlogSendData, options: RlogSendOptions = {}) {
-    return this.client.send(data, options);
+  async send(props: RlogSendData, options: RlogSendOptions = {}) {
+    const { data } = await this.client.send(props, options);
+    return data;
   }
   trace(data: RlogSendData, options: RlogSendOptions = {}) {
     return this.client.trace(data, options);

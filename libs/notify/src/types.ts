@@ -1,4 +1,4 @@
-import type { RlogOptions } from '@lsk4/rlog';
+import type { RlogOptions, RlogSendOptions } from '@lsk4/rlog';
 import { Type } from '@nestjs/common';
 
 export type NotifyModuleOptions = RlogOptions & {
@@ -19,3 +19,15 @@ export interface NotifyModuleAsyncOptions {
   inject?: any[];
   imports?: any[];
 }
+
+export type NotifySendOptionsLink =
+  | string
+  | { title?: string; url: string; style?: 'primary' | 'danger' };
+
+export type NotifySendOptions = RlogSendOptions & {
+  title?: string;
+  props?: Record<string, string>;
+  tags?: string[];
+  users?: string[];
+  links?: NotifySendOptionsLink[];
+};

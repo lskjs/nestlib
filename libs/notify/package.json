@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@lsk4/err": "^4.20.0",
-    "@lsk4/rlog": "^4.21.0"
+    "@lsk4/rlog": "^4.21.3"
   },
   "devDependencies": {
     "@nestjs/common": "^10.3.0",
