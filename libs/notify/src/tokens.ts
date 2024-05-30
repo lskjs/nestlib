@@ -7,5 +7,5 @@ export function getNotifyServiceToken(ns?: string): string {
   return [ns, NOTIFY_SERVICE_TOKEN].filter(Boolean).join('_');
 }
 
-export const InjectNotifyServiceToken = (connection?: string) =>
+export const InjectNotifyService = (connection?: string) =>
   Inject(getNotifyServiceToken(connection));
