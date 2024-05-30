@@ -2,7 +2,7 @@ import type { RlogOptions } from '@lsk4/rlog';
 import { Type } from '@nestjs/common';
 
 export type NotifyModuleOptions = RlogOptions & {
-  namespace: string;
+  namespace?: string;
   // some custom options
 };
 
@@ -11,7 +11,7 @@ export interface NotifyModuleOptionsFactory {
 }
 
 export interface NotifyModuleAsyncOptions {
-  namespace: string;
+  namespace?: string;
 
   useExisting?: Type<NotifyModuleOptionsFactory>;
   useClass?: Type<NotifyModuleOptionsFactory>;
