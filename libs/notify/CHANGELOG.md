@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.32.1](https://github.com/lskjs/lskjs/compare/v4.32.0...v4.32.1) (2024-05-30)
+
+
+### Bug Fixes
+
+* **notify:** change options type ([df2771e](https://github.com/lskjs/lskjs/commit/df2771e6b872fdf9b845612eaa37b4f318d98ab5))
+
+
+
+
+
 # [4.32.0](https://github.com/lskjs/lskjs/compare/v4.31.1...v4.32.0) (2024-05-30)
 
 
