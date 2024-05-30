@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.30.0](https://github.com/lskjs/lskjs/compare/v4.29.0...v4.30.0) (2024-05-30)
+
+
+### Features
+
+* **decorators:** add Data decorator ([186fa55](https://github.com/lskjs/lskjs/commit/186fa55bc51c59d280fecd13112db5b4e778819e))
+* **decorators:** add Data decorator ([6a44d3d](https://github.com/lskjs/lskjs/commit/6a44d3dec351484af4946f8eaced026a8d1c3641))
+
+
+
+
+
 # [4.21.0](https://github.com/lskjs/lskjs/compare/v4.20.0...v4.21.0) (2024-01-30)
 
 **Note:** Version bump only for package @nestlib/decorators
