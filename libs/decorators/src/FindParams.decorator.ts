@@ -1,8 +1,8 @@
-import { Err } from '@lsk4/err';
 import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 import { Exclude, plainToInstance } from 'class-transformer';
 import { IsBoolean, IsNumber, IsOptional, IsString, Max, Min, validate } from 'class-validator';
-import { validateAndThrow, validateErrorsAndThrow } from './utils/validateAndTrow';
+
+import { validateErrorsAndThrow } from './utils/validateAndTrow';
 
 export class Find<Filter = any> {
   @IsOptional()
