@@ -2,7 +2,7 @@ import { Err } from '@lsk4/err';
 import { ValidationPipe, ValidationPipeOptions } from '@nestjs/common';
 import type { ValidationError } from 'class-validator';
 
-export class AnyValidataionPipe extends ValidationPipe {
+export class AnyValidationPipe extends ValidationPipe {
   constructor(options?: ValidationPipeOptions) {
     super({
       exceptionFactory: (validationErrors: ValidationError[] = []) => {
