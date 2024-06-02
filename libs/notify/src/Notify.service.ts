@@ -12,8 +12,8 @@ export class NotifyService {
     this.client = new Rlog(this.options);
   }
   async send(props: RlogSendData, options: NotifySendOptions = {}) {
-    const { data } = await this.client.send(props, options);
-    return data;
+    const res = await this.client.send(props, options);
+    return res;
   }
   trace(data: RlogSendData, options: NotifySendOptions = {}) {
     return this.client.trace(data, options);
