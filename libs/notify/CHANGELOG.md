@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.32.3](https://github.com/lskjs/lskjs/compare/v4.32.2...v4.32.3) (2024-06-02)
+
+
+### Bug Fixes
+
+* **notify:** check return data ([bc3c5a3](https://github.com/lskjs/lskjs/commit/bc3c5a3b38bb2026b39d99ec320e3247af7e2fcb))
+
+
+
+
+
 ## [4.32.1](https://github.com/lskjs/lskjs/compare/v4.32.0...v4.32.1) (2024-05-30)
 
 
