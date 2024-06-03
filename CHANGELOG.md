@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.33.0](https://github.com/lskjs/nestlib/compare/v4.32.3...v4.33.0) (2024-06-03)
+
+
+### Features
+
+* **notify:** makes notify options public ([ad701a5](https://github.com/lskjs/nestlib/commit/ad701a51be1519113729d6c2905719b68ddeb6db))
+
+
+
+
+
 ## [4.32.3](https://github.com/lskjs/nestlib/compare/v4.32.2...v4.32.3) (2024-06-02)
 
 
