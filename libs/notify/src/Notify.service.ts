@@ -8,7 +8,7 @@ import type { NotifyModuleOptions, NotifySendOptions } from './types.js';
 @Injectable()
 export class NotifyService {
   private client: Rlog;
-  constructor(@Inject(NOTIFY_MODULE_OPTIONS_TOKEN) private readonly options: NotifyModuleOptions) {
+  constructor(@Inject(NOTIFY_MODULE_OPTIONS_TOKEN) public readonly options: NotifyModuleOptions) {
     this.client = new Rlog(this.options);
   }
   async send(props: RlogSendData, options: NotifySendOptions = {}) {
