@@ -77,12 +77,16 @@ export const Data = createParamDecorator(async (props: any, ctx: ExecutionContex
     }
   }
 
-  let data = raw;
-  // eslint-disable-next-line no-restricted-syntax
-  for (const key of keys) {
-    if (raw[key] !== undefined) {
-      data = raw[key];
-      break;
+  let data;
+  if (keys.length === 0) {
+    data = raw;
+  } else {
+    // eslint-disable-next-line no-restricted-syntax
+    for (const key of keys) {
+      if (raw[key] !== undefined) {
+        data = raw[key];
+        break;
+      }
     }
   }
 
