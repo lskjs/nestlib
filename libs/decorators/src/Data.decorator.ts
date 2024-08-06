@@ -71,7 +71,7 @@ export const Data = createParamDecorator(async (props: any, ctx: ExecutionContex
     if (props?.Dto) {
       Dto = props.Dto;
     }
-    const rawKeys = props.key || props.keys;
+    const rawKeys = props?.key || props?.keys;
     if (rawKeys) {
       keys = Array.isArray(rawKeys) ? props.key : [props.key];
     }
