@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.34.0](https://github.com/lskjs/lskjs/compare/v4.33.0...v4.34.0) (2024-08-06)
+
+
+### Features
+
+* **decorators:** improve Data decorator ([ea1a903](https://github.com/lskjs/lskjs/commit/ea1a9031a98df8b8d73d6d26d74cedfeabb7c1ab))
+
+
+
+
+
 # [4.30.0](https://github.com/lskjs/lskjs/compare/v4.29.0...v4.30.0) (2024-05-30)
 
 
