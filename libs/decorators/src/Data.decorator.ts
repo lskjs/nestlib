@@ -65,26 +65,25 @@ export const Data = createParamDecorator(async (props: any, ctx: ExecutionContex
     Dto = props;
   } else if (typeof props === 'string') {
     keys = [props];
-  }
-  if (props?.Dto) {
-    Dto = props.Dto;
-  }
-  const rawKeys = props.key || props.keys;
-  if (rawKeys) {
-    keys = Array.isArray(rawKeys) ? props.key : [props.key];
+  } else if (Array.isArray(props)) {
+    keys = props;
+  } else {
+    if (props?.Dto) {
+      Dto = props.Dto;
+    }
+    const rawKeys = props.key || props.keys;
+    if (rawKeys) {
+      keys = Array.isArray(rawKeys) ? props.key : [props.key];
+    }
   }
 
-  let data;
+  let data = raw;
   // eslint-disable-next-line no-restricted-syntax
   for (const key of keys) {
     if (raw[key] !== undefined) {
       data = raw[key];
       break;
     }
-  }
-
-  if (!keys.length) {
-    data = raw;
   }
 
   if (!Dto) return data;
