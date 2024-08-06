@@ -7,7 +7,8 @@ import { validateAndThrow } from './utils/validateAndThrow.js';
  * Decorator for extracting and validating data from a request.
  * @param data - Data for extraction and validation.
  * @param data.Dto - DTO class for data validation.
- * @param data.key - The key to search for data in the request.
+ * @param data.key - The key or keys to search for data in the request.
+ * @param data.keys - OPTIONAL The key or keys to search for data in the request.
  * @returns Data from the request.
  * @throws Validation errors.
  * @example
@@ -19,14 +20,28 @@ import { validateAndThrow } from './utils/validateAndThrow.js';
  * }
  *
  * @Post('with-dto-and-key')
- * async createWithDtoAndKey(@Data({ Dto: MyDto, key: 'body' }) data: MyDto) {
+ * async createWithDtoAndKey(@Data({ Dto: MyDto, key: 'props' }) data: MyDto) {
  *  // Data is validated and transformed into an instance of MyDto from body
  *  return data;
  * }
  *
- * @Post('with-key')
- * async createWithKey(@Data({ key: 'query' }) data: any) {
- *  // Data is extracted from query without transformation and validation
+ * }
+ *
+ * @Post('with-key-only')
+ * async createWithDtoAndKey(@Data('props') data: MyDto) {
+ *  // Data is validated and transformed into an instance of MyDto from body
+ *  return data;
+ * }
+ *
+ * @Post('with-dto-and-keys')
+ * async createWithKeys(@Data({ Dto: MyDto, key: ['params', 'props'] }) data: any) {
+ *  // Data is extracted from query and body without transformation and validation
+ *  return data;
+ * }
+ *
+ * @Post('with-keys-only')
+ * async createWithKeys(@Data(['params', 'props']) data: any) {
+ *  // Data is extracted from query and body without transformation and validation
  *  return data;
  * }
  *
@@ -44,20 +59,33 @@ export const Data = createParamDecorator(async (props: any, ctx: ExecutionContex
   const raw = { ...request.query, ...request.body };
 
   let Dto;
-  let key;
+  let keys = [];
+
   if (typeof props === 'function') {
     Dto = props;
   } else if (typeof props === 'string') {
-    key = props;
+    keys = [props];
   }
   if (props?.Dto) {
     Dto = props.Dto;
   }
-  if (props?.key) {
-    key = props.key;
+  const rawKeys = props.key || props.keys;
+  if (rawKeys) {
+    keys = Array.isArray(rawKeys) ? props.key : [props.key];
   }
 
-  const data = key ? raw[key] : raw;
+  let data;
+  // eslint-disable-next-line no-restricted-syntax
+  for (const key of keys) {
+    if (raw[key] !== undefined) {
+      data = raw[key];
+      break;
+    }
+  }
+
+  if (!keys.length) {
+    data = raw;
+  }
 
   if (!Dto) return data;
 
