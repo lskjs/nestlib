@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.35.3](https://github.com/lskjs/lskjs/compare/v4.35.2...v4.35.3) (2024-08-06)
+
+
+### Bug Fixes
+
+* **decorators:** edge cases in @Data ([43772be](https://github.com/lskjs/lskjs/commit/43772be6fb9d2e2c86be6f2f01aa5c44814db28a))
+
+
+
+
+
 ## [4.35.2](https://github.com/lskjs/lskjs/compare/v4.35.1...v4.35.2) (2024-08-06)
 
 
