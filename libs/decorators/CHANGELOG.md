@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.35.0](https://github.com/lskjs/lskjs/compare/v4.34.0...v4.35.0) (2024-08-06)
+
+
+### Features
+
+* **decorators:** add multiple keys in @Data ([cb6b5ae](https://github.com/lskjs/lskjs/commit/cb6b5aed2a0eb6696a5269bef447d03c32ae8a34))
+
+
+
+
+
 # [4.34.0](https://github.com/lskjs/lskjs/compare/v4.33.0...v4.34.0) (2024-08-06)
 
 
