@@ -2,7 +2,7 @@ import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 import { Exclude, plainToInstance } from 'class-transformer';
 import { IsBoolean, IsNumber, IsOptional, IsString, Max, Min, validate } from 'class-validator';
 
-import { validateErrorsAndThrow } from './utils/validateAndTrow';
+import { validateErrorsAndThrow } from './utils/validateAndThrow.js';
 
 export class Find<Filter = any> {
   @IsOptional()
