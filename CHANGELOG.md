@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.35.1](https://github.com/lskjs/nestlib/compare/v4.35.0...v4.35.1) (2024-08-06)
+
+
+### Bug Fixes
+
+* **decorators:** edge cases in @Data ([05995a4](https://github.com/lskjs/nestlib/commit/05995a465955c02512f8e616ab706d32ced7e2ed))
+
+
+
+
+
 # [4.35.0](https://github.com/lskjs/nestlib/compare/v4.34.0...v4.35.0) (2024-08-06)
 
 
