@@ -15,7 +15,8 @@ import type { ConfigModuleOptions } from './types.js';
 @Global()
 @Module({})
 export class ConfigModule {
-  static forRoot(options: ConfigModuleOptions = {}): DynamicModule {
+  // TODO: подумать об прокидывании схемы
+  static forRoot(options: ConfigModuleOptions<any> = {}): DynamicModule {
     const { ns, name, key, ...loadConfigOptions } = options;
 
     const cwd = options.cwd || process.cwd();
@@ -37,7 +38,11 @@ export class ConfigModule {
         NestConfigModule.forRoot({
           load: [
             () => {
-              const { config } = loadConfigSync<any>(name || '.env', loadConfigOptions);
+              const { config } = loadConfigSync<any>(
+                name || '.env',
+                // @ts-ignore
+                loadConfigOptions,
+              );
               if (!key) return config;
               if (typeof key === 'string') return config?.[key];
               if (typeof key === 'function') return key(config);

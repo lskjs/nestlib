@@ -28,6 +28,7 @@ export class ErrorInterceptor implements NestInterceptor {
         // TODO: так же подумать о разных статусах, например для прод сервера не нужны подробности 400х ошибок в консоли, но нужно подробности 500х
         const isDebug = isDev;
 
+        // eslint-disable-next-line prefer-const
         let [code, message] = Err.getCodeMessage(error);
         const { status, err, data, ...rawDebug } = error || {};
         const debug = omitBy(
