@@ -9,7 +9,6 @@ type UseControllerOptions = {
   ErrorInterceptor?: Function | NestInterceptor<any, any> | null;
   interceptors?: (Function | NestInterceptor<any, any>)[];
 };
-
 export function UseController(
   path: string | string[],
   {

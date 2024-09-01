@@ -2,7 +2,7 @@ import { isPlainObject, omit } from '@lsk4/algos';
 import { ExecutionContext } from '@nestjs/common';
 import type { Response } from 'express';
 
-export function pack(context: ExecutionContext, raw: any, info?: any) {
+export function pack(context: ExecutionContext, raw: any, info?: any, { toString = false } = {}) {
   const response = context.switchToHttp().getResponse<Response>();
   const status = (info.status || raw?.__status) ?? null;
   let isJson: boolean;
@@ -25,7 +25,7 @@ export function pack(context: ExecutionContext, raw: any, info?: any) {
       data = raw;
     }
   }
-  if (typeof data === 'undefined') data = null;
+  // if (typeof data === 'undefined') data = null;
   const code = resultWrap ? info.code : data.code;
   let message = resultWrap ? info.message : data.message;
   if (message === code) message = undefined;
@@ -33,8 +33,9 @@ export function pack(context: ExecutionContext, raw: any, info?: any) {
   let resultType;
   if (resultWrap) {
     resultType = 'object';
+    const ok = info.ok ?? 1;
     result = {
-      ok: 1,
+      ok,
       code,
       message,
       data,
@@ -75,5 +76,6 @@ export function pack(context: ExecutionContext, raw: any, info?: any) {
   }
   if (resultType === 'string') return result;
   // TODO: fast-safe-stringify?
-  return JSON.stringify(result);
+  if (toString) return JSON.stringify(result);
+  return result;
 }

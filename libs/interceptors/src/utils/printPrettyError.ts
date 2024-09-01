@@ -4,6 +4,7 @@ import { createLogger } from '@lsk4/log';
 
 import { pe } from './pe';
 
+// TODO: вынести в конфиг
 const isDebug = isDev;
 const defaultLevel = isDebug ? 'debug' : 'error';
 const log = createLogger('web', { level: defaultLevel });
@@ -13,6 +14,7 @@ export const printPrettyError = (error: any) => {
   if (error instanceof Error) {
     const errCode = Err.getCode(error);
     const errMessage = errCode !== Err.getMessage(error) ? Err.getMessage(error) : '';
+
     log.warn([errCode, errMessage].filter(Boolean).join(': '));
     if (log.level === 'trace' || log.level === 'debug') {
       // eslint-disable-next-line no-console
