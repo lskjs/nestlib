@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.36.0](https://github.com/lskjs/lskjs/compare/v4.35.3...v4.36.0) (2024-09-01)
+
+**Note:** Version bump only for package @nestlib/auth
+
+
+
+
+
 ## [4.35.3](https://github.com/lskjs/lskjs/compare/v4.35.2...v4.35.3) (2024-08-06)
 
 **Note:** Version bump only for package @nestlib/auth

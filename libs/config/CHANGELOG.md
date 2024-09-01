@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.36.0](https://github.com/lskjs/lskjs/compare/v4.35.3...v4.36.0) (2024-09-01)
+
+
+### Bug Fixes
+
+* **config:** type error ([4efcef0](https://github.com/lskjs/lskjs/commit/4efcef07f32927347f8da7c436c30ab14e0299c5))
+
+
+
+
+
 # [4.26.0](https://github.com/lskjs/lskjs/compare/v4.25.1...v4.26.0) (2024-02-25)
 
 

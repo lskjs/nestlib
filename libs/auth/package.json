@@ -1,6 +1,6 @@
 {
   "name": "@nestlib/auth",
-  "version": "4.35.3",
+  "version": "4.36.0",
   "description": "LSK.js – nest auth – helpers for auth in Nest.js projects",
   "author": "Igor Suvorov <hi@isuvorov.com> (https://github.com/isuvorov)",
   "private": false,

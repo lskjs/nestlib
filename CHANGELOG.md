@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.36.0](https://github.com/lskjs/nestlib/compare/v4.35.3...v4.36.0) (2024-09-01)
+
+
+### Bug Fixes
+
+* **config:** type error ([4efcef0](https://github.com/lskjs/nestlib/commit/4efcef07f32927347f8da7c436c30ab14e0299c5))
+
+
+### Features
+
+* **interceptors:** improve ErrorInterceptor ([305dd42](https://github.com/lskjs/nestlib/commit/305dd429aea6314b75961de49595f8d574809082))
+
+
+
+
+
 ## [4.35.3](https://github.com/lskjs/nestlib/compare/v4.35.2...v4.35.3) (2024-08-06)
 
 
