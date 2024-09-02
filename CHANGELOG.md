@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.37.0](https://github.com/lskjs/nestlib/compare/v4.36.0...v4.37.0) (2024-09-02)
+
+
+### Features
+
+* **interceptors:** add debug levels for error intercepter ([30b3a10](https://github.com/lskjs/nestlib/commit/30b3a103db6907621d251a9c2a9373c8312881e1))
+
+
+
+
+
 # [4.36.0](https://github.com/lskjs/nestlib/compare/v4.35.3...v4.36.0) (2024-09-01)
 
 
