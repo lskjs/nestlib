@@ -30,7 +30,7 @@ export class ErrorInterceptor implements NestInterceptor {
           ...rawDebug
         } = error || {};
         const status =
-          rawStatus ||
+          +rawStatus ||
           // TODO: подумать можно ли так кидаться?
           // rawStatusCode ||
           500;
