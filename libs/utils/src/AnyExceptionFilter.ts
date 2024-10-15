@@ -12,15 +12,21 @@ import {
 import { Request, Response } from 'express';
 import stringify from 'fast-safe-stringify';
 
-// TODO: дописать
+// const stringify = (obj: any, replacer?: any, space?: any) => JSON.stringify(obj, replacer, space);
+
+// TODO: подумать еще раз
 
 const isDeepDebug = !!process.env.DEBUG;
 const isEmpty = (obj = {}) => !Object.keys(obj).length;
 
+// TODO: подумать о том, как совместить ErrorInterceptor и AnyExceptionFilter
+// по идее вся логика которую я писал в ErrorInterceptor - её нужно перенести сюда
 @Catch(Err)
 export class AnyExceptionFilter implements BaseExceptionFilter {
   // AnyExceptionFilter.name
-  log = createLogger('webserver:exception');
+  // TODO:подумать про неймспейсы
+  // log = createLogger('web:exception');
+  log = createLogger('web');
   rmqlog = createLogger('rmq:exception');
   catch(err: Err, host: ArgumentsHost) {
     const ctx = host.switchToHttp();
@@ -46,7 +52,7 @@ export class AnyExceptionFilter implements BaseExceptionFilter {
     const debug = isDebug && !isEmpty(err?.debug) ? err?.debug : null;
 
     let code = err?.code;
-    if (!code) code = `status${status}`;
+    if (!code) code = `err${status}`;
 
     let message: string | undefined = err?.message;
     if (message === code) message = undefined;
@@ -59,8 +65,9 @@ export class AnyExceptionFilter implements BaseExceptionFilter {
     const data = err?.data;
 
     const response: Record<string, unknown> = omitNull({
+      ok: 0,
       code,
-      statusCode: status,
+      // statusCode: status,
       message,
       debug,
       data,
@@ -70,7 +77,10 @@ export class AnyExceptionFilter implements BaseExceptionFilter {
       // this.log.warn('!res.status');
       return null;
     }
-    return res.status(status).send(stringify(response, undefined, isDebug ? 2 : 0));
+    return res
+      .status(status)
+      .header('Content-Type', 'application/json')
+      .send(stringify(response, undefined, isDebug ? 2 : 0));
   }
 
   logError(err: Err, logInfo: any, host: ArgumentsHost) {
