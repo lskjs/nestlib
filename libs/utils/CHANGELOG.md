@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.38.0](https://github.com/lskjs/lskjs/compare/v4.37.0...v4.38.0) (2024-10-15)
+
+
+### Features
+
+* **utils:** improve AnyExeptionFilter ([8e913e1](https://github.com/lskjs/lskjs/commit/8e913e175f48bbc924b38620c723c9c15524590e))
+
+
+
+
+
 ## [4.32.2](https://github.com/lskjs/lskjs/compare/v4.32.1...v4.32.2) (2024-05-31)
 
 

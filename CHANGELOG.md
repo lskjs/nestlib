@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.38.0](https://github.com/lskjs/nestlib/compare/v4.37.0...v4.38.0) (2024-10-15)
+
+
+### Bug Fixes
+
+* **interceptors:** can non number status ([9c33489](https://github.com/lskjs/nestlib/commit/9c33489c8c2620bd90739078f9e453d1ce2f84af))
+
+
+### Features
+
+* **utils:** improve AnyExeptionFilter ([8e913e1](https://github.com/lskjs/nestlib/commit/8e913e175f48bbc924b38620c723c9c15524590e))
+
+
+
+
+
 # [4.37.0](https://github.com/lskjs/nestlib/compare/v4.36.0...v4.37.0) (2024-09-02)
 
 
