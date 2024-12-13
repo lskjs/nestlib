@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.38.1](https://github.com/lskjs/nestlib/compare/v4.38.0...v4.38.1) (2024-12-13)
+
+
+### Bug Fixes
+
+* **access-logger:** corrent status code ([4203099](https://github.com/lskjs/nestlib/commit/4203099dc9c3f1a64cb8fccab8b4895d9e53779f))
+
+
+
+
+
 # [4.38.0](https://github.com/lskjs/nestlib/compare/v4.37.0...v4.38.0) (2024-10-15)
 
 
