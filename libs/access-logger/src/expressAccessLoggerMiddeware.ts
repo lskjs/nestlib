@@ -50,8 +50,10 @@ export function expressAccessLoggerMiddeware(req: Request, res: Response, next?:
 
     // @ts-ignore
     const err = (this.req.nestError || this.req.err || this.req.error) as any;
-    const errCode = Err.getCode(err);
-    data.err = errCode;
+    if (err) {
+      const errCode = err ? Err.getCode(err) : null;
+      data.err = errCode;
+    }
 
     const diff = process.hrtime(hrtime);
     data.duration = diff[0] * 1e3 + diff[1] * 1e-6;
