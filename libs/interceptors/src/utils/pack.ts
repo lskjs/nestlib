@@ -1,6 +1,10 @@
 import { isPlainObject, omit } from '@lsk4/algos';
+// import { isDev } from '@lsk4/env';
+import { isDebug } from '@lsk4/env';
 import { ExecutionContext } from '@nestjs/common';
 import type { Response } from 'express';
+
+import { stringify } from './stringify';
 
 export function pack(context: ExecutionContext, raw: any, info?: any, { toString = false } = {}) {
   const response = context.switchToHttp().getResponse<Response>();
@@ -75,7 +79,7 @@ export function pack(context: ExecutionContext, raw: any, info?: any, { toString
     response.setHeader('content-type', 'application/json');
   }
   if (resultType === 'string') return result;
-  // TODO: fast-safe-stringify?
-  if (toString) return JSON.stringify(result);
+  if (toString) return stringify(result, isDebug ? 2 : 0);
+  // if (toString) return JSON.stringify(result);
   return result;
 }
