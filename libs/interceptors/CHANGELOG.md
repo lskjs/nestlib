@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.39.0](https://github.com/lskjs/lskjs/compare/v4.38.1...v4.39.0) (2025-03-20)
+
+
+### Features
+
+* **interceptors:** implement safe stringify ([faaff42](https://github.com/lskjs/lskjs/commit/faaff422d76af0b5d4b79719610d408bb6348b29))
+
+
+
+
+
 # [4.38.0](https://github.com/lskjs/lskjs/compare/v4.37.0...v4.38.0) (2024-10-15)
 
 

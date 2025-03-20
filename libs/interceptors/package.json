@@ -1,6 +1,6 @@
 {
   "name": "@nestlib/interceptors",
-  "version": "4.38.0",
+  "version": "4.39.0",
   "description": "LSK.js – nest utils – helpers and utils for Nest.js projects",
   "author": "Igor Suvorov <hi@isuvorov.com> (https://github.com/isuvorov)",
   "private": false,
