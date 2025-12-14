@@ -1,14 +1,14 @@
-# LSK.js – utils
+# Nestlib – Nest Access logger
 
-> @lskjs/utils – LSK.js – utils – helpers and functions
+> @nestlib/access-logger – Nestlib – Nest Access logger – HTTP request logging middleware for NestJS
 
 [![LSK logo](https://badgen.net/badge/icon/MADE%20BY%20LSK?icon=zeit\&label\&color=red\&labelColor=red)](https://github.com/lskjs)
-[![NPM version](https://badgen.net/npm/v/@lskjs/utils)](https://www.npmjs.com/package/@lskjs/utils)
-[![NPM downloads](https://badgen.net/npm/dt/@lskjs/utils)](https://www.npmjs.com/package/@lskjs/utils)
-[![NPM Dependency count](https://badgen.net/bundlephobia/dependency-count/@lskjs/utils)](https://bundlephobia.com/result?p=@lskjs/utils)
-[![Have TypeScript types](https://badgen.net/npm/types/@lskjs/utils)](https://www.npmjs.com/package/@lskjs/utils)
-[![Have tree shaking](https://badgen.net/bundlephobia/tree-shaking/@lskjs/utils)](https://bundlephobia.com/result?p=@lskjs/utils)
-[![NPM Package size](https://badgen.net/bundlephobia/minzip/@lskjs/utils)](https://bundlephobia.com/result?p=@lskjs/utils)
+[![NPM version](https://badgen.net/npm/v/@nestlib/access-logger)](https://www.npmjs.com/package/@nestlib/access-logger)
+[![NPM downloads](https://badgen.net/npm/dt/@nestlib/access-logger)](https://www.npmjs.com/package/@nestlib/access-logger)
+[![NPM Dependency count](https://badgen.net/bundlephobia/dependency-count/@nestlib/access-logger)](https://bundlephobia.com/result?p=@nestlib/access-logger)
+[![Have TypeScript types](https://badgen.net/npm/types/@nestlib/access-logger)](https://www.npmjs.com/package/@nestlib/access-logger)
+[![Have tree shaking](https://badgen.net/bundlephobia/tree-shaking/@nestlib/access-logger)](https://bundlephobia.com/result?p=@nestlib/access-logger)
+[![NPM Package size](https://badgen.net/bundlephobia/minzip/@nestlib/access-logger)](https://bundlephobia.com/result?p=@nestlib/access-logger)
 [![Package size](https://badgen.net//github/license/lskjs/lskjs)](https://github.com/lskjs/lskjs/blob/master/LICENSE)
 [![Ask us in Telegram](https://img.shields.io/badge/Ask%20us%20in-Telegram-brightblue.svg)](https://t.me/lskjschat)
 
@@ -23,6 +23,8 @@
 # Table of contents
 
 *   [⌨️ Install](#️-install)
+*   [📚 Usage](#-usage)
+*   [🔧 Features](#-features)
 *   [📖 License](#-license)
 *   [👥 Contributors](#-contributors)
 *   [👏 Contributing](#-contributing)
@@ -32,11 +34,92 @@
 
 ```sh
 # yarn
-yarn i @lskjs/utils 
+yarn i @nestlib/access-logger 
 
 # npm
-npm i @lskjs/utils 
+npm i @nestlib/access-logger 
+
+# pnpm
+pnpm i @nestlib/access-logger
 ```
+
+# 📚 Usage
+
+## Basic Setup
+
+Import and use `AccessLoggerMiddleware` in your NestJS application:
+
+```typescript
+import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
+import { AccessLoggerMiddleware } from '@nestlib/access-logger';
+
+@Module({})
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer
+      .apply(AccessLoggerMiddleware)
+      .forRoutes('*');
+  }
+}
+```
+
+## Express Middleware
+
+You can also use the Express middleware directly:
+
+```typescript
+import { expressAccessLoggerMiddeware } from '@nestlib/access-logger';
+import express from 'express';
+
+const app = express();
+app.use(expressAccessLoggerMiddeware);
+```
+
+## Custom Logger
+
+The middleware will use `req.log` if available, otherwise it will use a default logger:
+
+```typescript
+import { ILogger } from '@lsk4/log';
+
+// In your middleware or guard
+req.log = yourCustomLogger;
+```
+
+# 🔧 Features
+
+- **Request ID Generation**: Automatically generates unique request IDs (using `nanoid` in production, sequential numbers in development)
+- **Comprehensive Logging**: Logs method, URL, IP address, user agent, referer, status code, response time, and more
+- **Smart Log Levels**: Automatically determines log level based on:
+  - HTTP status codes (errors → `error`, client errors → `warn`)
+  - Response duration (slow requests → `warn`/`error`)
+  - Request errors
+- **WebSocket Support**: Special handling for WebSocket connections
+- **IP Detection**: Automatically extracts client IP from various headers and connection properties
+- **Development Mode**: Enhanced logging in development mode with request body logging
+
+## Logged Data
+
+The middleware logs the following information:
+
+- `method` - HTTP method (GET, POST, etc.) or 'WS' for WebSocket
+- `reqId` - Unique request identifier
+- `host` - Request host
+- `url` - Request URL
+- `referer` - Referer header
+- `ua` - User agent
+- `ip` - Client IP address
+- `status` - HTTP status code
+- `duration` - Request duration in milliseconds
+- `length` - Response content length
+- `err` - Error code (if any)
+
+## Log Levels
+
+- `error` - Server errors (5xx), errors, or very slow requests (>10s)
+- `warn` - Client errors (4xx) or slow requests (>3s)
+- `debug` - Normal successful requests
+- `trace` - WebSocket connections and request start events
 
 ***
 
