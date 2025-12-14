@@ -1,6 +1,6 @@
 # 🪺 Nestlib – NestJS Modules & Decorators Monorepo
 
-[![LSK logo](https://badgen.net/badge/icon/MADE%20BY%20LSK?icon=zeit&label&color=red&labelColor=red)](https://github.com/lskjs)
+[![LSK.js](https://github.com/lskjs/presets/raw/main/docs/badge.svg)](https://github.com/lskjs)
 [![NPM version](https://badgen.net/npm/v/@nestlib/access-logger)](https://www.npmjs.com/package/@nestlib/access-logger)
 [![NPM downloads](https://badgen.net/npm/dt/@nestlib/access-logger)](https://www.npmjs.com/package/@nestlib/access-logger)
 [![Package size](https://badgen.net/github/license/lskjs/nestlib)](https://github.com/lskjs/nestlib/blob/main/LICENSE)
