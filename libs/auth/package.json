@@ -1,7 +1,7 @@
 {
   "name": "@nestlib/auth",
   "version": "4.39.0",
-  "description": "LSK.js – nest auth – helpers for auth in Nest.js projects",
+  "description": "Nestlib – Nest auth – helpers for auth in NestJS projects",
   "author": "Igor Suvorov <hi@isuvorov.com> (https://github.com/isuvorov)",
   "private": false,
   "scripts": {
@@ -92,9 +92,9 @@
     }
   ],
   "///": "//////////========================/////////========================/////////========================/////////",
-  "repository": "https://github.com/lskjs/lskjs/tree/master//libs-nest/nest-auth",
-  "homepage": "https://github.com/lskjs/lskjs/tree/master//libs/nest-auth",
-  "bugs": "https://github.com/lskjs/lskjs/issues",
+  "repository": "https://github.com/nestlibs/nestlib/tree/master/libs/auth",
+  "homepage": "https://github.com/nestlibs/nestlib/tree/master/libs/auth",
+  "bugs": "https://github.com/nestlibs/nestlib/issues",
   "license": "MIT",
   "publishConfig": {
     "access": "public",

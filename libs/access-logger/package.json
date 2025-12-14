@@ -1,7 +1,7 @@
 {
   "name": "@nestlib/access-logger",
   "version": "4.38.1",
-  "description": "LSK.js – nest utils – helpers and utils for Nest.js projects",
+  "description": "Nestlib – Nest Access logger – HTTP request logging middleware for NestJS",
   "author": "Igor Suvorov <hi@isuvorov.com> (https://github.com/isuvorov)",
   "private": false,
   "scripts": {
@@ -74,9 +74,9 @@
     }
   ],
   "///": "//////////========================/////////========================/////////========================/////////",
-  "repository": "https://github.com/lskjs/lskjs/tree/master//libs-nest/nest-utils",
-  "homepage": "https://github.com/lskjs/lskjs/tree/master//libs/nest-utils",
-  "bugs": "https://github.com/lskjs/lskjs/issues",
+  "repository": "https://github.com/nestlibs/nestlib/tree/master/libs/access-logger",
+  "homepage": "https://github.com/nestlibs/nestlib/tree/master/libs/access-logger",
+  "bugs": "https://github.com/nestlibs/nestlib/issues",
   "license": "MIT",
   "publishConfig": {
     "access": "public",

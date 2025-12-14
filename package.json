@@ -2,7 +2,7 @@
   "name": "@nestlib/root",
   "version": "4.0.0",
   "type": "module",
-  "description": "Nestlib - module & decorators collection for Nest.js",
+  "description": "Nestlib - module & decorators collection for NestJS",
   "author": "Igor Suvorov <hi@isuvorov.com> (https://github.com/isuvorov)",
   "private": true,
   "scripts": {

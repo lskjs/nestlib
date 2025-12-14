@@ -1,6 +1,6 @@
 # Nestlib – Nest Auth
 
-> @nestlib/auth – Nestlib – Nest auth – helpers for auth in Nest.js projects
+> @nestlib/auth – Nestlib – Nest auth – helpers for auth in NestJS projects
 
 [![LSK logo](https://badgen.net/badge/icon/MADE%20BY%20LSK?icon=zeit\&label\&color=red\&labelColor=red)](https://github.com/lskjs)
 [![NPM version](https://badgen.net/npm/v/@nestlib/auth)](https://www.npmjs.com/package/@nestlib/auth)
@@ -57,7 +57,7 @@ npm i @nestlib/auth
 
 # 📖 Features
 
-- 🔐 **Complete authentication system** for Nest.js applications
+- 🔐 **Complete authentication system** for NestJS applications
 - 👤 **User management** with email-based authentication
 - 🔑 **Password hashing** using bcrypt
 - 🎫 **Session management** with express-session and connect-mongo

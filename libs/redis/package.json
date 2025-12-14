@@ -1,7 +1,7 @@
 {
   "name": "@nestlib/redis",
   "version": "4.24.0",
-  "description": "LSK.js – nest rabbitmq – helpers for rabbitmq in Nest.js projects",
+  "description": "Nestlib – Nest redis – helpers for redis in NestJS projects",
   "author": "Igor Suvorov <hi@isuvorov.com> (https://github.com/isuvorov)",
   "private": false,
   "scripts": {
@@ -61,9 +61,9 @@
     }
   ],
   "///": "//////////========================/////////========================/////////========================/////////",
-  "repository": "https://github.com/lskjs/lskjs/tree/master//libs/nest-rabbitmq",
-  "homepage": "https://github.com/lskjs/lskjs/tree/master//libs/nest-rabbitmq",
-  "bugs": "https://github.com/lskjs/lskjs/issues",
+  "repository": "https://github.com/nestlibs/nestlib/tree/master/libs/redis",
+  "homepage": "https://github.com/nestlibs/nestlib/tree/master/libs/redis",
+  "bugs": "https://github.com/nestlibs/nestlib/issues",
   "license": "MIT",
   "publishConfig": {
     "access": "public",

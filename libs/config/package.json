@@ -1,7 +1,7 @@
 {
   "name": "@nestlib/config",
   "version": "4.36.0",
-  "description": "LSK.js – nest config – helpers for config in Nest.js projects",
+  "description": "Nestlib – Nest config – helpers for config in NestJS projects",
   "author": "Igor Suvorov <hi@isuvorov.com> (https://github.com/isuvorov)",
   "private": false,
   "scripts": {
@@ -64,9 +64,9 @@
     }
   ],
   "///": "//////////========================/////////========================/////////========================/////////",
-  "repository": "https://github.com/lskjs/lskjs/tree/master//libs-nest/nest-config",
-  "homepage": "https://github.com/lskjs/lskjs/tree/master//libs/nest-config",
-  "bugs": "https://github.com/lskjs/lskjs/issues",
+  "repository": "https://github.com/nestlibs/nestlib/tree/master/libs/config",
+  "homepage": "https://github.com/nestlibs/nestlib/tree/master/libs/config",
+  "bugs": "https://github.com/nestlibs/nestlib/issues",
   "license": "MIT",
   "publishConfig": {
     "access": "public",

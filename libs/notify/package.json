@@ -1,7 +1,7 @@
 {
   "name": "@nestlib/notify",
   "version": "4.33.0",
-  "description": "LSK.js – nest notify sender – use telegram, slack or emails",
+  "description": "Nestlib – Nest notify – notification sender for NestJS projects using Telegram, Slack, or emails",
   "author": "Igor Suvorov <hi@isuvorov.com> (https://github.com/isuvorov)",
   "private": false,
   "scripts": {
@@ -55,9 +55,9 @@
     }
   ],
   "///": "//////////========================/////////========================/////////========================/////////",
-  "repository": "https://github.com/lskjs/lskjs/tree/master//libs-nest/nest-cache",
-  "homepage": "https://github.com/lskjs/lskjs/tree/master//libs/nest-cache",
-  "bugs": "https://github.com/lskjs/lskjs/issues",
+  "repository": "https://github.com/nestlibs/nestlib/tree/master/libs/notify",
+  "homepage": "https://github.com/nestlibs/nestlib/tree/master/libs/notify",
+  "bugs": "https://github.com/nestlibs/nestlib/issues",
   "license": "MIT",
   "publishConfig": {
     "access": "public",
