@@ -63,8 +63,8 @@
     }
   ],
   "///": "//////////========================/////////========================/////////========================/////////",
-  "repository": "https://github.com/nestlibs/nestlib/tree/master/libs/rabbitmq",
-  "homepage": "https://github.com/nestlibs/nestlib/tree/master/libs/rabbitmq",
+  "repository": "https://github.com/nestlibs/nestlib/tree/main/libs/rabbitmq",
+  "homepage": "https://github.com/nestlibs/nestlib/tree/main/libs/rabbitmq",
   "bugs": "https://github.com/nestlibs/nestlib/issues",
   "license": "MIT",
   "publishConfig": {

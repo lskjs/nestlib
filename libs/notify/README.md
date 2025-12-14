@@ -9,7 +9,7 @@
 [![Have TypeScript types](https://badgen.net/npm/types/@nestlib/notify)](https://www.npmjs.com/package/@nestlib/notify)
 [![Have tree shaking](https://badgen.net/bundlephobia/tree-shaking/@nestlib/notify)](https://bundlephobia.com/result?p=@nestlib/notify)
 [![NPM Package size](https://badgen.net/bundlephobia/minzip/@nestlib/notify)](https://bundlephobia.com/result?p=@nestlib/notify)
-[![Package size](https://badgen.net//github/license/lskjs/lskjs)](https://github.com/lskjs/lskjs/blob/master/LICENSE)
+[![Package size](https://badgen.net//github/license/lskjs/lskjs)](https://github.com/lskjs/lskjs/blob/main/LICENSE)
 [![Ask us in Telegram](https://img.shields.io/badge/Ask%20us%20in-Telegram-brightblue.svg)](https://t.me/lskjschat)
 
 <!-- template file="scripts/templates/preview.md" start -->
@@ -401,7 +401,7 @@ The module is built on top of `@lsk4/rlog` and supports all Rlog configuration o
 - **Email**: Configure email sending options
 - **Other channels**: Any channel supported by `@lsk4/rlog`
 
-For detailed configuration options, refer to the [@lsk4/rlog documentation](https://github.com/lskjs/lskjs/tree/master/packages/rlog).
+For detailed configuration options, refer to the [@lsk4/rlog documentation](https://github.com/lskjs/lskjs/tree/main/packages/rlog).
 
 **Example configuration:**
 

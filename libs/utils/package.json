@@ -78,8 +78,8 @@
     }
   ],
   "///": "//////////========================/////////========================/////////========================/////////",
-  "repository": "https://github.com/nestlibs/nestlib/tree/master/libs/utils",
-  "homepage": "https://github.com/nestlibs/nestlib/tree/master/libs/utils",
+  "repository": "https://github.com/nestlibs/nestlib/tree/main/libs/utils",
+  "homepage": "https://github.com/nestlibs/nestlib/tree/main/libs/utils",
   "bugs": "https://github.com/nestlibs/nestlib/issues",
   "license": "MIT",
   "publishConfig": {

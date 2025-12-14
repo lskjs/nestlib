@@ -61,8 +61,8 @@
     }
   ],
   "///": "//////////========================/////////========================/////////========================/////////",
-  "repository": "https://github.com/nestlibs/nestlib/tree/master/libs/redis",
-  "homepage": "https://github.com/nestlibs/nestlib/tree/master/libs/redis",
+  "repository": "https://github.com/nestlibs/nestlib/tree/main/libs/redis",
+  "homepage": "https://github.com/nestlibs/nestlib/tree/main/libs/redis",
   "bugs": "https://github.com/nestlibs/nestlib/issues",
   "license": "MIT",
   "publishConfig": {

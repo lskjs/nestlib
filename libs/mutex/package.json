@@ -54,8 +54,8 @@
     }
   },
   "///": "//////////========================/////////========================/////////========================/////////",
-  "repository": "https://github.com/nestlibs/nestlib/tree/master/libs/mutex",
-  "homepage": "https://github.com/nestlibs/nestlib/tree/master/libs/mutex",
+  "repository": "https://github.com/nestlibs/nestlib/tree/main/libs/mutex",
+  "homepage": "https://github.com/nestlibs/nestlib/tree/main/libs/mutex",
   "bugs": "https://github.com/nestlibs/nestlib/issues",
   "license": "MIT",
   "publishConfig": {

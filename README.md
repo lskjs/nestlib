@@ -3,7 +3,7 @@
 [![LSK logo](https://badgen.net/badge/icon/MADE%20BY%20LSK?icon=zeit&label&color=red&labelColor=red)](https://github.com/lskjs)
 [![NPM version](https://badgen.net/npm/v/@nestlib/access-logger)](https://www.npmjs.com/package/@nestlib/access-logger)
 [![NPM downloads](https://badgen.net/npm/dt/@nestlib/access-logger)](https://www.npmjs.com/package/@nestlib/access-logger)
-[![Package size](https://badgen.net/github/license/lskjs/nestlib)](https://github.com/lskjs/nestlib/blob/master/LICENSE)
+[![Package size](https://badgen.net/github/license/lskjs/nestlib)](https://github.com/lskjs/nestlib/blob/main/LICENSE)
 [![Ask us in Telegram](https://img.shields.io/badge/Ask%20us%20in-Telegram-brightblue.svg)](https://t.me/lskjschat)
 
 <div align="center">

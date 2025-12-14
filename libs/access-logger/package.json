@@ -74,8 +74,8 @@
     }
   ],
   "///": "//////////========================/////////========================/////////========================/////////",
-  "repository": "https://github.com/nestlibs/nestlib/tree/master/libs/access-logger",
-  "homepage": "https://github.com/nestlibs/nestlib/tree/master/libs/access-logger",
+  "repository": "https://github.com/nestlibs/nestlib/tree/main/libs/access-logger",
+  "homepage": "https://github.com/nestlibs/nestlib/tree/main/libs/access-logger",
   "bugs": "https://github.com/nestlibs/nestlib/issues",
   "license": "MIT",
   "publishConfig": {

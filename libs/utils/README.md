@@ -9,7 +9,7 @@
 [![Have TypeScript types](https://badgen.net/npm/types/@nestlib/utils)](https://www.npmjs.com/package/@nestlib/utils)
 [![Have tree shaking](https://badgen.net/bundlephobia/tree-shaking/@nestlib/utils)](https://bundlephobia.com/result?p=@nestlib/utils)
 [![NPM Package size](https://badgen.net/bundlephobia/minzip/@nestlib/utils)](https://bundlephobia.com/result?p=@nestlib/utils)
-[![Package size](https://badgen.net//github/license/lskjs/lskjs)](https://github.com/lskjs/lskjs/blob/master/LICENSE)
+[![Package size](https://badgen.net//github/license/lskjs/lskjs)](https://github.com/lskjs/lskjs/blob/main/LICENSE)
 [![Ask us in Telegram](https://img.shields.io/badge/Ask%20us%20in-Telegram-brightblue.svg)](https://t.me/lskjschat)
 
 <!-- template file="scripts/templates/preview.md" start -->

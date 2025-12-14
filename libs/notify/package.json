@@ -55,8 +55,8 @@
     }
   ],
   "///": "//////////========================/////////========================/////////========================/////////",
-  "repository": "https://github.com/nestlibs/nestlib/tree/master/libs/notify",
-  "homepage": "https://github.com/nestlibs/nestlib/tree/master/libs/notify",
+  "repository": "https://github.com/nestlibs/nestlib/tree/main/libs/notify",
+  "homepage": "https://github.com/nestlibs/nestlib/tree/main/libs/notify",
   "bugs": "https://github.com/nestlibs/nestlib/issues",
   "license": "MIT",
   "publishConfig": {

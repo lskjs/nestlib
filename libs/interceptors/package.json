@@ -59,8 +59,8 @@
     }
   ],
   "///": "//////////========================/////////========================/////////========================/////////",
-  "repository": "https://github.com/nestlibs/nestlib/tree/master/libs/interceptors",
-  "homepage": "https://github.com/nestlibs/nestlib/tree/master/libs/interceptors",
+  "repository": "https://github.com/nestlibs/nestlib/tree/main/libs/interceptors",
+  "homepage": "https://github.com/nestlibs/nestlib/tree/main/libs/interceptors",
   "bugs": "https://github.com/nestlibs/nestlib/issues",
   "license": "MIT",
   "publishConfig": {

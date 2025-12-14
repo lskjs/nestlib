@@ -69,8 +69,8 @@
     }
   ],
   "///": "//////////========================/////////========================/////////========================/////////",
-  "repository": "https://github.com/nestlibs/nestlib/tree/master/libs/decorators",
-  "homepage": "https://github.com/nestlibs/nestlib/tree/master/libs/decorators",
+  "repository": "https://github.com/nestlibs/nestlib/tree/main/libs/decorators",
+  "homepage": "https://github.com/nestlibs/nestlib/tree/main/libs/decorators",
   "bugs": "https://github.com/nestlibs/nestlib/issues",
   "license": "MIT",
   "publishConfig": {

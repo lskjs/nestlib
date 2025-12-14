@@ -51,8 +51,8 @@
     }
   },
   "///": "//////////========================/////////========================/////////========================/////////",
-  "repository": "https://github.com/nestlibs/nestlib/tree/master/libs/crypto",
-  "homepage": "https://github.com/nestlibs/nestlib/tree/master/libs/crypto",
+  "repository": "https://github.com/nestlibs/nestlib/tree/main/libs/crypto",
+  "homepage": "https://github.com/nestlibs/nestlib/tree/main/libs/crypto",
   "bugs": "https://github.com/nestlibs/nestlib/issues",
   "license": "MIT",
   "publishConfig": {

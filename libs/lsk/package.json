@@ -45,8 +45,8 @@
     }
   },
   "///": "//////////========================/////////========================/////////========================/////////",
-  "repository": "https://github.com/nestlibs/nestlib/tree/master/libs/lsk",
-  "homepage": "https://github.com/nestlibs/nestlib/tree/master/libs/lsk",
+  "repository": "https://github.com/nestlibs/nestlib/tree/main/libs/lsk",
+  "homepage": "https://github.com/nestlibs/nestlib/tree/main/libs/lsk",
   "bugs": "https://github.com/nestlibs/nestlib/issues",
   "license": "MIT",
   "publishConfig": {

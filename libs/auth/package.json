@@ -92,8 +92,8 @@
     }
   ],
   "///": "//////////========================/////////========================/////////========================/////////",
-  "repository": "https://github.com/nestlibs/nestlib/tree/master/libs/auth",
-  "homepage": "https://github.com/nestlibs/nestlib/tree/master/libs/auth",
+  "repository": "https://github.com/nestlibs/nestlib/tree/main/libs/auth",
+  "homepage": "https://github.com/nestlibs/nestlib/tree/main/libs/auth",
   "bugs": "https://github.com/nestlibs/nestlib/issues",
   "license": "MIT",
   "publishConfig": {
