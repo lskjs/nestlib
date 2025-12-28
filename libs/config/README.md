@@ -30,8 +30,12 @@
     *   [Environment Variables](#environment-variables)
     *   [Namespaced Configuration](#namespaced-configuration)
     *   [Dynamic Module Registration](#dynamic-module-registration)
+    *   [Async Configuration with forRootAsync](#async-configuration-with-forrootasync)
+    *   [Configuration File Types](#configuration-file-types)
 *   [📚 API Reference](#-api-reference)
     *   [ConfigModule](#configmodule)
+        *   [forRoot](#configmoduleforrooptions-configmoduleoptions)
+        *   [forRootAsync](#configmoduleforrootasyncoptions-configmoduleasyncoptions)
     *   [ConfigService](#configservice)
     *   [InjectConfig](#injectconfig)
     *   [getConfig](#getconfig)
@@ -66,6 +70,8 @@ npm i @nestlib/config
 - 📝 **Integration with @lsk4/config** for advanced config loading
 - 🌲 **Hierarchical .env file resolution** (searches up directory tree)
 - 💉 **Dependency injection** support with custom decorators
+- 🔀 **Async module registration** with `forRootAsync` for dynamic options
+- 📄 **Multiple file formats**: `.env`, `.js`, `.ts`, `.json` configuration files
 
 # 🚀 Usage
 
@@ -282,6 +288,154 @@ import { getConfig } from '@nestlib/config';
 export class AppModule {}
 ```
 
+## Async Configuration with forRootAsync
+
+Use `forRootAsync` when you need to load configuration options dynamically, for example from another service or when you need to await async operations:
+
+### Using useFactory
+
+```typescript
+import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestlib/config';
+
+@Module({
+  imports: [
+    ConfigModule.forRootAsync({
+      useFactory: async () => ({
+        name: 'env.config',
+        cwd: '/path/to/config',
+        throwError: true,
+      }),
+    }),
+  ],
+})
+export class AppModule {}
+```
+
+### Using useFactory with Dependencies
+
+```typescript
+import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestlib/config';
+import { SomeService } from './some.service';
+
+@Module({
+  imports: [
+    ConfigModule.forRootAsync({
+      imports: [SomeModule],
+      inject: [SomeService],
+      useFactory: async (someService: SomeService) => ({
+        name: someService.getConfigName(),
+        cwd: someService.getConfigPath(),
+      }),
+    }),
+  ],
+})
+export class AppModule {}
+```
+
+### Using useClass
+
+```typescript
+import { Injectable } from '@nestjs/common';
+import { ConfigModuleOptions, ConfigOptionsFactory } from '@nestlib/config';
+
+@Injectable()
+class ConfigOptionsService implements ConfigOptionsFactory {
+  createConfigOptions(): ConfigModuleOptions {
+    return {
+      name: 'env.config.js',
+      cwd: process.cwd(),
+    };
+  }
+}
+
+@Module({
+  imports: [
+    ConfigModule.forRootAsync({
+      useClass: ConfigOptionsService,
+    }),
+  ],
+})
+export class AppModule {}
+```
+
+### Using useExisting
+
+```typescript
+@Module({
+  imports: [
+    ConfigModule.forRootAsync({
+      imports: [ConfigOptionsModule],
+      useExisting: ConfigOptionsService,
+    }),
+  ],
+})
+export class AppModule {}
+```
+
+## Configuration File Types
+
+The module supports multiple configuration file formats:
+
+### .env Files
+
+Standard dotenv format, automatically parsed:
+
+```env
+# .env
+DATABASE_HOST=localhost
+DATABASE_PORT=5432
+API_KEY=secret123
+```
+
+### JavaScript/TypeScript Configuration Files
+
+Use `env.config.js` or `env.config.ts` for more complex configurations:
+
+```typescript
+// env.config.ts
+export default {
+  database: {
+    host: 'localhost',
+    port: 5432,
+    name: 'myapp',
+  },
+  api: {
+    url: 'https://api.example.com',
+    timeout: 5000,
+  },
+};
+```
+
+Load with:
+
+```typescript
+ConfigModule.forRoot({
+  name: 'env.config',
+})
+```
+
+### JSON Configuration Files
+
+```json
+// config.json
+{
+  "database": {
+    "host": "localhost",
+    "port": 5432
+  }
+}
+```
+
+Load with:
+
+```typescript
+ConfigModule.forRoot({
+  name: 'config.json',
+})
+```
+
 # 📚 API Reference
 
 ## ConfigModule
@@ -290,7 +444,7 @@ Main module for configuration management.
 
 ### `ConfigModule.forRoot(options?: ConfigModuleOptions)`
 
-Initialize the configuration module.
+Initialize the configuration module synchronously.
 
 **Options:**
 
@@ -308,6 +462,10 @@ interface ConfigModuleOptions {
   // Current working directory (default: process.cwd())
   cwd?: string;
   
+  // Whether to throw error if config file not found
+  // Default: false if .env file exists, true otherwise
+  throwError?: boolean;
+  
   // Additional options from @lsk4/config LoadConfigOptions
   // ...
 }
@@ -316,12 +474,17 @@ interface ConfigModuleOptions {
 **Examples:**
 
 ```typescript
-// Basic usage
+// Basic usage - auto-detects .env file
 ConfigModule.forRoot()
 
 // With custom working directory
 ConfigModule.forRoot({
   cwd: '/path/to/config',
+})
+
+// With JS/TS config file
+ConfigModule.forRoot({
+  name: 'env.config',
 })
 
 // With key extraction
@@ -337,6 +500,86 @@ ConfigModule.forRoot({
 // With namespace
 ConfigModule.forRoot({
   ns: 'myapp',
+})
+
+// With error handling
+ConfigModule.forRoot({
+  name: 'required-config.json',
+  throwError: true,
+})
+```
+
+### `ConfigModule.forRootAsync(options?: ConfigModuleAsyncOptions)`
+
+Initialize the configuration module asynchronously. Useful when configuration options depend on other services or async operations.
+
+**Options:**
+
+```typescript
+interface ConfigModuleAsyncOptions {
+  // Namespace for this configuration instance
+  ns?: string;
+  
+  // Modules to import
+  imports?: any[];
+  
+  // Dependencies to inject into useFactory
+  inject?: InjectionToken[];
+  
+  // Factory function to create options
+  useFactory?: (...args: any[]) => Promise<ConfigModuleOptions> | ConfigModuleOptions;
+  
+  // Class that implements ConfigOptionsFactory
+  useClass?: Type<ConfigOptionsFactory>;
+  
+  // Existing provider that implements ConfigOptionsFactory
+  useExisting?: Type<ConfigOptionsFactory>;
+}
+
+interface ConfigOptionsFactory {
+  createConfigOptions(): Promise<ConfigModuleOptions> | ConfigModuleOptions;
+}
+```
+
+**Examples:**
+
+```typescript
+// Using useFactory
+ConfigModule.forRootAsync({
+  useFactory: async () => ({
+    name: 'env.config',
+    cwd: '/custom/path',
+  }),
+})
+
+// Using useFactory with injected dependencies
+ConfigModule.forRootAsync({
+  imports: [SettingsModule],
+  inject: [SettingsService],
+  useFactory: async (settings: SettingsService) => ({
+    name: settings.getConfigFileName(),
+    cwd: settings.getConfigPath(),
+  }),
+})
+
+// Using useClass
+ConfigModule.forRootAsync({
+  useClass: ConfigOptionsService,
+})
+
+// Using useExisting
+ConfigModule.forRootAsync({
+  imports: [SharedModule],
+  useExisting: SharedConfigService,
+})
+
+// With namespace
+ConfigModule.forRootAsync({
+  ns: 'database',
+  useFactory: () => ({
+    name: 'database.config',
+    key: 'connection',
+  }),
 })
 ```
 
@@ -456,6 +699,20 @@ The module automatically searches for `.env` files in the following order:
 3. `{cwd}/../../.env`
 
 The first file found will be used.
+
+### File Type Detection
+
+The module automatically detects the configuration file type based on the filename:
+
+| File Pattern | Type | Parser |
+|--------------|------|--------|
+| `.env` | Environment | dotenv |
+| `*.config` (without `.js`/`.ts`/`.json`) | Environment | dotenv |
+| `*.js` | JavaScript | @lsk4/config |
+| `*.ts` | TypeScript | @lsk4/config |
+| `*.json` | JSON | @lsk4/config |
+
+For files like `env.config` (without extension), the module first checks if `env.config.js` or `env.config.ts` exists. If found, it loads them as JS/TS files. Otherwise, it treats the file as a dotenv file.
 
 ### Variable Expansion
 
