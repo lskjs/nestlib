@@ -43,6 +43,7 @@ import { ConfigModule } from '@nestlib/config';
   ],
 })
 export class AppModule {}
+```
 
 The module will automatically search for `.env` files in the current directory and parent directories (`.env`, `../.env`, `../../.env`).
 
