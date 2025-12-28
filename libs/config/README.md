@@ -1,53 +1,28 @@
-# Nestlib – Nest Config
+# ⚙️ @nestlib/config – Configuration Module for NestJS
 
-> @nestlib/config – Nestlib – Nest config – helpers for config in NestJS projects
-
-[![LSK logo](https://badgen.net/badge/icon/MADE%20BY%20LSK?icon=zeit\&label\&color=red\&labelColor=red)](https://github.com/lskjs)
+[![LSK.js](https://github.com/lskjs/presets/raw/main/docs/badge.svg)](https://github.com/lskjs)
 [![NPM version](https://badgen.net/npm/v/@nestlib/config)](https://www.npmjs.com/package/@nestlib/config)
 [![NPM downloads](https://badgen.net/npm/dt/@nestlib/config)](https://www.npmjs.com/package/@nestlib/config)
-[![NPM Dependency count](https://badgen.net/bundlephobia/dependency-count/@nestlib/config)](https://bundlephobia.com/result?p=@nestlib/config)
-[![Have TypeScript types](https://badgen.net/npm/types/@nestlib/config)](https://www.npmjs.com/package/@nestlib/config)
-[![Have tree shaking](https://badgen.net/bundlephobia/tree-shaking/@nestlib/config)](https://bundlephobia.com/result?p=@nestlib/config)
-[![NPM Package size](https://badgen.net/bundlephobia/minzip/@nestlib/config)](https://bundlephobia.com/result?p=@nestlib/config)
-[![Package size](https://badgen.net//github/license/lskjs/lskjs)](https://github.com/lskjs/lskjs/blob/main/LICENSE)
+[![Package size](https://badgen.net/bundlephobia/minzip/@nestlib/config)](https://bundlephobia.com/result?p=@nestlib/config)
+[![Package size](https://badgen.net/github/license/nestlibs/nestlib)](https://github.com/nestlibs/nestlib/blob/main/LICENSE)
 [![Ask us in Telegram](https://img.shields.io/badge/Ask%20us%20in-Telegram-brightblue.svg)](https://t.me/lskjschat)
 
-<!-- template file="scripts/templates/preview.md" start -->
+<div align="center">
+  <p><strong>❤️‍🔥 Powerful configuration management for NestJS applications ❤️‍🔥</strong></p>
+</div>
 
-<!-- template end -->
+<img src="https://github.com/nestlibs/nestlib/raw/main/docs/logo.png" align="right" width="120" height="120" />
 
-***
+**⚙️ Environment-based**: Automatic `.env` file detection and hierarchical resolution  
+**🔑 Type-safe**: Full TypeScript support with strict typing  
+**🏷️ Namespaces**: Multiple configuration instances with namespace support  
+**🔄 Dynamic**: Custom loaders and async module registration  
+**📦 Multiple formats**: `.env`, `.js`, `.ts`, `.json` configuration files  
+**💉 DI Support**: Dependency injection with custom decorators
 
-<!-- # 📒 Table of contents  -->
+## 🚀 Quick Start
 
-# Table of contents
-
-*   [⌨️ Install](#️-install)
-*   [📖 Features](#-features)
-*   [🚀 Usage](#-usage)
-    *   [Basic Setup](#basic-setup)
-    *   [Using ConfigService](#using-configservice)
-    *   [Environment Variables](#environment-variables)
-    *   [Namespaced Configuration](#namespaced-configuration)
-    *   [Dynamic Module Registration](#dynamic-module-registration)
-    *   [Async Configuration with forRootAsync](#async-configuration-with-forrootasync)
-    *   [Configuration File Types](#configuration-file-types)
-*   [📚 API Reference](#-api-reference)
-    *   [ConfigModule](#configmodule)
-        *   [forRoot](#configmoduleforrooptions-configmoduleoptions)
-        *   [forRootAsync](#configmoduleforrootasyncoptions-configmoduleasyncoptions)
-    *   [ConfigService](#configservice)
-    *   [InjectConfig](#injectconfig)
-    *   [getConfig](#getconfig)
-*   [🔧 Configuration](#-configuration)
-*   [📖 License](#-license)
-*   [👥 Contributors](#-contributors)
-*   [👏 Contributing](#-contributing)
-*   [📮 Any questions? Always welcome :)](#-any-questions-always-welcome-)
-
-# ⌨️ Install
-
-```sh
+```bash
 # pnpm
 pnpm add @nestlib/config
 
@@ -58,7 +33,20 @@ yarn add @nestlib/config
 npm i @nestlib/config
 ```
 
-# 📖 Features
+```typescript
+import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestlib/config';
+
+@Module({
+  imports: [
+    ConfigModule.forRootAsync(), // will automatically read the .env & .env.js & .env.ts files
+  ],
+})
+export class AppModule {}
+
+The module will automatically search for `.env` files in the current directory and parent directories (`.env`, `../.env`, `../../.env`).
+
+## ✨ Features
 
 - ⚙️ **Powerful configuration management** for NestJS applications
 - 🌍 **Environment-based configuration** with automatic .env file detection
@@ -73,27 +61,11 @@ npm i @nestlib/config
 - 🔀 **Async module registration** with `forRootAsync` for dynamic options
 - 📄 **Multiple file formats**: `.env`, `.js`, `.ts`, `.json` configuration files
 
-# 🚀 Usage
+## 📖 Usage
 
-## Basic Setup
+### Using ConfigService
 
-```typescript
-import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestlib/config';
-
-@Module({
-  imports: [
-    ConfigModule.forRoot(),
-  ],
-})
-export class AppModule {}
-```
-
-The module will automatically search for `.env` files in the current directory and parent directories (`.env`, `../.env`, `../../.env`).
-
-## Using ConfigService
-
-### Inject and Access Configuration
+#### Inject and Access Configuration
 
 ```typescript
 import { Injectable } from '@nestjs/common';
@@ -117,7 +89,7 @@ export class MyService {
 }
 ```
 
-### Using InjectConfig Decorator
+#### Using InjectConfig Decorator
 
 ```typescript
 import { Injectable } from '@nestjs/common';
@@ -136,7 +108,7 @@ export class MyService {
 }
 ```
 
-## Environment Variables
+### Environment Variables
 
 Create a `.env` file in your project root:
 
@@ -158,7 +130,7 @@ API_URL=https://api.example.com
 API_KEY=your-api-key
 ```
 
-## Namespaced Configuration
+### Namespaced Configuration
 
 Use namespaces to organize multiple configuration instances:
 
@@ -206,9 +178,9 @@ export class DatabaseService {
 }
 ```
 
-## Dynamic Module Registration
+### Dynamic Module Registration
 
-### Using getConfig Helper
+#### Using getConfig Helper
 
 The `getConfig` helper provides a convenient way to inject configuration into other modules:
 
@@ -224,7 +196,7 @@ import { getConfig } from '@nestlib/config';
 export class AppModule {}
 ```
 
-### Picking Specific Fields
+#### Picking Specific Fields
 
 ```typescript
 import { Module } from '@nestjs/common';
@@ -246,7 +218,7 @@ import { getConfig } from '@nestlib/config';
 export class AppModule {}
 ```
 
-### Using Custom Transform Function
+#### Using Custom Transform Function
 
 ```typescript
 import { Module } from '@nestjs/common';
@@ -265,34 +237,9 @@ import { getConfig } from '@nestlib/config';
 export class AppModule {}
 ```
 
-### Loading Entire Configuration
+### Async Configuration with forRootAsync
 
-```typescript
-import { Module } from '@nestjs/common';
-import { getConfig } from '@nestlib/config';
-
-@Module({
-  imports: [
-    // Get all configuration
-    SomeModule.forRootAsync(getConfig()),
-    
-    // Get and transform all configuration
-    AnotherModule.forRootAsync(
-      getConfig((config) => ({
-        apiUrl: config.API_URL,
-        timeout: parseInt(config.TIMEOUT || '5000'),
-      }))
-    ),
-  ],
-})
-export class AppModule {}
-```
-
-## Async Configuration with forRootAsync
-
-Use `forRootAsync` when you need to load configuration options dynamically, for example from another service or when you need to await async operations:
-
-### Using useFactory
+Use `forRootAsync` when you need to load configuration options dynamically:
 
 ```typescript
 import { Module } from '@nestjs/common';
@@ -312,75 +259,11 @@ import { ConfigModule } from '@nestlib/config';
 export class AppModule {}
 ```
 
-### Using useFactory with Dependencies
-
-```typescript
-import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestlib/config';
-import { SomeService } from './some.service';
-
-@Module({
-  imports: [
-    ConfigModule.forRootAsync({
-      imports: [SomeModule],
-      inject: [SomeService],
-      useFactory: async (someService: SomeService) => ({
-        name: someService.getConfigName(),
-        cwd: someService.getConfigPath(),
-      }),
-    }),
-  ],
-})
-export class AppModule {}
-```
-
-### Using useClass
-
-```typescript
-import { Injectable } from '@nestjs/common';
-import { ConfigModuleOptions, ConfigOptionsFactory } from '@nestlib/config';
-
-@Injectable()
-class ConfigOptionsService implements ConfigOptionsFactory {
-  createConfigOptions(): ConfigModuleOptions {
-    return {
-      name: 'env.config.js',
-      cwd: process.cwd(),
-    };
-  }
-}
-
-@Module({
-  imports: [
-    ConfigModule.forRootAsync({
-      useClass: ConfigOptionsService,
-    }),
-  ],
-})
-export class AppModule {}
-```
-
-### Using useExisting
-
-```typescript
-@Module({
-  imports: [
-    ConfigModule.forRootAsync({
-      imports: [ConfigOptionsModule],
-      useExisting: ConfigOptionsService,
-    }),
-  ],
-})
-export class AppModule {}
-```
-
-## Configuration File Types
+### Configuration File Types
 
 The module supports multiple configuration file formats:
 
-### .env Files
-
-Standard dotenv format, automatically parsed:
+#### .env Files
 
 ```env
 # .env
@@ -389,9 +272,7 @@ DATABASE_PORT=5432
 API_KEY=secret123
 ```
 
-### JavaScript/TypeScript Configuration Files
-
-Use `env.config.js` or `env.config.ts` for more complex configurations:
+#### JavaScript/TypeScript Configuration Files
 
 ```typescript
 // env.config.ts
@@ -416,33 +297,11 @@ ConfigModule.forRoot({
 })
 ```
 
-### JSON Configuration Files
+## 📚 API Reference
 
-```json
-// config.json
-{
-  "database": {
-    "host": "localhost",
-    "port": 5432
-  }
-}
-```
+### ConfigModule
 
-Load with:
-
-```typescript
-ConfigModule.forRoot({
-  name: 'config.json',
-})
-```
-
-# 📚 API Reference
-
-## ConfigModule
-
-Main module for configuration management.
-
-### `ConfigModule.forRoot(options?: ConfigModuleOptions)`
+#### `ConfigModule.forRoot(options?: ConfigModuleOptions)`
 
 Initialize the configuration module synchronously.
 
@@ -450,173 +309,41 @@ Initialize the configuration module synchronously.
 
 ```typescript
 interface ConfigModuleOptions {
-  // Namespace for this configuration instance
-  ns?: string;
-  
-  // Key to extract from loaded config, or function to transform config
-  key?: string | ((config: any) => any);
-  
-  // Name of the configuration file (default: '.env')
-  name?: string;
-  
-  // Current working directory (default: process.cwd())
-  cwd?: string;
-  
-  // Whether to throw error if config file not found
-  // Default: false if .env file exists, true otherwise
-  throwError?: boolean;
-  
-  // Additional options from @lsk4/config LoadConfigOptions
-  // ...
+  ns?: string;           // Namespace for this configuration instance
+  key?: string | ((config: any) => any);  // Key to extract from loaded config
+  name?: string;         // Name of the configuration file (default: '.env')
+  cwd?: string;          // Current working directory (default: process.cwd())
+  throwError?: boolean;  // Whether to throw error if config file not found
 }
 ```
 
-**Examples:**
+#### `ConfigModule.forRootAsync(options?: ConfigModuleAsyncOptions)`
 
-```typescript
-// Basic usage - auto-detects .env file
-ConfigModule.forRoot()
-
-// With custom working directory
-ConfigModule.forRoot({
-  cwd: '/path/to/config',
-})
-
-// With JS/TS config file
-ConfigModule.forRoot({
-  name: 'env.config',
-})
-
-// With key extraction
-ConfigModule.forRoot({
-  key: 'database',
-})
-
-// With key transformation
-ConfigModule.forRoot({
-  key: (config) => config.services.api,
-})
-
-// With namespace
-ConfigModule.forRoot({
-  ns: 'myapp',
-})
-
-// With error handling
-ConfigModule.forRoot({
-  name: 'required-config.json',
-  throwError: true,
-})
-```
-
-### `ConfigModule.forRootAsync(options?: ConfigModuleAsyncOptions)`
-
-Initialize the configuration module asynchronously. Useful when configuration options depend on other services or async operations.
-
-**Options:**
+Initialize the configuration module asynchronously.
 
 ```typescript
 interface ConfigModuleAsyncOptions {
-  // Namespace for this configuration instance
-  ns?: string;
-  
-  // Modules to import
-  imports?: any[];
-  
-  // Dependencies to inject into useFactory
-  inject?: InjectionToken[];
-  
-  // Factory function to create options
+  ns?: string;           // Namespace for this configuration instance
+  imports?: any[];       // Modules to import
+  inject?: InjectionToken[];  // Dependencies to inject into useFactory
   useFactory?: (...args: any[]) => Promise<ConfigModuleOptions> | ConfigModuleOptions;
-  
-  // Class that implements ConfigOptionsFactory
   useClass?: Type<ConfigOptionsFactory>;
-  
-  // Existing provider that implements ConfigOptionsFactory
   useExisting?: Type<ConfigOptionsFactory>;
 }
-
-interface ConfigOptionsFactory {
-  createConfigOptions(): Promise<ConfigModuleOptions> | ConfigModuleOptions;
-}
 ```
 
-**Examples:**
-
-```typescript
-// Using useFactory
-ConfigModule.forRootAsync({
-  useFactory: async () => ({
-    name: 'env.config',
-    cwd: '/custom/path',
-  }),
-})
-
-// Using useFactory with injected dependencies
-ConfigModule.forRootAsync({
-  imports: [SettingsModule],
-  inject: [SettingsService],
-  useFactory: async (settings: SettingsService) => ({
-    name: settings.getConfigFileName(),
-    cwd: settings.getConfigPath(),
-  }),
-})
-
-// Using useClass
-ConfigModule.forRootAsync({
-  useClass: ConfigOptionsService,
-})
-
-// Using useExisting
-ConfigModule.forRootAsync({
-  imports: [SharedModule],
-  useExisting: SharedConfigService,
-})
-
-// With namespace
-ConfigModule.forRootAsync({
-  ns: 'database',
-  useFactory: () => ({
-    name: 'database.config',
-    key: 'connection',
-  }),
-})
-```
-
-## ConfigService
+### ConfigService
 
 Service for accessing configuration values.
-
-### Methods
-
-#### `get(key: string): any`
-
-Get configuration value by key.
-
-**Parameters:**
-- `key` - The configuration key to retrieve
-
-**Returns:** The configuration value
-
-**Example:**
 
 ```typescript
 const apiUrl = configService.get('API_URL');
 const dbHost = configService.get('database.host');
 ```
 
-**Note:** The service includes built-in logging for debugging configuration access.
-
-## InjectConfig
+### InjectConfig
 
 Decorator for injecting ConfigService with optional namespace.
-
-### `@InjectConfig(namespace?: string)`
-
-**Parameters:**
-- `namespace` - (optional) The namespace of the configuration to inject
-
-**Examples:**
 
 ```typescript
 // Inject default configuration
@@ -626,33 +353,9 @@ constructor(@InjectConfig() private config: ConfigService) {}
 constructor(@InjectConfig('database') private dbConfig: ConfigService) {}
 ```
 
-## getConfig
+### getConfig
 
 Helper function for dynamic module registration with configuration.
-
-### Signatures
-
-```typescript
-// Get all configuration
-getConfig(): GetConfigResult
-
-// Get configuration with field selection or transformation
-getConfig(fields: string[] | PropsFn): GetConfigResult
-
-// Get nested configuration path
-getConfig(path: string): GetConfigResult
-
-// Get nested configuration with field selection or transformation
-getConfig(path: string, fields: string[] | PropsFn): GetConfigResult
-```
-
-**Parameters:**
-- `path` - (optional) Dot-notation path to nested configuration
-- `fields` - (optional) Array of field names to pick, or transformation function
-
-**Returns:** Object with `imports`, `useFactory`, and `inject` for dynamic module registration
-
-**Examples:**
 
 ```typescript
 // Get entire configuration
@@ -671,25 +374,9 @@ RedisModule.forRootAsync(
     port: parseInt(config.port),
   }))
 )
-
-// Nested path with field picking
-DbModule.forRootAsync(
-  getConfig('database', ['host', 'port', 'name'])
-)
 ```
 
-# 🔧 Configuration
-
-The module requires the following dependencies:
-
-- `@nestjs/common` - NestJS common utilities
-- `@nestjs/config` - Official NestJS configuration module
-- `@nestjs/core` - NestJS core functionality
-- `@lsk4/config` - Advanced configuration loading
-- `@lsk4/log` - Logging utilities
-- `@lsk4/err` - Error handling
-- `@lsk4/algos` - Algorithm utilities (for picking fields)
-- `dotenv` - Environment variable loading
+## 🔧 Configuration
 
 ### Environment File Resolution
 
@@ -698,11 +385,7 @@ The module automatically searches for `.env` files in the following order:
 2. `{cwd}/../.env`
 3. `{cwd}/../../.env`
 
-The first file found will be used.
-
 ### File Type Detection
-
-The module automatically detects the configuration file type based on the filename:
 
 | File Pattern | Type | Parser |
 |--------------|------|--------|
@@ -711,8 +394,6 @@ The module automatically detects the configuration file type based on the filena
 | `*.js` | JavaScript | @lsk4/config |
 | `*.ts` | TypeScript | @lsk4/config |
 | `*.json` | JSON | @lsk4/config |
-
-For files like `env.config` (without extension), the module first checks if `env.config.js` or `env.config.ts` exists. If found, it loads them as JS/TS files. Otherwise, it treats the file as a dotenv file.
 
 ### Variable Expansion
 
@@ -724,39 +405,16 @@ API_V1_URL=${BASE_URL}/v1
 API_V2_URL=${BASE_URL}/v2
 ```
 
-***
+## 📝 License
 
-# 📖 License
+MIT © [Igor Suvorov](https://github.com/isuvorov)
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+## 🔗 Links
 
-# 👥 Contributors
+* [GitHub Repository](https://github.com/nestlibs/nestlib)
+* [Issues](https://github.com/nestlibs/nestlib/issues)
+* [Telegram](https://t.me/lskjschat)
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+---
 
-<!-- prettier-ignore-start -->
-
-<!-- markdownlint-disable -->
-
-<table>
-  <tr>
-    <td align="center"><a href="https://isuvorov.com"><img src="https://avatars2.githubusercontent.com/u/1056977?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Igor Suvorov</b></sub></a><br /><a href="lskjs/lskjs///commits?author=isuvorov" title="Code">💻</a> <a href="#design-isuvorov" title="Design">🎨</a> <a href="#ideas-isuvorov" title="Ideas, Planning, & Feedback">🤔</a></td>
-  </tr>
-</table>
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-# 👏 Contributing
-
-1.  Fork it (<https://github.com/yourname/yourproject/fork>)
-2.  Create your feature branch (`git checkout -b features/fooBar`)
-3.  Commit your changes (`git commit -am 'feat(image): Add some fooBar'`)
-4.  Push to the branch (`git push origin feature/fooBar`)
-5.  Create a new Pull Request
-
-# 📮 Any questions? Always welcome :)
-
-*   [Email](mailto:hi@isuvorov.com)
-*   [LSK.news – Telegram channel](https://t.me/lskjs)
-*   [Спроси нас в телеграме ;)](https://t.me/lskjschat)
+**@nestlib/config** – _Powerful configuration management for NestJS_ ⚙️
