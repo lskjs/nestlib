@@ -1,0 +1,70 @@
+{
+  "name": "@nestlib/apm",
+  "version": "4.0.0",
+  "description": "Nestlib – Nest APM – helpers for APM (Application Performance Monitoring) in NestJS projects",
+  "author": "Igor Suvorov <hi@isuvorov.com> (https://github.com/isuvorov)",
+  "private": false,
+  "scripts": {
+    "dev": "            ycmd dev",
+    "build": "          ycmd build",
+    "test": "           ycmd test",
+    "prepack": "        ycmd prepack",
+    "release": "        ycmd release"
+  },
+  "dependencies": {
+    "@lsk4/algos": "^4.24.0",
+    "@lsk4/config": "^4.10.0",
+    "@lsk4/log": "^4.28.0",
+    "elastic-apm-node": "^4.7.0",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^10.3.3",
+    "@nestjs/core": "^10.3.3"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "*",
+    "@nestjs/core": "*"
+  },
+  "//": "///////////========================/////////========================/////////========================//////////",
+  "prettier": "@lsk4/eslint-config/prettier",
+  "eslintConfig": {
+    "extends": "@lsk4/eslint-config"
+  },
+  "files": [
+    "lib",
+    "cjs",
+    "README.md",
+    "LICENCE"
+  ],
+  "main": "cjs/index.js",
+  "types": "cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "types": "./cjs/index.d.ts",
+      "default": "./cjs/index.js"
+    },
+    "./*": {
+      "import": "./lib/*.js",
+      "types": "./cjs/*.d.ts",
+      "default": "./cjs/*.js"
+    }
+  },
+  "_size-limit": [
+    {
+      "path": "lib/index.js",
+      "limit": "10kb"
+    }
+  ],
+  "///": "//////////========================/////////========================/////////========================/////////",
+  "repository": "https://github.com/nestlibs/nestlib/tree/main/libs/apm",
+  "homepage": "https://github.com/nestlibs/nestlib/tree/main/libs/apm",
+  "bugs": "https://github.com/nestlibs/nestlib/issues",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "////": "/////////========================/////////========================/////////========================/////////"
+}
