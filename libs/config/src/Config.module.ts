@@ -15,6 +15,7 @@ import {
   ConfigService as NestConfigService,
 } from '@nestjs/config';
 import dotenv from 'dotenv';
+
 import { ConfigService } from './Config.service.js';
 import { log } from './log.js';
 import { getConfigServiceToken } from './tokens.js';
@@ -41,12 +42,14 @@ export class ConfigModule {
         (!configFileName.includes('.') &&
           !existsSync(`${cwd}/${configFileName}.js`) &&
           !existsSync(`${cwd}/${configFileName}.ts`)));
-    const envFilePath =
-      isEnvFile && existsSync(`${cwd}/${configFileName}`)
-        ? `${cwd}/${configFileName}`
-        : name
-        ? undefined // Если указано имя файла, не ищем стандартные .env
-        : ['.env', '../.env', '../../.env'].map((f) => `${cwd}/${f}`).find((f) => existsSync(f));
+    let envFilePath: string | undefined;
+    if (isEnvFile && existsSync(`${cwd}/${configFileName}`)) {
+      envFilePath = `${cwd}/${configFileName}`;
+    } else if (name) {
+      envFilePath = undefined; // Если указано имя файла, не ищем стандартные .env
+    } else {
+      envFilePath = ['.env', '../.env', '../../.env'].map((f) => `${cwd}/${f}`).find((f) => existsSync(f));
+    }
 
     // TODO: may be
     // dotenv.config({ path: envFilePath });
@@ -149,14 +152,16 @@ export class ConfigModule {
             (!configFileName.includes('.') &&
               !existsSync(`${cwd}/${configFileName}.js`) &&
               !existsSync(`${cwd}/${configFileName}.ts`)));
-        const envFilePath =
-          isEnvFile && existsSync(`${cwd}/${configFileName}`)
-            ? `${cwd}/${configFileName}`
-            : name
-            ? undefined
-            : ['.env', '../.env', '../../.env']
-                .map((f) => `${cwd}/${f}`)
-                .find((f) => existsSync(f));
+        let envFilePath: string | undefined;
+        if (isEnvFile && existsSync(`${cwd}/${configFileName}`)) {
+          envFilePath = `${cwd}/${configFileName}`;
+        } else if (name) {
+          envFilePath = undefined;
+        } else {
+          envFilePath = ['.env', '../.env', '../../.env']
+            .map((f) => `${cwd}/${f}`)
+            .find((f) => existsSync(f));
+        }
 
         if (envFilePath) {
           log.trace(`Using env file: ${envFilePath}`);
@@ -205,17 +210,13 @@ export class ConfigModule {
 
     const nestConfigServiceProvider: Provider = {
       provide: NestConfigService,
-      useFactory: (configLoaded: Record<string, unknown>) => {
-        return new NestConfigService(configLoaded);
-      },
+      useFactory: (configLoaded: Record<string, unknown>) => new NestConfigService(configLoaded),
       inject: ['CONFIG_LOADED'],
     };
 
     const configServiceProvider: Provider = {
       provide: ConfigService,
-      useFactory: (nestConfigService: NestConfigService) => {
-        return new ConfigService(nestConfigService);
-      },
+      useFactory: (nestConfigService: NestConfigService) => new ConfigService(nestConfigService),
       inject: [NestConfigService],
     };
 

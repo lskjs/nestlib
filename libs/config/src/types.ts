@@ -1,5 +1,10 @@
 import type { LoadConfigOptions } from '@lsk4/config';
-import type { InjectionToken, ModuleMetadata, OptionalFactoryDependency, Type } from '@nestjs/common';
+import type {
+  InjectionToken,
+  ModuleMetadata,
+  OptionalFactoryDependency,
+  Type,
+} from '@nestjs/common';
 
 export type PropsFn = (res: Record<string, unknown>) => Record<string, unknown>;
 
