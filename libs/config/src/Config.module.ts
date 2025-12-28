@@ -21,7 +21,7 @@ import { log } from './log.js';
 import { getConfigServiceToken } from './tokens.js';
 import type { ConfigModuleAsyncOptions, ConfigModuleOptions } from './types.js';
 
-// TODO: change loadConfigSync to async version
+// TODO: улусшить тесты связанные с параметрами forRootAsync
 @Global()
 @Module({})
 export class ConfigModule {
@@ -48,7 +48,9 @@ export class ConfigModule {
     } else if (name) {
       envFilePath = undefined; // Если указано имя файла, не ищем стандартные .env
     } else {
-      envFilePath = ['.env', '../.env', '../../.env'].map((f) => `${cwd}/${f}`).find((f) => existsSync(f));
+      envFilePath = ['.env', '../.env', '../../.env']
+        .map((f) => `${cwd}/${f}`)
+        .find((f) => existsSync(f));
     }
 
     // TODO: may be

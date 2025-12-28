@@ -7,6 +7,9 @@ import { projectType, createAsyncModule, type ConfigService, getConfigServiceTok
 const configImportType = 'async';
 const createModule = createAsyncModule;
 
+// TODO: сделать тест когда name у конфига другой
+// TODO: сделать тест когда в 1 директории несколько конфигов в частности .js и обычный
+
 // NOTE: ниже копипаста для всех 4х файлов тестов
 
 describe(`ConfigModule (${configImportType}) (${projectType} project)`, () => {
